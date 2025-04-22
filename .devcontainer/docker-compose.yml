@@ -1,0 +1,9 @@
+services:
+  development:
+    build:
+      context: .
+    working_dir: /development
+    volumes:
+      - "..:/development"
+      - "../.usersecrets:/root/.microsoft/usersecrets:rw"
+    command: sleep infinity
