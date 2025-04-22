@@ -1,0 +1,23 @@
+{
+  "name": "SILQ",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "development",
+  "workspaceFolder": "/development",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csdevkit",
+        "github.vscode-pull-request-github",
+        "jgclark.vscode-todo-highlight",
+        "k--kato.docomment",
+        "GitHub.copilot",
+        "foxundermoon.shell-format",
+        "eamodio.gitlens",
+        "Gruntfuggly.todo-tree",
+        "GitHub.copilot-chat",
+      ],
+      "settings": {}
+    }
+  },
+  "shutdownAction": "stopCompose"
+}
