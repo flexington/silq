@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Text;
 using flx.SILQ.Errors;
+using flx.SILQ.Models;
 
-namespace flx.SILQ;
+namespace flx.SILQ.Core;
 
 public class Tokenizer
 {

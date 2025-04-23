@@ -1,3 +1,6 @@
+using flx.SILQ.Core;
+using flx.SILQ.Models;
+
 namespace flx.SILQ.Tests;
 
 [TestClass]

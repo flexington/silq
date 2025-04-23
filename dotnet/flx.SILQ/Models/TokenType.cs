@@ -1,4 +1,4 @@
-namespace flx.SILQ;
+namespace flx.SILQ.Models;
 
 /// <summary>
 /// Represents the different types of tokens that can be identified by the SILQ tokenizer.

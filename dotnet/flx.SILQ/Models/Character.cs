@@ -1,4 +1,4 @@
-namespace flx.SILQ;
+namespace flx.SILQ.Models;
 
 /// <summary>
 /// Represents a single character in the source input, including its value and position (line and column).

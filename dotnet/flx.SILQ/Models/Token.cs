@@ -1,4 +1,4 @@
-namespace flx.SILQ;
+namespace flx.SILQ.Models;
 
 /// <summary>
 /// Represents a token identified by the SILQ tokenizer, including its type, lexeme, literal value, and line number.
