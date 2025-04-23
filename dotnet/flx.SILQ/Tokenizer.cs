@@ -7,18 +7,18 @@ namespace flx.SILQ;
 public class Tokenizer
 {
     private Queue<Character> _characters;
-    private List<Token> _tokens = new List<Token>();
     private List<ErrorToken> _errors = new List<ErrorToken>();
 
     private Dictionary<string, TokenType> _keywords = new Dictionary<string, TokenType>
     {
+        { "and", TokenType.AND },
+        { "as", TokenType.AS},
         { "from", TokenType.FROM },
         { "where", TokenType.WHERE },
         { "select", TokenType.SELECT },
         { "first", TokenType.FIRST },
         { "last", TokenType.LAST },
         { "count", TokenType.COUNT },
-        { "and", TokenType.AND },
         { "or", TokenType.OR },
         { "true", TokenType.TRUE },
         { "false", TokenType.FALSE },
@@ -29,14 +29,16 @@ public class Tokenizer
         { "like", TokenType.LIKE }
     };
 
-    public Tokenizer(string[] input)
+    /// <summary>
+    /// Tokenizes the input lines into a list of tokens.
+    /// Handles keywords, operators, numbers, identifiers, strings, and comments.
+    /// Adds error tokens for unexpected characters.
+    /// </summary>
+    /// <param name="input">The input lines to tokenize.</param>
+    /// <returns>A list of <see cref="Token"/> objects representing the tokenized input.</returns>
+    public List<Token> Tokenize(string[] input)
     {
         _characters = Enqueue(input);
-    }
-
-
-    public List<Token> Tokenize(string input)
-    {
         List<Token> tokens = new List<Token>();
 
         while (_characters.Count > 0)
@@ -50,57 +52,60 @@ public class Tokenizer
                 case '\n':
                     break;
                 case '.':
-                    tokens.Add(new Token(TokenType.DOT, c.ToString(), null, c.Line, c.Column));
+                    tokens.Add(new Token(TokenType.DOT, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '+':
-                    tokens.Add(new Token(TokenType.PLUS, c.ToString(), null, c.Line, c.Column));
+                    tokens.Add(new Token(TokenType.PLUS, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '-':
-                    tokens.Add(new Token(TokenType.MINUS, c.ToString(), null, c.Line, c.Column));
+                    tokens.Add(new Token(TokenType.MINUS, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case ';':
-                    tokens.Add(new Token(TokenType.SEMICOLON, c.ToString(), null, c.Line, c.Column));
+                    tokens.Add(new Token(TokenType.SEMICOLON, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '*':
-                    tokens.Add(new Token(TokenType.STAR, c.ToString(), null, c.Line, c.Column));
+                    tokens.Add(new Token(TokenType.STAR, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '!':
                     bool matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.BANG_EQUAL, c.ToString(), null, c.Line, c.Column));
-                    else tokens.Add(new Token(TokenType.BANG, c.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.BANG_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    else tokens.Add(new Token(TokenType.BANG, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '=':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.EQUAL_EQUAL, c.ToString(), null, c.Line, c.Column));
-                    else tokens.Add(new Token(TokenType.EQUAL, c.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.EQUAL_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    else tokens.Add(new Token(TokenType.EQUAL, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '>':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.GREATER_EQUAL, c.ToString(), null, c.Line, c.Column));
-                    else tokens.Add(new Token(TokenType.GREATER, c.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.GREATER_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    else tokens.Add(new Token(TokenType.GREATER, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '<':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.LESS_EQUAL, c.ToString(), null, c.Line, c.Column));
-                    else tokens.Add(new Token(TokenType.LESS, c.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.LESS_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    else tokens.Add(new Token(TokenType.LESS, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '/':
                     matched = Match('/');
                     if (matched) SkipLine();
-                    else tokens.Add(new Token(TokenType.SLASH, c.ToString(), null, c.Line, c.Column));
+                    else tokens.Add(new Token(TokenType.SLASH, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '"':
                     Token str = ReadString();
                     if (str != null) tokens.Add(str);
                     break;
                 default:
-                    // Check if the character is a digit
-                    // Check if the character is an identifier
+                    if (IsDigit(c.Value)) tokens.Add(ToNumber(c));
+                    else if (IsAlpha(c.Value)) tokens.Add(Identifier(c));
+                    _errors.Add(new ErrorToken($"Unexpected character '{c.Value}'", c.Line, c.Column));
                     break;
-
             }
 
         }
+
+        tokens.Add(new Token(TokenType.EOF, null, null, 0, 0));
+        return tokens;
     }
 
     /// <summary>
@@ -181,5 +186,83 @@ public class Tokenizer
         if (_characters.Peek().Value == '"') _characters.Dequeue(); // Consume the closing quote
 
         return new Token(TokenType.STRING, $"\"{stringBuilder.ToString()}\"", stringBuilder.ToString(), last.Line, last.Column);
+    }
+
+    /// <summary>
+    /// Determines whether the specified character is a digit (0-9).
+    /// </summary>
+    /// <param name="c">The character to check.</param>
+    /// <returns><c>true</c> if the character is a digit; otherwise, <c>false</c>.</returns>
+    private bool IsDigit(char c)
+    {
+        return c >= '0' && c <= '9' || c == '.';
+    }
+
+    /// <summary>
+    /// Determines whether the specified character is an alphabetic letter (A-Z or a-z).
+    /// </summary>
+    /// <param name="c">The character to check.</param>
+    /// <returns><c>true</c> if the character is an alphabetic letter; otherwise, <c>false</c>.</returns>
+    private bool IsAlpha(char c)
+    {
+        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == '_';
+    }
+
+    /// <summary>
+    /// Determines whether the specified character is alphanumeric (A-Z, a-z, 0-9, or underscore).
+    /// </summary>
+    /// <param name="c">The character to check.</param>
+    /// <returns><c>true</c> if the character is alphanumeric; otherwise, <c>false</c>.</returns>
+    private bool IsAlphaNumeric(char c)
+    {
+        return IsAlpha(c) || IsDigit(c);
+    }
+
+    /// <summary>
+    /// Consumes characters from the queue to form a number token, starting with the provided character.
+    /// Continues until a non-digit character or end of line is encountered.
+    /// </summary>
+    /// <param name="last">The first character of the number.</param>
+    /// <returns>A <see cref="Token"/> representing the parsed number.</returns>
+    private Token ToNumber(Character last)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(last.Value);
+
+
+
+        while (_characters.Count > 0 && IsDigit(_characters.Peek().Value))
+        {
+            if (last.Line != _characters.Peek().Line) break;
+            last = _characters.Dequeue();
+            sb.Append(last.Value);
+        }
+        return new Token(TokenType.NUMBER, sb.ToString(), double.Parse(sb.ToString()).ToString("0.0########"), last.Line, last.Column);
+    }
+
+    /// <summary>
+    /// Consumes characters from the queue to form an identifier token, starting with the provided character.
+    /// Continues until a non-alphanumeric character or end of line is encountered.
+    /// If the resulting string matches a keyword, returns the corresponding keyword token.
+    /// </summary>
+    /// <param name="c">The first character of the identifier.</param>
+    /// <returns>A <see cref="Token"/> representing the identifier or keyword.</returns>
+    private Token Identifier(Character c)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.Append(c.Value);
+        while (_characters.Count > 0 && IsAlphaNumeric(_characters.Peek().Value))
+        {
+            if (c.Line != _characters.Peek().Line) break; // Break if the next character is in a different line
+            c = _characters.Dequeue();
+            stringBuilder.Append(c.Value);
+        }
+
+        if (_keywords.ContainsKey(stringBuilder.ToString()))
+        {
+            return new Token(_keywords[stringBuilder.ToString()], stringBuilder.ToString(), null, c.Line, c.Column);
+        }
+
+        return new Token(TokenType.IDENTIFIER, stringBuilder.ToString(), stringBuilder.ToString(), c.Line, c.Column);
     }
 }
