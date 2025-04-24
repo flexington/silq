@@ -10,7 +10,12 @@ namespace flx.SILQ.Core;
 /// </summary>
 public partial class Interpreter
 {
-    public string Interpre(Expression expression)
+    /// <summary>
+    /// Interprets the given expression by evaluating it and converting the result to a string.
+    /// </summary>
+    /// <param name="expression">The expression to interpret.</param>
+    /// <returns>The string representation of the evaluated expression.</returns>
+    public string Interpret(Expression expression)
     {
         try
         {
