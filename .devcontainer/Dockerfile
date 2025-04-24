@@ -36,3 +36,4 @@ COPY /shell /install/shell
 RUN chmod +x /install/shell/install.sh
 RUN /bin/bash -c "./install/shell/install.sh"
 
+RUN dotnet tool update -g docfx

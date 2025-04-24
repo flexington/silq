@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Expressions
+  commentId: N:flx.SILQ.Expressions
+  id: flx.SILQ.Expressions
+  children:
+  - flx.SILQ.Expressions.Binary
+  - flx.SILQ.Expressions.Expression
+  - flx.SILQ.Expressions.Grouping
+  - flx.SILQ.Expressions.IVisitor`1
+  - flx.SILQ.Expressions.Literal
+  - flx.SILQ.Expressions.Unary
+  langs:
+  - csharp
+  - vb
+  name: flx.SILQ.Expressions
+  nameWithType: flx.SILQ.Expressions
+  fullName: flx.SILQ.Expressions
+  type: Namespace
+  assemblies:
+  - flx.SILQ
+references:
+- uid: flx.SILQ.Expressions.Binary
+  commentId: T:flx.SILQ.Expressions.Binary
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Binary.html
+  name: Binary
+  nameWithType: Binary
+  fullName: flx.SILQ.Expressions.Binary
+- uid: flx.SILQ.Expressions.Expression
+  commentId: T:flx.SILQ.Expressions.Expression
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Expression.html
+  name: Expression
+  nameWithType: Expression
+  fullName: flx.SILQ.Expressions.Expression
+- uid: flx.SILQ.Expressions.Grouping
+  commentId: T:flx.SILQ.Expressions.Grouping
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Grouping.html
+  name: Grouping
+  nameWithType: Grouping
+  fullName: flx.SILQ.Expressions.Grouping
+- uid: flx.SILQ.Expressions.IVisitor`1
+  commentId: T:flx.SILQ.Expressions.IVisitor`1
+  href: flx.SILQ.Expressions.IVisitor-1.html
+  name: IVisitor<T>
+  nameWithType: IVisitor<T>
+  fullName: flx.SILQ.Expressions.IVisitor<T>
+  nameWithType.vb: IVisitor(Of T)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T)
+  name.vb: IVisitor(Of T)
+  spec.csharp:
+  - uid: flx.SILQ.Expressions.IVisitor`1
+    name: IVisitor
+    href: flx.SILQ.Expressions.IVisitor-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: flx.SILQ.Expressions.IVisitor`1
+    name: IVisitor
+    href: flx.SILQ.Expressions.IVisitor-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: flx.SILQ.Expressions.Literal
+  commentId: T:flx.SILQ.Expressions.Literal
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Literal.html
+  name: Literal
+  nameWithType: Literal
+  fullName: flx.SILQ.Expressions.Literal
+- uid: flx.SILQ.Expressions.Unary
+  commentId: T:flx.SILQ.Expressions.Unary
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Unary.html
+  name: Unary
+  nameWithType: Unary
+  fullName: flx.SILQ.Expressions.Unary
+- uid: flx.SILQ.Expressions
+  commentId: N:flx.SILQ.Expressions
+  href: flx.html
+  name: flx.SILQ.Expressions
+  nameWithType: flx.SILQ.Expressions
+  fullName: flx.SILQ.Expressions
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html

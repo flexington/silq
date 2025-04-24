@@ -1,0 +1,246 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Expressions.IVisitor`1
+  commentId: T:flx.SILQ.Expressions.IVisitor`1
+  id: IVisitor`1
+  parent: flx.SILQ.Expressions
+  children:
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Binary)
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Grouping)
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Literal)
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Unary)
+  langs:
+  - csharp
+  - vb
+  name: IVisitor<T>
+  nameWithType: IVisitor<T>
+  fullName: flx.SILQ.Expressions.IVisitor<T>
+  type: Interface
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: IVisitor
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 2
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: public interface IVisitor<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IVisitor(Of T)
+  nameWithType.vb: IVisitor(Of T)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T)
+  name.vb: IVisitor(Of T)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Literal)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Literal)
+  id: Visit(flx.SILQ.Expressions.Literal)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Literal)
+  nameWithType: IVisitor<T>.Visit(Literal)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Literal)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 4
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Literal literal)
+    parameters:
+    - id: literal
+      type: flx.SILQ.Expressions.Literal
+    return:
+      type: '{T}'
+    content.vb: Function Visit(literal As Literal) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Literal)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Literal)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Unary)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Unary)
+  id: Visit(flx.SILQ.Expressions.Unary)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Unary)
+  nameWithType: IVisitor<T>.Visit(Unary)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Unary)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 5
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Unary unary)
+    parameters:
+    - id: unary
+      type: flx.SILQ.Expressions.Unary
+    return:
+      type: '{T}'
+    content.vb: Function Visit(unary As Unary) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Unary)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Unary)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Binary)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Binary)
+  id: Visit(flx.SILQ.Expressions.Binary)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Binary)
+  nameWithType: IVisitor<T>.Visit(Binary)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Binary)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 6
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Binary binary)
+    parameters:
+    - id: binary
+      type: flx.SILQ.Expressions.Binary
+    return:
+      type: '{T}'
+    content.vb: Function Visit(binary As Binary) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Binary)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Binary)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Grouping)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Grouping)
+  id: Visit(flx.SILQ.Expressions.Grouping)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Grouping)
+  nameWithType: IVisitor<T>.Visit(Grouping)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Grouping)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 7
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Grouping grouping)
+    parameters:
+    - id: grouping
+      type: flx.SILQ.Expressions.Grouping
+    return:
+      type: '{T}'
+    content.vb: Function Visit(grouping As Grouping) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Grouping)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Grouping)
+references:
+- uid: flx.SILQ.Expressions
+  commentId: N:flx.SILQ.Expressions
+  href: flx.html
+  name: flx.SILQ.Expressions
+  nameWithType: flx.SILQ.Expressions
+  fullName: flx.SILQ.Expressions
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit*
+  commentId: Overload:flx.SILQ.Expressions.IVisitor`1.Visit
+  href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Literal_
+  name: Visit
+  nameWithType: IVisitor<T>.Visit
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit
+  nameWithType.vb: IVisitor(Of T).Visit
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit
+- uid: flx.SILQ.Expressions.Literal
+  commentId: T:flx.SILQ.Expressions.Literal
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Literal.html
+  name: Literal
+  nameWithType: Literal
+  fullName: flx.SILQ.Expressions.Literal
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: flx.SILQ.Expressions.Unary
+  commentId: T:flx.SILQ.Expressions.Unary
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Unary.html
+  name: Unary
+  nameWithType: Unary
+  fullName: flx.SILQ.Expressions.Unary
+- uid: flx.SILQ.Expressions.Binary
+  commentId: T:flx.SILQ.Expressions.Binary
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Binary.html
+  name: Binary
+  nameWithType: Binary
+  fullName: flx.SILQ.Expressions.Binary
+- uid: flx.SILQ.Expressions.Grouping
+  commentId: T:flx.SILQ.Expressions.Grouping
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Grouping.html
+  name: Grouping
+  nameWithType: Grouping
+  fullName: flx.SILQ.Expressions.Grouping

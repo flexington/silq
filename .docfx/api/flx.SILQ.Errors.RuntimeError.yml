@@ -1,0 +1,641 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Errors.RuntimeError
+  commentId: T:flx.SILQ.Errors.RuntimeError
+  id: RuntimeError
+  parent: flx.SILQ.Errors
+  children:
+  - flx.SILQ.Errors.RuntimeError.#ctor(System.String,System.String)
+  - flx.SILQ.Errors.RuntimeError.#ctor(flx.SILQ.Models.Token,System.String)
+  - flx.SILQ.Errors.RuntimeError.Token
+  langs:
+  - csharp
+  - vb
+  name: RuntimeError
+  nameWithType: RuntimeError
+  fullName: flx.SILQ.Errors.RuntimeError
+  type: Class
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Errors/RuntimeError.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: RuntimeError
+    path: ../dotnet/flx.SILQ/Errors/RuntimeError.cs
+    startLine: 8
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Errors
+  summary: Represents a runtime error that occurs during interpretation of SILQ code.
+  example: []
+  syntax:
+    content: 'public class RuntimeError : Exception, ISerializable'
+    content.vb: Public Class RuntimeError Inherits Exception Implements ISerializable
+  inheritance:
+  - System.Object
+  - System.Exception
+  implements:
+  - System.Runtime.Serialization.ISerializable
+  inheritedMembers:
+  - System.Exception.GetBaseException
+  - System.Exception.GetType
+  - System.Exception.ToString
+  - System.Exception.Data
+  - System.Exception.HelpLink
+  - System.Exception.HResult
+  - System.Exception.InnerException
+  - System.Exception.Message
+  - System.Exception.Source
+  - System.Exception.StackTrace
+  - System.Exception.TargetSite
+  - System.Exception.SerializeObjectState
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: flx.SILQ.Errors.RuntimeError.Token
+  commentId: P:flx.SILQ.Errors.RuntimeError.Token
+  id: Token
+  parent: flx.SILQ.Errors.RuntimeError
+  langs:
+  - csharp
+  - vb
+  name: Token
+  nameWithType: RuntimeError.Token
+  fullName: flx.SILQ.Errors.RuntimeError.Token
+  type: Property
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Errors/RuntimeError.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: Token
+    path: ../dotnet/flx.SILQ/Errors/RuntimeError.cs
+    startLine: 11
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Errors
+  syntax:
+    content: public Token Token { get; }
+    parameters: []
+    return:
+      type: flx.SILQ.Models.Token
+    content.vb: Public ReadOnly Property Token As Token
+  overload: flx.SILQ.Errors.RuntimeError.Token*
+- uid: flx.SILQ.Errors.RuntimeError.#ctor(flx.SILQ.Models.Token,System.String)
+  commentId: M:flx.SILQ.Errors.RuntimeError.#ctor(flx.SILQ.Models.Token,System.String)
+  id: '#ctor(flx.SILQ.Models.Token,System.String)'
+  parent: flx.SILQ.Errors.RuntimeError
+  langs:
+  - csharp
+  - vb
+  name: RuntimeError(Token, string)
+  nameWithType: RuntimeError.RuntimeError(Token, string)
+  fullName: flx.SILQ.Errors.RuntimeError.RuntimeError(flx.SILQ.Models.Token, string)
+  type: Constructor
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Errors/RuntimeError.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: .ctor
+    path: ../dotnet/flx.SILQ/Errors/RuntimeError.cs
+    startLine: 18
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Errors
+  summary: Initializes a new instance of the <xref href="flx.SILQ.Errors.RuntimeError" data-throw-if-not-resolved="false"></xref> class with a token and error message.
+  example: []
+  syntax:
+    content: public RuntimeError(Token token, string message)
+    parameters:
+    - id: token
+      type: flx.SILQ.Models.Token
+      description: The token where the error occurred.
+    - id: message
+      type: System.String
+      description: The error message.
+    content.vb: Public Sub New(token As Token, message As String)
+  overload: flx.SILQ.Errors.RuntimeError.#ctor*
+  nameWithType.vb: RuntimeError.New(Token, String)
+  fullName.vb: flx.SILQ.Errors.RuntimeError.New(flx.SILQ.Models.Token, String)
+  name.vb: New(Token, String)
+- uid: flx.SILQ.Errors.RuntimeError.#ctor(System.String,System.String)
+  commentId: M:flx.SILQ.Errors.RuntimeError.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: flx.SILQ.Errors.RuntimeError
+  langs:
+  - csharp
+  - vb
+  name: RuntimeError(string, string)
+  nameWithType: RuntimeError.RuntimeError(string, string)
+  fullName: flx.SILQ.Errors.RuntimeError.RuntimeError(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Errors/RuntimeError.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: .ctor
+    path: ../dotnet/flx.SILQ/Errors/RuntimeError.cs
+    startLine: 28
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Errors
+  summary: Initializes a new instance of the <xref href="flx.SILQ.Errors.RuntimeError" data-throw-if-not-resolved="false"></xref> class with a name and error message.
+  example: []
+  syntax:
+    content: public RuntimeError(string name, string message)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name associated with the error.
+    - id: message
+      type: System.String
+      description: The error message.
+    content.vb: Public Sub New(name As String, message As String)
+  overload: flx.SILQ.Errors.RuntimeError.#ctor*
+  nameWithType.vb: RuntimeError.New(String, String)
+  fullName.vb: flx.SILQ.Errors.RuntimeError.New(String, String)
+  name.vb: New(String, String)
+references:
+- uid: flx.SILQ.Errors
+  commentId: N:flx.SILQ.Errors
+  href: flx.html
+  name: flx.SILQ.Errors
+  nameWithType: flx.SILQ.Errors
+  fullName: flx.SILQ.Errors
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Errors
+    name: Errors
+    href: flx.SILQ.Errors.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Errors
+    name: Errors
+    href: flx.SILQ.Errors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Exception.GetBaseException
+  commentId: M:System.Exception.GetBaseException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  name: GetBaseException()
+  nameWithType: Exception.GetBaseException()
+  fullName: System.Exception.GetBaseException()
+  spec.csharp:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+- uid: System.Exception.GetType
+  commentId: M:System.Exception.GetType
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  name: GetType()
+  nameWithType: Exception.GetType()
+  fullName: System.Exception.GetType()
+  spec.csharp:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+- uid: System.Exception.ToString
+  commentId: M:System.Exception.ToString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  name: ToString()
+  nameWithType: Exception.ToString()
+  fullName: System.Exception.ToString()
+  spec.csharp:
+  - uid: System.Exception.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  - name: (
+  - name: )
+- uid: System.Exception.Data
+  commentId: P:System.Exception.Data
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.data
+  name: Data
+  nameWithType: Exception.Data
+  fullName: System.Exception.Data
+- uid: System.Exception.HelpLink
+  commentId: P:System.Exception.HelpLink
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.helplink
+  name: HelpLink
+  nameWithType: Exception.HelpLink
+  fullName: System.Exception.HelpLink
+- uid: System.Exception.HResult
+  commentId: P:System.Exception.HResult
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.hresult
+  name: HResult
+  nameWithType: Exception.HResult
+  fullName: System.Exception.HResult
+- uid: System.Exception.InnerException
+  commentId: P:System.Exception.InnerException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.innerexception
+  name: InnerException
+  nameWithType: Exception.InnerException
+  fullName: System.Exception.InnerException
+- uid: System.Exception.Message
+  commentId: P:System.Exception.Message
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.message
+  name: Message
+  nameWithType: Exception.Message
+  fullName: System.Exception.Message
+- uid: System.Exception.Source
+  commentId: P:System.Exception.Source
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.source
+  name: Source
+  nameWithType: Exception.Source
+  fullName: System.Exception.Source
+- uid: System.Exception.StackTrace
+  commentId: P:System.Exception.StackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.stacktrace
+  name: StackTrace
+  nameWithType: Exception.StackTrace
+  fullName: System.Exception.StackTrace
+- uid: System.Exception.TargetSite
+  commentId: P:System.Exception.TargetSite
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.targetsite
+  name: TargetSite
+  nameWithType: Exception.TargetSite
+  fullName: System.Exception.TargetSite
+- uid: System.Exception.SerializeObjectState
+  commentId: E:System.Exception.SerializeObjectState
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.serializeobjectstate
+  name: SerializeObjectState
+  nameWithType: Exception.SerializeObjectState
+  fullName: System.Exception.SerializeObjectState
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+- uid: flx.SILQ.Errors.RuntimeError.Token*
+  commentId: Overload:flx.SILQ.Errors.RuntimeError.Token
+  href: flx.SILQ.Errors.RuntimeError.html#flx_SILQ_Errors_RuntimeError_Token
+  name: Token
+  nameWithType: RuntimeError.Token
+  fullName: flx.SILQ.Errors.RuntimeError.Token
+- uid: flx.SILQ.Models.Token
+  commentId: T:flx.SILQ.Models.Token
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.Token.html
+  name: Token
+  nameWithType: Token
+  fullName: flx.SILQ.Models.Token
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  href: flx.html
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+- uid: flx.SILQ.Errors.RuntimeError
+  commentId: T:flx.SILQ.Errors.RuntimeError
+  href: flx.SILQ.Errors.RuntimeError.html
+  name: RuntimeError
+  nameWithType: RuntimeError
+  fullName: flx.SILQ.Errors.RuntimeError
+- uid: flx.SILQ.Errors.RuntimeError.#ctor*
+  commentId: Overload:flx.SILQ.Errors.RuntimeError.#ctor
+  href: flx.SILQ.Errors.RuntimeError.html#flx_SILQ_Errors_RuntimeError__ctor_flx_SILQ_Models_Token_System_String_
+  name: RuntimeError
+  nameWithType: RuntimeError.RuntimeError
+  fullName: flx.SILQ.Errors.RuntimeError.RuntimeError
+  nameWithType.vb: RuntimeError.New
+  fullName.vb: flx.SILQ.Errors.RuntimeError.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

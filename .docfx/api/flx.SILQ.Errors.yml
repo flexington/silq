@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Errors
+  commentId: N:flx.SILQ.Errors
+  id: flx.SILQ.Errors
+  children:
+  - flx.SILQ.Errors.ErrorToken
+  - flx.SILQ.Errors.ParserError
+  - flx.SILQ.Errors.RuntimeError
+  langs:
+  - csharp
+  - vb
+  name: flx.SILQ.Errors
+  nameWithType: flx.SILQ.Errors
+  fullName: flx.SILQ.Errors
+  type: Namespace
+  assemblies:
+  - flx.SILQ
+references:
+- uid: flx.SILQ.Errors.ErrorToken
+  commentId: T:flx.SILQ.Errors.ErrorToken
+  href: flx.SILQ.Errors.ErrorToken.html
+  name: ErrorToken
+  nameWithType: ErrorToken
+  fullName: flx.SILQ.Errors.ErrorToken
+- uid: flx.SILQ.Errors.ParserError
+  commentId: T:flx.SILQ.Errors.ParserError
+  href: flx.SILQ.Errors.ParserError.html
+  name: ParserError
+  nameWithType: ParserError
+  fullName: flx.SILQ.Errors.ParserError
+- uid: flx.SILQ.Errors.RuntimeError
+  commentId: T:flx.SILQ.Errors.RuntimeError
+  href: flx.SILQ.Errors.RuntimeError.html
+  name: RuntimeError
+  nameWithType: RuntimeError
+  fullName: flx.SILQ.Errors.RuntimeError
