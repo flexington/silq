@@ -1,0 +1,297 @@
+using flx.SILQ.Errors;
+using flx.SILQ.Expressions;
+using flx.SILQ.Models;
+
+namespace flx.SILQ.Core.Tests;
+
+[TestClass]
+public class InterpreterTests
+{
+    [TestMethod]
+    public void Interpret_WhenAddition_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal(2.0);
+        var right = new Literal(3.0);
+        var op = new Token(TokenType.PLUS, "+", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("5", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNumberHasZeroDecimal_ReturnWithoutDecimal()
+    {
+        // Arrange
+        var expr = new Literal(42.0);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("42", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNegativeNumber_ReturnsResult()
+    {
+        // Arrange
+        var number = new Literal(7.0);
+        var op = new Token(TokenType.MINUS, "-", null, 1);
+        var expr = new Unary(op, number);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("-7", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNotTrue_ReturnsFalse()
+    {
+        // Arrange
+        var value = new Literal(true);
+        var op = new Token(TokenType.BANG, "!", null, 1);
+        var expr = new Unary(op, value);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("false", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNotFalse_ReturnsTrue()
+    {
+        // Arrange
+        var value = new Literal(false);
+        var op = new Token(TokenType.BANG, "!", null, 1);
+        var expr = new Unary(op, value);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNotNumber_ReturnsFalse()
+    {
+        // Arrange
+        var value = new Literal(0.0);
+        var op = new Token(TokenType.BANG, "!", null, 1);
+        var expr = new Unary(op, value);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("false", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringConcatenation_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal("Hello, ");
+        var right = new Literal("World!");
+        var op = new Token(TokenType.PLUS, "+", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("Hello, World!", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenGreaterThan_ReturnsTrue()
+    {
+        // Arrange
+        var left = new Literal(5.0);
+        var right = new Literal(2.0);
+        var op = new Token(TokenType.GREATER, ">", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenGreaterThanEqual_ReturnsTrue()
+    {
+        // Arrange
+        var left = new Literal(5.0);
+        var right = new Literal(5.0);
+        var op = new Token(TokenType.GREATER_EQUAL, ">=", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenComplexGreaterThanEqual_ReturnsTrue()
+    {
+        // Arrange
+        var left = new Binary(new Literal(2.0), new Token(TokenType.PLUS, "+", null, 1), new Literal(3.0)); // 2 + 3
+        var right = new Literal(5.0);
+        var op = new Token(TokenType.GREATER_EQUAL, ">=", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringEqual_ReturnsFalse()
+    {
+        // Arrange
+        var left = new Literal("foo");
+        var right = new Literal("bar");
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("false", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringNotEqual_ReturnsTrue()
+    {
+        // Arrange
+        var left = new Literal("foo");
+        var right = new Literal("bar");
+        var op = new Token(TokenType.BANG_EQUAL, "!=", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringEqual_ReturnsTrue()
+    {
+        // Arrange
+        var left = new Literal("foo");
+        var right = new Literal("foo");
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNumberEqualString_ReturnsFalse()
+    {
+        // Arrange
+        var left = new Literal(42.0);
+        var right = new Literal("42");
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("false", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringPlusBoolean_ReturnsRuntimeError()
+    {
+        // Arrange
+        var left = new Literal("foo");
+        var right = new Literal(true);
+        var op = new Token(TokenType.PLUS, "+", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNumberMinusBoolean_ReturnsRuntimeError()
+    {
+        // Arrange
+        var left = new Literal(1.0);
+        var right = new Literal(false);
+        var op = new Token(TokenType.MINUS, "-", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
+    }
+
+    [TestMethod]
+    public void Interpret_WhenTruePlusFalse_ReturnsRuntimeError()
+    {
+        // Arrange
+        var left = new Literal(true);
+        var right = new Literal(false);
+        var op = new Token(TokenType.PLUS, "+", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
+    }
+
+    [TestMethod]
+    public void Interpret_WhenStringMinusString_ReturnsRuntimeError()
+    {
+        // Arrange
+        var left = new Literal("foo");
+        var right = new Literal("bar");
+        var op = new Token(TokenType.MINUS, "-", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
+    }
+}
+
