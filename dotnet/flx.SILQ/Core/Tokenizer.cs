@@ -97,8 +97,16 @@ public class Tokenizer
                     if (str != null) tokens.Add(str);
                     break;
                 default:
-                    if (IsDigit(c.Value)) tokens.Add(ToNumber(c));
-                    else if (IsAlpha(c.Value)) tokens.Add(Identifier(c));
+                    if (IsDigit(c.Value))
+                    {
+                        tokens.Add(ToNumber(c));
+                        break;
+                    }
+                    else if (IsAlpha(c.Value))
+                    {
+                        tokens.Add(Identifier(c));
+                        break;
+                    }
                     _errors.Add(new ErrorToken($"Unexpected character '{c.Value}'", c.Line, c.Column));
                     break;
             }
@@ -178,7 +186,7 @@ public class Tokenizer
         }
 
         // Check if we reached the end of the input without finding a closing quote
-        if (_characters.Count == 0 && _characters.Peek().Value != '"')
+        if (_characters.Count == 0 || _characters.Peek().Value != '"')
         {
             _errors.Add(new ErrorToken("Unterminated string", last.Line, last.Column));
             return null;
