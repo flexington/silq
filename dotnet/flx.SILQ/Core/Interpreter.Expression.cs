@@ -82,4 +82,14 @@ public partial class Interpreter : IVisitor<object>
         }
         return null;
     }
+
+    /// <summary>
+    /// Visits a <see cref="Grouping"/> expression and evaluates its contained expression.
+    /// </summary>
+    /// <param name="grouping">The grouping expression to evaluate.</param>
+    /// <returns>The result of the evaluated grouping expression.</returns>
+    public object Visit(Grouping grouping)
+    {
+       return Evaluate(grouping.Expression);
+    }
 }

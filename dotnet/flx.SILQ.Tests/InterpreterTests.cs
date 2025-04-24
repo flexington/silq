@@ -293,5 +293,43 @@ public class InterpreterTests
         // Act & Assert
         Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
     }
+
+    [TestMethod]
+    public void Interpret_WhenComplexEqual_ReturnsTrue()
+    {
+        // Arrange 165 == (86 + 79)
+        var left = new Literal(165.0);
+        var right = new Binary(new Literal(86.0), new Token(TokenType.PLUS, "+", null, 1), new Literal(79.0)); // 86 + 79
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
+        var expr = new Binary(left, op, right);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenNestedExpressions_ReturnsResult()
+    {
+        // Arrange
+        var innerLeft = new Literal(2.0);
+        var innerRight = new Literal(3.0);
+        var innerOp = new Token(TokenType.PLUS, "+", null, 1);
+        var innerExpr = new Binary(innerLeft, innerOp, innerRight);
+
+        var outerLeft = new Literal(5.0);
+        var outerOp = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
+        var expr = new Binary(outerLeft, outerOp, innerExpr);
+        var interpreter = new Interpreter();
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
 }
 

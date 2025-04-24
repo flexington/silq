@@ -399,4 +399,86 @@ public class ParserTests
         var parser = new Parser();
         Assert.ThrowsException<ParserError>(() => parser.ParseExpression(tokens));
     }
+
+    [TestMethod]
+    public void ParseExpression_WhenGrouping_ReturnsGroupingExpression()
+    {
+        // Arrange: (123)
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.NUMBER, "123", 123.0, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Grouping));
+        var grouping = (Grouping)expression;
+        Assert.IsInstanceOfType(grouping.Expression, typeof(Literal));
+        Assert.AreEqual(123.0, ((Literal)grouping.Expression).Value);
+    }
+
+    [TestMethod]
+    public void ParseExpression_WhenNestedGrouping_ReturnsGroupingExpression()
+    {
+        // Arrange: ((true))
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.TRUE, "true", null, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Grouping));
+        var outer = (Grouping)expression;
+        Assert.IsInstanceOfType(outer.Expression, typeof(Grouping));
+        var inner = (Grouping)outer.Expression;
+        Assert.IsInstanceOfType(inner.Expression, typeof(Literal));
+        Assert.AreEqual(true, ((Literal)inner.Expression).Value);
+    }
+
+    [TestMethod]
+    public void ParseExpression_WhenGroupingWithBinary_ReturnsGroupingExpression()
+    {
+        // Arrange: (1 + 2)
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.NUMBER, "1", 1.0, 1),
+            new Token(TokenType.PLUS, "+", null, 1),
+            new Token(TokenType.NUMBER, "2", 2.0, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Grouping));
+        var grouping = (Grouping)expression;
+        Assert.IsInstanceOfType(grouping.Expression, typeof(Binary));
+        var binary = (Binary)grouping.Expression;
+        Assert.IsInstanceOfType(binary.Left, typeof(Literal));
+        Assert.IsInstanceOfType(binary.Right, typeof(Literal));
+        Assert.AreEqual(1.0, ((Literal)binary.Left).Value);
+        Assert.AreEqual(2.0, ((Literal)binary.Right).Value);
+    }
 }
