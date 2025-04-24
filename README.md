@@ -34,8 +34,7 @@ Custom BNF notation:
 - Grouping: `(...)`
 - Repitition: `*`
 
-```bnf
-program             → query* EOF ;
+<!-- program             → query* EOF ;
 
 query               → modifier "from" identifier where select projection alias? ";";
 
@@ -49,7 +48,9 @@ projection          → member | "{" member* "}" ;
 
 function            → "contains" | "in" | "startsWith" | "endsWith";
 
-alias               → "as" identifier;
+alias               → "as" identifier; -->
+
+```bnf
 
 expression          → equiality ;
 
@@ -75,8 +76,8 @@ number              → 42 | 3.14 | -7 ;
 
 string              → "Hello" | "World" | "foo" ;
 
-array               → [ literal ] ;
 ```
+<!-- array               → [ literal ] ; -->
 
 ## Identifiers
 
