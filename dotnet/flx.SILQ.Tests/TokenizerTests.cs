@@ -17,6 +17,8 @@ public class TokenizerTests
     [DataRow("<", TokenType.LESS)]
     [DataRow(">", TokenType.GREATER)]
     [DataRow("!", TokenType.BANG)]
+    [DataRow("(", TokenType.LEFT_PAREN)]
+    [DataRow(")", TokenType.RIGHT_PAREN)]
     public void Tokenize_SingleCharacterTokens_ReturnsExpectedTokens(string inputChar, TokenType expectedType)
     {
         var tokenizer = new Tokenizer();

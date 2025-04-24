@@ -116,47 +116,14 @@ public partial class Parser
 
         if (Match(TokenType.IDENTIFIER)) throw new ParserError(Peek(), "Identifier not implemented yet");
 
+        if (Match(TokenType.LEFT_PAREN))
+        {
+            var expression = Expression();
+            if (!Match(TokenType.RIGHT_PAREN)) throw new ParserError(Peek(), "Expected ')' after expression");
+            return new Grouping(expression);
+        }
+
         throw new ParserError(Peek(), "Expected expression");
 
-    }
-
-    private bool Match(params TokenType[] types)
-    {
-        foreach (var type in types)
-        {
-            if (Check(type))
-            {
-                Advance();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private Token Advance()
-    {
-        if (!IsAtEnd()) _current++;
-        return Previous();
-    }
-
-    private Token Previous()
-    {
-        return _tokens[_current - 1];
-    }
-
-    private bool IsAtEnd()
-    {
-        return Peek().TokenType == TokenType.EOF;
-    }
-
-    private bool Check(TokenType type)
-    {
-        if (IsAtEnd()) return false;
-        return Peek().TokenType == type;
-    }
-
-    private Token Peek()
-    {
-        return _tokens[_current];
     }
 }
