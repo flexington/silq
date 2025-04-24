@@ -1,7 +1,7 @@
 using flx.SILQ.Core;
 using flx.SILQ.Models;
 
-namespace flx.SILQ.Tests;
+namespace flx.SILQ.Core.Tests;
 
 [TestClass]
 public class TokenizerTests
