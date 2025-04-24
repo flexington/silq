@@ -10,6 +10,19 @@ namespace flx.SILQ.Core;
 /// </summary>
 public partial class Interpreter
 {
+    public string Interpre(Expression expression)
+    {
+        try
+        {
+            object value = Evaluate(expression);
+            return Stringify(value);
+        }
+        catch (RuntimeError)
+        {
+            throw;
+        }
+    }
+
     /// <summary>
     /// Adds two operands, supporting both numeric addition and string concatenation.
     /// </summary>
@@ -123,5 +136,25 @@ public partial class Interpreter
         if (obj == null) return false;
         if (obj is bool) return (bool)obj;
         return true;
+    }
+
+    /// <summary>
+    /// Converts an object to its string representation for the interpreter.
+    /// Returns "nil" for null, lower-case for booleans, and trims ".0" for whole numbers.
+    /// </summary>
+    /// <param name="obj">The object to stringify.</param>
+    /// <returns>The string representation of the object.</returns>
+    private string Stringify(object obj)
+    {
+        if (obj == null) return "null";
+        if (obj is bool) return obj.ToString().ToLower();
+
+        if (CanConvertToDouble(obj))
+        {
+            var text = Convert.ToDouble(obj).ToString();
+            if (text.EndsWith(".0")) text = text.Substring(0, text.Length - 2);
+            return text;
+        }
+        return obj.ToString();
     }
 }
