@@ -116,6 +116,13 @@ public partial class Parser
 
         if (Match(TokenType.IDENTIFIER)) throw new ParserError(Peek(), "Identifier not implemented yet");
 
+        if (Match(TokenType.LEFT_PAREN))
+        {
+            var expression = Expression();
+            if (!Match(TokenType.RIGHT_PAREN)) throw new ParserError(Peek(), "Expected ')' after expression");
+            return new Grouping(expression);
+        }
+
         throw new ParserError(Peek(), "Expected expression");
 
     }

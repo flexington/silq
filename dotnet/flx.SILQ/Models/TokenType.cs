@@ -96,6 +96,11 @@ public enum TokenType
     LAST,
 
     /// <summary>
+    /// Left brace '('
+    /// </summary>
+    LEFT_PAREN,
+
+    /// <summary>
     /// Less '<'
     /// </summary>
     LESS,
@@ -144,6 +149,11 @@ public enum TokenType
     /// 'print' keyword
     /// </summary>
     PRINT,
+
+    /// <summary>
+    /// Right brace ')'
+    /// </summary>
+    RIGHT_PAREN,
 
     /// <summary>
     /// 'select' keyword
