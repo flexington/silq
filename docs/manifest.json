@@ -1,0 +1,364 @@
+{
+  "source_base_path": "/development/.docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Core.Interpreter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Core.Interpreter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Core.Interpreter",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Core.Interpreter.yml\" sourcestartlinenumber=\"1\">Provides core evaluation logic for the SILQ interpreter, including arithmetic operations, type checking, and expression evaluation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Core.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Core.Parser.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Core.Parser",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Core.Tokenizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Core.Tokenizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Core.Tokenizer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Core",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Errors.ErrorToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Errors.ErrorToken.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Errors.ErrorToken",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Errors.ParserError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Errors.ParserError.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Errors.ParserError",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Errors.RuntimeError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Errors.RuntimeError.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Errors.RuntimeError",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Errors.RuntimeError.yml\" sourcestartlinenumber=\"1\">Represents a runtime error that occurs during interpretation of SILQ code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Errors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Errors.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Errors",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Binary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Binary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Binary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Expression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Expression.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Expression",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Grouping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Grouping.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Grouping",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.IVisitor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.IVisitor-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.IVisitor<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Literal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Literal.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Literal",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Unary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Unary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Unary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Models.Character.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Models.Character.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Models.Character",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Models.Character.yml\" sourcestartlinenumber=\"1\">Represents a single character in the source input, including its value and position (line and column).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Models.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Models.Token.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Models.Token",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Models.Token.yml\" sourcestartlinenumber=\"1\">Represents a token identified by the SILQ tokenizer, including its type, lexeme, literal value, and line number.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Models.TokenType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Models.TokenType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Models.TokenType",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Models.TokenType.yml\" sourcestartlinenumber=\"1\">Represents the different types of tokens that can be identified by the SILQ tokenizer.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Models",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "specs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "specs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "specs/lexical-structure.md",
+      "output": {
+        ".html": {
+          "relative_path": "specs/lexical-structure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "specs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "specs/toc.json"
+        },
+        ".html": {
+          "relative_path": "specs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
