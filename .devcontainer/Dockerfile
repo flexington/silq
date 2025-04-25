@@ -11,7 +11,6 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:dotnet/backports
 RUN apt-get update
 RUN apt-get install -y dotnet-sdk-8.0
-RUN apt-get install -y dotnet-sdk-9.0
 
 # Get and Install Node
 # https://github.com/nodejs/node
@@ -36,3 +35,4 @@ COPY /shell /install/shell
 RUN chmod +x /install/shell/install.sh
 RUN /bin/bash -c "./install/shell/install.sh"
 
+RUN dotnet tool update -g docfx

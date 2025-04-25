@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  id: flx.SILQ.Models
+  children:
+  - flx.SILQ.Models.Character
+  - flx.SILQ.Models.Token
+  - flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
+  type: Namespace
+  assemblies:
+  - flx.SILQ
+references:
+- uid: flx.SILQ.Models.Character
+  commentId: T:flx.SILQ.Models.Character
+  href: flx.SILQ.Models.Character.html
+  name: Character
+  nameWithType: Character
+  fullName: flx.SILQ.Models.Character
+- uid: flx.SILQ.Models.Token
+  commentId: T:flx.SILQ.Models.Token
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.Token.html
+  name: Token
+  nameWithType: Token
+  fullName: flx.SILQ.Models.Token
+- uid: flx.SILQ.Models.TokenType
+  commentId: T:flx.SILQ.Models.TokenType
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.TokenType.html
+  name: TokenType
+  nameWithType: TokenType
+  fullName: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  href: flx.html
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html

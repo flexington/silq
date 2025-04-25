@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Core
+  commentId: N:flx.SILQ.Core
+  id: flx.SILQ.Core
+  children:
+  - flx.SILQ.Core.Interpreter
+  - flx.SILQ.Core.Parser
+  - flx.SILQ.Core.Tokenizer
+  langs:
+  - csharp
+  - vb
+  name: flx.SILQ.Core
+  nameWithType: flx.SILQ.Core
+  fullName: flx.SILQ.Core
+  type: Namespace
+  assemblies:
+  - flx.SILQ
+references:
+- uid: flx.SILQ.Core.Interpreter
+  commentId: T:flx.SILQ.Core.Interpreter
+  href: flx.SILQ.Core.Interpreter.html
+  name: Interpreter
+  nameWithType: Interpreter
+  fullName: flx.SILQ.Core.Interpreter
+- uid: flx.SILQ.Core.Parser
+  commentId: T:flx.SILQ.Core.Parser
+  href: flx.SILQ.Core.Parser.html
+  name: Parser
+  nameWithType: Parser
+  fullName: flx.SILQ.Core.Parser
+- uid: flx.SILQ.Core.Tokenizer
+  commentId: T:flx.SILQ.Core.Tokenizer
+  href: flx.SILQ.Core.Tokenizer.html
+  name: Tokenizer
+  nameWithType: Tokenizer
+  fullName: flx.SILQ.Core.Tokenizer

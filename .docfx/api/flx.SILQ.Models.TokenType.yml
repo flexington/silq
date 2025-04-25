@@ -1,0 +1,1137 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Models.TokenType
+  commentId: T:flx.SILQ.Models.TokenType
+  id: TokenType
+  parent: flx.SILQ.Models
+  children:
+  - flx.SILQ.Models.TokenType.AND
+  - flx.SILQ.Models.TokenType.AS
+  - flx.SILQ.Models.TokenType.BANG
+  - flx.SILQ.Models.TokenType.BANG_EQUAL
+  - flx.SILQ.Models.TokenType.COUNT
+  - flx.SILQ.Models.TokenType.DOT
+  - flx.SILQ.Models.TokenType.EOF
+  - flx.SILQ.Models.TokenType.EQUAL
+  - flx.SILQ.Models.TokenType.EQUAL_EQUAL
+  - flx.SILQ.Models.TokenType.FALSE
+  - flx.SILQ.Models.TokenType.FIRST
+  - flx.SILQ.Models.TokenType.FROM
+  - flx.SILQ.Models.TokenType.GREATER
+  - flx.SILQ.Models.TokenType.GREATER_EQUAL
+  - flx.SILQ.Models.TokenType.IDENTIFIER
+  - flx.SILQ.Models.TokenType.IN
+  - flx.SILQ.Models.TokenType.IS
+  - flx.SILQ.Models.TokenType.LAST
+  - flx.SILQ.Models.TokenType.LEFT_PAREN
+  - flx.SILQ.Models.TokenType.LESS
+  - flx.SILQ.Models.TokenType.LESS_EQUAL
+  - flx.SILQ.Models.TokenType.LIKE
+  - flx.SILQ.Models.TokenType.MINUS
+  - flx.SILQ.Models.TokenType.NOT
+  - flx.SILQ.Models.TokenType.NULL
+  - flx.SILQ.Models.TokenType.NUMBER
+  - flx.SILQ.Models.TokenType.OR
+  - flx.SILQ.Models.TokenType.PLUS
+  - flx.SILQ.Models.TokenType.PRINT
+  - flx.SILQ.Models.TokenType.RIGHT_PAREN
+  - flx.SILQ.Models.TokenType.SELECT
+  - flx.SILQ.Models.TokenType.SEMICOLON
+  - flx.SILQ.Models.TokenType.SLASH
+  - flx.SILQ.Models.TokenType.STAR
+  - flx.SILQ.Models.TokenType.STRING
+  - flx.SILQ.Models.TokenType.TRUE
+  - flx.SILQ.Models.TokenType.WHERE
+  langs:
+  - csharp
+  - vb
+  name: TokenType
+  nameWithType: TokenType
+  fullName: flx.SILQ.Models.TokenType
+  type: Enum
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: TokenType
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 5
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Represents the different types of tokens that can be identified by the SILQ tokenizer.
+  example: []
+  syntax:
+    content: public enum TokenType
+    content.vb: Public Enum TokenType
+- uid: flx.SILQ.Models.TokenType.AND
+  commentId: F:flx.SILQ.Models.TokenType.AND
+  id: AND
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: AND
+  nameWithType: TokenType.AND
+  fullName: flx.SILQ.Models.TokenType.AND
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: AND
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 10
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Logical AND
+  example: []
+  syntax:
+    content: AND = 0
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.AS
+  commentId: F:flx.SILQ.Models.TokenType.AS
+  id: AS
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: AS
+  nameWithType: TokenType.AS
+  fullName: flx.SILQ.Models.TokenType.AS
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: AS
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 15
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'as' keyword"
+  example: []
+  syntax:
+    content: AS = 1
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.BANG
+  commentId: F:flx.SILQ.Models.TokenType.BANG
+  id: BANG
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: BANG
+  nameWithType: TokenType.BANG
+  fullName: flx.SILQ.Models.TokenType.BANG
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: BANG
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 20
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Bang '!'
+  example: []
+  syntax:
+    content: BANG = 2
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.BANG_EQUAL
+  commentId: F:flx.SILQ.Models.TokenType.BANG_EQUAL
+  id: BANG_EQUAL
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: BANG_EQUAL
+  nameWithType: TokenType.BANG_EQUAL
+  fullName: flx.SILQ.Models.TokenType.BANG_EQUAL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: BANG_EQUAL
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 25
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Bang equal '!='
+  example: []
+  syntax:
+    content: BANG_EQUAL = 3
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.COUNT
+  commentId: F:flx.SILQ.Models.TokenType.COUNT
+  id: COUNT
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: COUNT
+  nameWithType: TokenType.COUNT
+  fullName: flx.SILQ.Models.TokenType.COUNT
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: COUNT
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 30
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'count' keyword"
+  example: []
+  syntax:
+    content: COUNT = 4
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.DOT
+  commentId: F:flx.SILQ.Models.TokenType.DOT
+  id: DOT
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: DOT
+  nameWithType: TokenType.DOT
+  fullName: flx.SILQ.Models.TokenType.DOT
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: DOT
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 35
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Dot '.'
+  example: []
+  syntax:
+    content: DOT = 5
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.EOF
+  commentId: F:flx.SILQ.Models.TokenType.EOF
+  id: EOF
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: EOF
+  nameWithType: TokenType.EOF
+  fullName: flx.SILQ.Models.TokenType.EOF
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: EOF
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 40
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: End of file/input
+  example: []
+  syntax:
+    content: EOF = 6
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.EQUAL
+  commentId: F:flx.SILQ.Models.TokenType.EQUAL
+  id: EQUAL
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: EQUAL
+  nameWithType: TokenType.EQUAL
+  fullName: flx.SILQ.Models.TokenType.EQUAL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: EQUAL
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 45
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Equal '='
+  example: []
+  syntax:
+    content: EQUAL = 7
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.EQUAL_EQUAL
+  commentId: F:flx.SILQ.Models.TokenType.EQUAL_EQUAL
+  id: EQUAL_EQUAL
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: EQUAL_EQUAL
+  nameWithType: TokenType.EQUAL_EQUAL
+  fullName: flx.SILQ.Models.TokenType.EQUAL_EQUAL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: EQUAL_EQUAL
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 50
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Equal equal '=='
+  example: []
+  syntax:
+    content: EQUAL_EQUAL = 8
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.FALSE
+  commentId: F:flx.SILQ.Models.TokenType.FALSE
+  id: "FALSE"
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: "FALSE"
+  nameWithType: TokenType.FALSE
+  fullName: flx.SILQ.Models.TokenType.FALSE
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: "FALSE"
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 55
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Boolean literal 'false'
+  example: []
+  syntax:
+    content: FALSE = 9
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.FIRST
+  commentId: F:flx.SILQ.Models.TokenType.FIRST
+  id: FIRST
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: FIRST
+  nameWithType: TokenType.FIRST
+  fullName: flx.SILQ.Models.TokenType.FIRST
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: FIRST
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 60
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'first' keyword"
+  example: []
+  syntax:
+    content: FIRST = 10
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.FROM
+  commentId: F:flx.SILQ.Models.TokenType.FROM
+  id: FROM
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: FROM
+  nameWithType: TokenType.FROM
+  fullName: flx.SILQ.Models.TokenType.FROM
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: FROM
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 65
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'from' keyword"
+  example: []
+  syntax:
+    content: FROM = 11
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.GREATER
+  commentId: F:flx.SILQ.Models.TokenType.GREATER
+  id: GREATER
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: GREATER
+  nameWithType: TokenType.GREATER
+  fullName: flx.SILQ.Models.TokenType.GREATER
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: GREATER
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 70
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Greater '&gt;'
+  example: []
+  syntax:
+    content: GREATER = 12
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.GREATER_EQUAL
+  commentId: F:flx.SILQ.Models.TokenType.GREATER_EQUAL
+  id: GREATER_EQUAL
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: GREATER_EQUAL
+  nameWithType: TokenType.GREATER_EQUAL
+  fullName: flx.SILQ.Models.TokenType.GREATER_EQUAL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: GREATER_EQUAL
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 75
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Greater equal '&gt;='
+  example: []
+  syntax:
+    content: GREATER_EQUAL = 13
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.IN
+  commentId: F:flx.SILQ.Models.TokenType.IN
+  id: IN
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: IN
+  nameWithType: TokenType.IN
+  fullName: flx.SILQ.Models.TokenType.IN
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: IN
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 80
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'in' keyword"
+  example: []
+  syntax:
+    content: IN = 14
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.IDENTIFIER
+  commentId: F:flx.SILQ.Models.TokenType.IDENTIFIER
+  id: IDENTIFIER
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: IDENTIFIER
+  nameWithType: TokenType.IDENTIFIER
+  fullName: flx.SILQ.Models.TokenType.IDENTIFIER
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: IDENTIFIER
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 85
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Identifier (variable or function name)
+  example: []
+  syntax:
+    content: IDENTIFIER = 15
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.IS
+  commentId: F:flx.SILQ.Models.TokenType.IS
+  id: IS
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: IS
+  nameWithType: TokenType.IS
+  fullName: flx.SILQ.Models.TokenType.IS
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: IS
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 90
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'is' keyword"
+  example: []
+  syntax:
+    content: IS = 16
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.LAST
+  commentId: F:flx.SILQ.Models.TokenType.LAST
+  id: LAST
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: LAST
+  nameWithType: TokenType.LAST
+  fullName: flx.SILQ.Models.TokenType.LAST
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: LAST
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 95
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'last' keyword"
+  example: []
+  syntax:
+    content: LAST = 17
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.LEFT_PAREN
+  commentId: F:flx.SILQ.Models.TokenType.LEFT_PAREN
+  id: LEFT_PAREN
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: LEFT_PAREN
+  nameWithType: TokenType.LEFT_PAREN
+  fullName: flx.SILQ.Models.TokenType.LEFT_PAREN
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: LEFT_PAREN
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 100
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Left brace '('
+  example: []
+  syntax:
+    content: LEFT_PAREN = 18
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.LESS
+  commentId: F:flx.SILQ.Models.TokenType.LESS
+  id: LESS
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: LESS
+  nameWithType: TokenType.LESS
+  fullName: flx.SILQ.Models.TokenType.LESS
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: LESS
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 105
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  syntax:
+    content: LESS = 19
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.LESS_EQUAL
+  commentId: F:flx.SILQ.Models.TokenType.LESS_EQUAL
+  id: LESS_EQUAL
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: LESS_EQUAL
+  nameWithType: TokenType.LESS_EQUAL
+  fullName: flx.SILQ.Models.TokenType.LESS_EQUAL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: LESS_EQUAL
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 110
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  syntax:
+    content: LESS_EQUAL = 20
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.LIKE
+  commentId: F:flx.SILQ.Models.TokenType.LIKE
+  id: LIKE
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: LIKE
+  nameWithType: TokenType.LIKE
+  fullName: flx.SILQ.Models.TokenType.LIKE
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: LIKE
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 115
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'like' keyword"
+  example: []
+  syntax:
+    content: LIKE = 21
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.MINUS
+  commentId: F:flx.SILQ.Models.TokenType.MINUS
+  id: MINUS
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: MINUS
+  nameWithType: TokenType.MINUS
+  fullName: flx.SILQ.Models.TokenType.MINUS
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: MINUS
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 120
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Minus '-'
+  example: []
+  syntax:
+    content: MINUS = 22
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.NOT
+  commentId: F:flx.SILQ.Models.TokenType.NOT
+  id: NOT
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: NOT
+  nameWithType: TokenType.NOT
+  fullName: flx.SILQ.Models.TokenType.NOT
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: NOT
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 125
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'not' keyword"
+  example: []
+  syntax:
+    content: NOT = 23
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.NULL
+  commentId: F:flx.SILQ.Models.TokenType.NULL
+  id: "NULL"
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: "NULL"
+  nameWithType: TokenType.NULL
+  fullName: flx.SILQ.Models.TokenType.NULL
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: "NULL"
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 130
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Null literal
+  example: []
+  syntax:
+    content: NULL = 24
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.NUMBER
+  commentId: F:flx.SILQ.Models.TokenType.NUMBER
+  id: NUMBER
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: NUMBER
+  nameWithType: TokenType.NUMBER
+  fullName: flx.SILQ.Models.TokenType.NUMBER
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: NUMBER
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 135
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Number literal
+  example: []
+  syntax:
+    content: NUMBER = 25
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.OR
+  commentId: F:flx.SILQ.Models.TokenType.OR
+  id: OR
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: OR
+  nameWithType: TokenType.OR
+  fullName: flx.SILQ.Models.TokenType.OR
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: OR
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 140
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Logical OR
+  example: []
+  syntax:
+    content: OR = 26
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.PLUS
+  commentId: F:flx.SILQ.Models.TokenType.PLUS
+  id: PLUS
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: PLUS
+  nameWithType: TokenType.PLUS
+  fullName: flx.SILQ.Models.TokenType.PLUS
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: PLUS
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 145
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Plus '+'
+  example: []
+  syntax:
+    content: PLUS = 27
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.PRINT
+  commentId: F:flx.SILQ.Models.TokenType.PRINT
+  id: PRINT
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: PRINT
+  nameWithType: TokenType.PRINT
+  fullName: flx.SILQ.Models.TokenType.PRINT
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: PRINT
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 150
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'print' keyword"
+  example: []
+  syntax:
+    content: PRINT = 28
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.RIGHT_PAREN
+  commentId: F:flx.SILQ.Models.TokenType.RIGHT_PAREN
+  id: RIGHT_PAREN
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: RIGHT_PAREN
+  nameWithType: TokenType.RIGHT_PAREN
+  fullName: flx.SILQ.Models.TokenType.RIGHT_PAREN
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: RIGHT_PAREN
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 155
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Right brace ')'
+  example: []
+  syntax:
+    content: RIGHT_PAREN = 29
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.SELECT
+  commentId: F:flx.SILQ.Models.TokenType.SELECT
+  id: SELECT
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: SELECT
+  nameWithType: TokenType.SELECT
+  fullName: flx.SILQ.Models.TokenType.SELECT
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: SELECT
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 160
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'select' keyword"
+  example: []
+  syntax:
+    content: SELECT = 30
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.SEMICOLON
+  commentId: F:flx.SILQ.Models.TokenType.SEMICOLON
+  id: SEMICOLON
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: SEMICOLON
+  nameWithType: TokenType.SEMICOLON
+  fullName: flx.SILQ.Models.TokenType.SEMICOLON
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: SEMICOLON
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 165
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Semicolon ';'
+  example: []
+  syntax:
+    content: SEMICOLON = 31
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.SLASH
+  commentId: F:flx.SILQ.Models.TokenType.SLASH
+  id: SLASH
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: SLASH
+  nameWithType: TokenType.SLASH
+  fullName: flx.SILQ.Models.TokenType.SLASH
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: SLASH
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 170
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Slash '/'
+  example: []
+  syntax:
+    content: SLASH = 32
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.STAR
+  commentId: F:flx.SILQ.Models.TokenType.STAR
+  id: STAR
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: STAR
+  nameWithType: TokenType.STAR
+  fullName: flx.SILQ.Models.TokenType.STAR
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: STAR
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 175
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Star '*'
+  example: []
+  syntax:
+    content: STAR = 33
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.STRING
+  commentId: F:flx.SILQ.Models.TokenType.STRING
+  id: STRING
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: STRING
+  nameWithType: TokenType.STRING
+  fullName: flx.SILQ.Models.TokenType.STRING
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: STRING
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 180
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: String literal
+  example: []
+  syntax:
+    content: STRING = 34
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.TRUE
+  commentId: F:flx.SILQ.Models.TokenType.TRUE
+  id: "TRUE"
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: "TRUE"
+  nameWithType: TokenType.TRUE
+  fullName: flx.SILQ.Models.TokenType.TRUE
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: "TRUE"
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 185
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: Boolean literal 'true'
+  example: []
+  syntax:
+    content: TRUE = 35
+    return:
+      type: flx.SILQ.Models.TokenType
+- uid: flx.SILQ.Models.TokenType.WHERE
+  commentId: F:flx.SILQ.Models.TokenType.WHERE
+  id: WHERE
+  parent: flx.SILQ.Models.TokenType
+  langs:
+  - csharp
+  - vb
+  name: WHERE
+  nameWithType: TokenType.WHERE
+  fullName: flx.SILQ.Models.TokenType.WHERE
+  type: Field
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Models/TokenType.cs
+      branch: chor/sandr0-p/docs
+      repo: https://github.com/flexington/silq.git
+    id: WHERE
+    path: ../dotnet/flx.SILQ/Models/TokenType.cs
+    startLine: 190
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Models
+  summary: "'where' keyword"
+  example: []
+  syntax:
+    content: WHERE = 36
+    return:
+      type: flx.SILQ.Models.TokenType
+references:
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  href: flx.html
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+- uid: flx.SILQ.Models.TokenType
+  commentId: T:flx.SILQ.Models.TokenType
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.TokenType.html
+  name: TokenType
+  nameWithType: TokenType
+  fullName: flx.SILQ.Models.TokenType
