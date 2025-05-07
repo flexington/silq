@@ -9,16 +9,6 @@ namespace flx.SILQ.Statements;
 public class Visitor : IVisitor
 {
     /// <summary>
-    /// Visits a generic <see cref="Statement"/> node.
-    /// Throws <see cref="NotImplementedException"/> by default.
-    /// </summary>
-    /// <param name="statement">The statement node to visit.</param>
-    public void Visit(Statement statement)
-    {
-        throw new NotImplementedException();
-    }
-
-    /// <summary>
     /// Visits a <see cref="Print"/> statement node.
     /// Throws <see cref="NotImplementedException"/> by default.
     /// </summary>
