@@ -27,7 +27,8 @@ public class Tokenizer
         { "not", TokenType.NOT },
         { "in", TokenType.IN },
         { "is", TokenType.IS },
-        { "like", TokenType.LIKE }
+        { "like", TokenType.LIKE },
+        { "print", TokenType.PRINT }
     };
 
     /// <summary>

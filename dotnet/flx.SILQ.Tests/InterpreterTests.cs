@@ -1,6 +1,9 @@
+using System;
+using System.IO;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
+using flx.SILQ.Statements;
 
 namespace flx.SILQ.Core.Tests;
 
@@ -330,6 +333,23 @@ public class InterpreterTests
 
         // Assert
         Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenPrintStatement_ReturnsResult()
+    {
+        // Arrange
+        var writer = new StringWriter();
+        Console.SetOut(writer);
+        var expression = new Literal("Hello, World!");
+        var printStatement = new Print(expression);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([printStatement]);
+
+        // Assert
+        Assert.AreEqual("Hello, World!", writer.ToString().Trim());
     }
 }
 
