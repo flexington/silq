@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
 using flx.SILQ.Statements;
@@ -18,6 +19,12 @@ public partial class Parser
     /// <returns>A list of parsed <see cref="Statement"/> objects.</returns>
     public List<Statement> ParseStatements(List<Token> tokens)
     {
+        if (tokens == null || tokens.Count == 0)
+            throw new ParserError(new Token(TokenType.EOF, "", null, 0), "No tokens to parse");
+
+        _tokens = tokens;
+        _current = 0;
+
         List<Statement> statements = new List<Statement>();
 
         while (!IsAtEnd())
@@ -34,9 +41,9 @@ public partial class Parser
     /// <returns>The parsed <see cref="Statement"/>.</returns>
     private Statement Statement()
     {
-        // if (Match(TokenType.PRINT)) return Print();
+        if (Match(TokenType.PRINT)) return Print();
 
-        return Print();
+        throw new ParserError(Peek(), "Expect statement.");
     }
 
     /// <summary>

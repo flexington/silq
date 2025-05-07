@@ -47,6 +47,7 @@ public class TokenizerTests
     [DataRow("in", TokenType.IN)]
     [DataRow("is", TokenType.IS)]
     [DataRow("like", TokenType.LIKE)]
+    [DataRow("print", TokenType.PRINT)]
     public void Tokenize_KeywordTokens_ReturnsExpectedTokens(string keyword, TokenType expectedType)
     {
         var tokenizer = new Tokenizer();

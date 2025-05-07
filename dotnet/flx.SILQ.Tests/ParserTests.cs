@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
+using flx.SILQ.Statements;
 
 namespace flx.SILQ.Core.Tests;
 
@@ -480,5 +482,28 @@ public class ParserTests
         Assert.IsInstanceOfType(binary.Right, typeof(Literal));
         Assert.AreEqual(1.0, ((Literal)binary.Left).Value);
         Assert.AreEqual(2.0, ((Literal)binary.Right).Value);
+    }
+
+    [TestMethod]
+    public void ParseStatement_WhenPrintStatement_ReturnsPrintStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.PRINT, "print", null, 1),
+            new Token(TokenType.STRING, "\"Hello World\"", "Hello World", 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Print));
+        Assert.IsInstanceOfType(((Print)statement.First()).Expression, typeof(Literal));
+        Assert.AreEqual("Hello World", ((Literal)((Print)statement.First()).Expression).Value);
     }
 }
