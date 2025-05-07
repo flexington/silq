@@ -5,11 +5,17 @@ using flx.SILQ.Models;
 
 namespace flx.SILQ.Core;
 
+/// <summary>
+/// Provides expression parsing logic for the SILQ language, supporting operator precedence and grouping.
+/// </summary>
 public partial class Parser
 {
-    private int _current = 0;
-    private List<Token> _tokens;
-
+    /// <summary>
+    /// Parses a list of tokens into an expression AST.
+    /// </summary>
+    /// <param name="tokens">The list of tokens to parse.</param>
+    /// <returns>The root <see cref="Expression"/> node.</returns>
+    /// <exception cref="ParserError">Thrown if the token list is empty or parsing fails.</exception>
     public Expression ParseExpression(List<Token> tokens)
     {
         if (tokens == null || tokens.Count == 0)
@@ -28,11 +34,19 @@ public partial class Parser
         }
     }
 
+    /// <summary>
+    /// Parses the highest-level expression (entry point for precedence parsing).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Expression()
     {
         return Equality();
     }
 
+    /// <summary>
+    /// Parses equality expressions (==, !=).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Equality()
     {
         Expression expression = Comparison();
@@ -47,6 +61,10 @@ public partial class Parser
         return expression;
     }
 
+    /// <summary>
+    /// Parses comparison expressions (>, >=, <, <=).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Comparison()
     {
         Expression expression = Term();
@@ -61,6 +79,10 @@ public partial class Parser
         return expression;
     }
 
+    /// <summary>
+    /// Parses term expressions (+, -).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Term()
     {
         Expression expression = Factor();
@@ -75,6 +97,10 @@ public partial class Parser
         return expression;
     }
 
+    /// <summary>
+    /// Parses factor expressions (*, /).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Factor()
     {
         Expression expression = Unary();
@@ -89,6 +115,10 @@ public partial class Parser
         return expression;
     }
 
+    /// <summary>
+    /// Parses unary expressions (!, -).
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Unary()
     {
         if (Match(TokenType.BANG, TokenType.MINUS))
@@ -101,6 +131,11 @@ public partial class Parser
         return Primary();
     }
 
+    /// <summary>
+    /// Parses primary expressions: literals, grouping, and identifiers.
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
+    /// <exception cref="ParserError">Thrown if the token does not match a valid primary expression.</exception>
     private Expression Primary()
     {
         if (Match(TokenType.FALSE)) return new Literal(false);

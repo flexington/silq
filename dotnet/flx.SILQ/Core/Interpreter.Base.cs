@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
+using flx.SILQ.Statements;
 
 namespace flx.SILQ.Core;
 
@@ -29,7 +31,28 @@ public partial class Interpreter
     }
 
     /// <summary>
+    /// Interprets a list of statements by executing each statement in order.
+    /// Throws a <see cref="RuntimeError"/> if an error occurs during execution.
+    /// </summary>
+    /// <param name="statements">The list of statements to interpret.</param>
+    public void Interpret(List<Statement> statements)
+    {
+        try
+        {
+            foreach (var statement in statements)
+            {
+                Execute(statement);
+            }
+        }
+        catch (RuntimeError)
+        {
+            throw;
+        }
+    }
+
+    /// <summary>
     /// Adds two operands, supporting both numeric addition and string concatenation.
+    /// Throws a <see cref="RuntimeError"/> if operands are not both numbers or both strings.
     /// </summary>
     /// <param name="token">The operator token for error reporting.</param>
     /// <param name="left">The left operand.</param>
@@ -43,7 +66,7 @@ public partial class Interpreter
     }
 
     /// <summary>
-    /// Determines if an object can be converted to a double.
+    /// Determines if an object can be converted to a double (numeric type).
     /// </summary>
     /// <param name="obj">The object to check.</param>
     /// <returns>True if the object can be converted to double; otherwise, false.</returns>
@@ -64,7 +87,7 @@ public partial class Interpreter
     }
 
     /// <summary>
-    /// Checks if the operand is a number, throwing a RuntimeError if not.
+    /// Checks if the operand is a number, throwing a <see cref="RuntimeError"/> if not.
     /// </summary>
     /// <param name="operator">The operator token for error reporting.</param>
     /// <param name="operand">The operand to check.</param>
@@ -75,7 +98,7 @@ public partial class Interpreter
     }
 
     /// <summary>
-    /// Checks if both operands are numbers, throwing a RuntimeError if not.
+    /// Checks if both operands are numbers, throwing a <see cref="RuntimeError"/> if not.
     /// </summary>
     /// <param name="operator">The operator token for error reporting.</param>
     /// <param name="left">The left operand.</param>
@@ -97,7 +120,16 @@ public partial class Interpreter
     }
 
     /// <summary>
-    /// Checks if two objects are equal, handling nulls.
+    /// Executes a statement by accepting this interpreter as a visitor.
+    /// </summary>
+    /// <param name="statement">The statement to execute.</param>
+    private void Execute(Statement statement)
+    {
+        statement.Accept(this);
+    }
+
+    /// <summary>
+    /// Checks if two objects are equal, handling nulls and type differences.
     /// </summary>
     /// <param name="left">The left object.</param>
     /// <param name="right">The right object.</param>
@@ -113,7 +145,7 @@ public partial class Interpreter
     }
 
     /// <summary>
-    /// Determines if an object is a numeric type.
+    /// Determines if an object is a numeric type (double, int, float, long, short, or byte).
     /// </summary>
     /// <param name="obj">The object to check.</param>
     /// <returns>True if the object is numeric; otherwise, false.</returns>
@@ -133,6 +165,7 @@ public partial class Interpreter
 
     /// <summary>
     /// Determines the truthiness of an object for logical operations.
+    /// Returns false for null, the boolean value for bools, and true otherwise.
     /// </summary>
     /// <param name="obj">The object to check.</param>
     /// <returns>True if the object is considered true; otherwise, false.</returns>
@@ -145,7 +178,7 @@ public partial class Interpreter
 
     /// <summary>
     /// Converts an object to its string representation for the interpreter.
-    /// Returns "nil" for null, lower-case for booleans, and trims ".0" for whole numbers.
+    /// Returns "null" for null, lower-case for booleans, and trims ".0" for whole numbers.
     /// </summary>
     /// <param name="obj">The object to stringify.</param>
     /// <returns>The string representation of the object.</returns>
