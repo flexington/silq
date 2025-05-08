@@ -11,4 +11,10 @@ public interface IVisitor
     /// </summary>
     /// <param name="print">The print statement to visit.</param>
     void Visit(Print print);
+
+    /// <summary>
+    /// Visits a <see cref="From"/> statement node.
+    /// </summary>
+    /// <param name="from">The from statement to visit.</param>
+    void Visit(From from);
 }

@@ -15,4 +15,9 @@ public partial class Interpreter : IVisitor
         object value = Evaluate(print.Expression);
         Console.WriteLine(Stringify(value));
     }
+
+    public void Visit(From from)
+    {
+        throw new NotImplementedException();
+    }
 }

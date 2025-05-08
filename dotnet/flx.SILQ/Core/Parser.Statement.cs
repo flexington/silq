@@ -42,6 +42,7 @@ public partial class Parser
     private Statement Statement()
     {
         if (Match(TokenType.PRINT)) return Print();
+        if (Match(TokenType.FROM)) return From();
 
         throw new ParserError(Peek(), "Expect statement.");
     }
@@ -55,5 +56,16 @@ public partial class Parser
         Expression expression = Expression();
         Consume(TokenType.SEMICOLON, "Expect ';' after value.");
         return new Print(expression);
+    }
+
+    /// <summary>
+    /// Parses a from statement, which consists of an expression followed by a semicolon.
+    /// </summary>
+    /// <returns>A <see cref="From"/> statement containing the parsed expression.</returns>
+    private Statement From()
+    {
+        Expression expression = Expression();
+        Consume(TokenType.SEMICOLON, "Expect ';' after value.");
+        return new From(expression);
     }
 }
