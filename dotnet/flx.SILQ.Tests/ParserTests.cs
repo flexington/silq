@@ -506,4 +506,50 @@ public class ParserTests
         Assert.IsInstanceOfType(((Print)statement.First()).Expression, typeof(Literal));
         Assert.AreEqual("Hello World", ((Literal)((Print)statement.First()).Expression).Value);
     }
+
+    [TestMethod]
+    public void ParseStatement_WhenFromIdentifierStatement_ReturnsFromStatement(){
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsNotNull(statement.First());
+
+        Assert.IsInstanceOfType(statement.First(), typeof(From));
+        Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
+    }
+
+    [TestMethod]
+    public void ParseStatement_WhenFromListStatement_ReturnsFromStatement(){
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.LIST, "list", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsNotNull(statement.First());
+
+        Assert.IsInstanceOfType(statement.First(), typeof(From));
+        Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
+    }    
 }

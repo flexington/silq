@@ -92,4 +92,15 @@ public partial class Interpreter : IVisitor<object>
     {
        return Evaluate(grouping.Expression);
     }
+
+    /// <summary>
+    /// Visits a <see cref="Variable"/> expression and retrieves its value from the environment.
+    /// </summary>
+    /// <param name="variable">The variable expression to evaluate.</param>
+    /// <returns>The value of the variable from the environment.</returns>
+    public object Visit(Variable variable)
+    {
+        // return _environment.Get(variable.Name);
+        return null; // Placeholder for actual environment retrieval
+    }
 }

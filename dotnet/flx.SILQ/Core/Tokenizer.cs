@@ -14,21 +14,22 @@ public class Tokenizer
     {
         { "and", TokenType.AND },
         { "as", TokenType.AS},
-        { "from", TokenType.FROM },
-        { "where", TokenType.WHERE },
-        { "select", TokenType.SELECT },
-        { "first", TokenType.FIRST },
-        { "last", TokenType.LAST },
         { "count", TokenType.COUNT },
-        { "or", TokenType.OR },
-        { "true", TokenType.TRUE },
         { "false", TokenType.FALSE },
-        { "null", TokenType.NULL },
-        { "not", TokenType.NOT },
+        { "from", TokenType.FROM },
+        { "first", TokenType.FIRST },
         { "in", TokenType.IN },
         { "is", TokenType.IS },
+        { "last", TokenType.LAST },
         { "like", TokenType.LIKE },
-        { "print", TokenType.PRINT }
+        { "not", TokenType.LIST },
+        { "null", TokenType.NULL },
+        { "not", TokenType.NOT },
+        { "or", TokenType.OR },
+        { "print", TokenType.PRINT },
+        { "select", TokenType.SELECT },
+        { "true", TokenType.TRUE },
+        { "where", TokenType.WHERE }
     };
 
     /// <summary>

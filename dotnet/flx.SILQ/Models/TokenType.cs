@@ -116,6 +116,11 @@ public enum TokenType
     LIKE,
 
     /// <summary>
+    /// 'list' keyword
+    /// </summary>
+    LIST,
+
+    /// <summary>
     /// Minus '-'
     /// </summary>
     MINUS,
