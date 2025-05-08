@@ -22,7 +22,6 @@ public class Tokenizer
         { "is", TokenType.IS },
         { "last", TokenType.LAST },
         { "like", TokenType.LIKE },
-        { "not", TokenType.LIST },
         { "null", TokenType.NULL },
         { "not", TokenType.NOT },
         { "or", TokenType.OR },

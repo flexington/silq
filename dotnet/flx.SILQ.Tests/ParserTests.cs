@@ -363,7 +363,7 @@ public class ParserTests
     }
 
     [TestMethod]
-    public void ParseExpression_WhenIdentifier_ThrowsParserError()
+    public void ParseExpression_WhenIdentifier_ThrowsIdentifierExpression()
     {
         // Arrange
         var tokens = new List<Token>
@@ -372,9 +372,14 @@ public class ParserTests
             new Token(TokenType.EOF, null, null, 1)
         };
 
-        // Act & Assert
+        // Act
         var parser = new Parser();
-        Assert.ThrowsException<ParserError>(() => parser.ParseExpression(tokens));
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Variable));
+        Assert.AreEqual("myVar", ((Variable)expression).Name.Lexeme);
     }
 
     [TestMethod]
@@ -508,7 +513,8 @@ public class ParserTests
     }
 
     [TestMethod]
-    public void ParseStatement_WhenFromIdentifierStatement_ReturnsFromStatement(){
+    public void ParseStatement_WhenFromStatement_ReturnsFromStatement()
+    {
         // Arrange
         var tokens = new List<Token>
         {
@@ -529,27 +535,4 @@ public class ParserTests
         Assert.IsInstanceOfType(statement.First(), typeof(From));
         Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
     }
-
-    [TestMethod]
-    public void ParseStatement_WhenFromListStatement_ReturnsFromStatement(){
-        // Arrange
-        var tokens = new List<Token>
-        {
-            new Token(TokenType.FROM, "from", null, 1),
-            new Token(TokenType.LIST, "list", null, 1),
-            new Token(TokenType.SEMICOLON, ";", null, 1),
-            new Token(TokenType.EOF, null, null, 1)
-        };
-
-        // Act
-        var parser = new Parser();
-        var statement = parser.ParseStatements(tokens);
-
-        // Assert
-        Assert.IsNotNull(statement);
-        Assert.IsNotNull(statement.First());
-
-        Assert.IsInstanceOfType(statement.First(), typeof(From));
-        Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
-    }    
 }

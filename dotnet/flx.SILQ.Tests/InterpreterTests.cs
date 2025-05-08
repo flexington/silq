@@ -351,5 +351,20 @@ public class InterpreterTests
         // Assert
         Assert.AreEqual("Hello, World!", writer.ToString().Trim());
     }
-}
 
+    [TestMethod]
+    public void Interpret_WhenFromStatementWithIdentifier_ReturnsResult()
+    {
+        // Arrange
+        var variable = new Variable(new Token(TokenType.IDENTIFIER, "myTable", null, 1));
+        var fromStatement = new From(variable);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([fromStatement]);
+
+        // Assert
+        // TODO: Implement the assertion for the result of the From statement
+        throw new NotImplementedException("Assertion for From statement result is not implemented.");
+    }
+}
