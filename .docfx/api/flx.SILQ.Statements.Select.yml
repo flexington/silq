@@ -1,45 +1,42 @@
 ### YamlMime:ManagedReference
 items:
-- uid: flx.SILQ.Statements.Print
-  commentId: T:flx.SILQ.Statements.Print
-  id: Print
+- uid: flx.SILQ.Statements.Select
+  commentId: T:flx.SILQ.Statements.Select
+  id: Select
   parent: flx.SILQ.Statements
   children:
-  - flx.SILQ.Statements.Print.#ctor(flx.SILQ.Expressions.Expression)
-  - flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
-  - flx.SILQ.Statements.Print.Expression
+  - flx.SILQ.Statements.Select.#ctor(flx.SILQ.Expressions.Expression[])
+  - flx.SILQ.Statements.Select.Accept(flx.SILQ.Statements.IVisitor)
+  - flx.SILQ.Statements.Select.Expressions
   langs:
   - csharp
   - vb
-  name: Print
-  nameWithType: Print
-  fullName: flx.SILQ.Statements.Print
+  name: Select
+  nameWithType: Select
+  fullName: flx.SILQ.Statements.Select
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Statements/Print.cs
+      path: dotnet/flx.SILQ/Statements/Select.cs
       branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
-    id: Print
-    path: ../dotnet/flx.SILQ/Statements/Print.cs
-    startLine: 9
+    id: Select
+    path: ../dotnet/flx.SILQ/Statements/Select.cs
+    startLine: 7
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Statements
-  summary: >-
-    Represents a print statement in the SILQ language.
-
-    When executed, evaluates the contained expression and outputs its value.
+  summary: Represents a "Select" statement in the SILQ language.
   example: []
   syntax:
-    content: 'public record Print : Statement, IEquatable<Statement>, IEquatable<Print>'
-    content.vb: Public Class Print Inherits Statement Implements IEquatable(Of Statement), IEquatable(Of Print)
+    content: 'public record Select : Statement, IEquatable<Statement>, IEquatable<Select>'
+    content.vb: Public Class [Select] Inherits Statement Implements IEquatable(Of Statement), IEquatable(Of Select)
   inheritance:
   - System.Object
   - flx.SILQ.Statements.Statement
   implements:
   - System.IEquatable{flx.SILQ.Statements.Statement}
-  - System.IEquatable{flx.SILQ.Statements.Print}
+  - System.IEquatable{flx.SILQ.Statements.Select}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -48,108 +45,102 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: flx.SILQ.Statements.Print.#ctor(flx.SILQ.Expressions.Expression)
-  commentId: M:flx.SILQ.Statements.Print.#ctor(flx.SILQ.Expressions.Expression)
-  id: '#ctor(flx.SILQ.Expressions.Expression)'
-  parent: flx.SILQ.Statements.Print
+- uid: flx.SILQ.Statements.Select.#ctor(flx.SILQ.Expressions.Expression[])
+  commentId: M:flx.SILQ.Statements.Select.#ctor(flx.SILQ.Expressions.Expression[])
+  id: '#ctor(flx.SILQ.Expressions.Expression[])'
+  parent: flx.SILQ.Statements.Select
   langs:
   - csharp
   - vb
-  name: Print(Expression)
-  nameWithType: Print.Print(Expression)
-  fullName: flx.SILQ.Statements.Print.Print(flx.SILQ.Expressions.Expression)
+  name: Select(Expression[])
+  nameWithType: Select.Select(Expression[])
+  fullName: flx.SILQ.Statements.Select.Select(flx.SILQ.Expressions.Expression[])
   type: Constructor
   source:
     remote:
-      path: dotnet/flx.SILQ/Statements/Print.cs
+      path: dotnet/flx.SILQ/Statements/Select.cs
       branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: .ctor
-    path: ../dotnet/flx.SILQ/Statements/Print.cs
-    startLine: 9
+    path: ../dotnet/flx.SILQ/Statements/Select.cs
+    startLine: 7
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Statements
-  summary: >-
-    Represents a print statement in the SILQ language.
-
-    When executed, evaluates the contained expression and outputs its value.
+  summary: Represents a "Select" statement in the SILQ language.
   example: []
   syntax:
-    content: public Print(Expression Expression)
+    content: public Select(Expression[] Expressions)
     parameters:
-    - id: Expression
-      type: flx.SILQ.Expressions.Expression
-      description: The expression to be printed.
-    content.vb: Public Sub New(Expression As Expression)
-  overload: flx.SILQ.Statements.Print.#ctor*
-  nameWithType.vb: Print.New(Expression)
-  fullName.vb: flx.SILQ.Statements.Print.New(flx.SILQ.Expressions.Expression)
-  name.vb: New(Expression)
-- uid: flx.SILQ.Statements.Print.Expression
-  commentId: P:flx.SILQ.Statements.Print.Expression
-  id: Expression
-  parent: flx.SILQ.Statements.Print
+    - id: Expressions
+      type: flx.SILQ.Expressions.Expression[]
+    content.vb: Public Sub New(Expressions As Expression())
+  overload: flx.SILQ.Statements.Select.#ctor*
+  nameWithType.vb: Select.New(Expression())
+  fullName.vb: flx.SILQ.Statements.Select.New(flx.SILQ.Expressions.Expression())
+  name.vb: New(Expression())
+- uid: flx.SILQ.Statements.Select.Expressions
+  commentId: P:flx.SILQ.Statements.Select.Expressions
+  id: Expressions
+  parent: flx.SILQ.Statements.Select
   langs:
   - csharp
   - vb
-  name: Expression
-  nameWithType: Print.Expression
-  fullName: flx.SILQ.Statements.Print.Expression
+  name: Expressions
+  nameWithType: Select.Expressions
+  fullName: flx.SILQ.Statements.Select.Expressions
   type: Property
   source:
     remote:
-      path: dotnet/flx.SILQ/Statements/Print.cs
+      path: dotnet/flx.SILQ/Statements/Select.cs
       branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
-    id: Expression
-    path: ../dotnet/flx.SILQ/Statements/Print.cs
-    startLine: 9
+    id: Expressions
+    path: ../dotnet/flx.SILQ/Statements/Select.cs
+    startLine: 7
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Statements
-  summary: The expression to be printed.
-  example: []
   syntax:
-    content: public Expression Expression { get; init; }
+    content: public Expression[] Expressions { get; init; }
     parameters: []
     return:
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Property Expression As Expression
-  overload: flx.SILQ.Statements.Print.Expression*
-- uid: flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
-  commentId: M:flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
+      type: flx.SILQ.Expressions.Expression[]
+    content.vb: Public Property Expressions As Expression()
+  overload: flx.SILQ.Statements.Select.Expressions*
+- uid: flx.SILQ.Statements.Select.Accept(flx.SILQ.Statements.IVisitor)
+  commentId: M:flx.SILQ.Statements.Select.Accept(flx.SILQ.Statements.IVisitor)
   id: Accept(flx.SILQ.Statements.IVisitor)
-  parent: flx.SILQ.Statements.Print
+  parent: flx.SILQ.Statements.Select
   langs:
   - csharp
   - vb
   name: Accept(IVisitor)
-  nameWithType: Print.Accept(IVisitor)
-  fullName: flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
+  nameWithType: Select.Accept(IVisitor)
+  fullName: flx.SILQ.Statements.Select.Accept(flx.SILQ.Statements.IVisitor)
   type: Method
   source:
     remote:
-      path: dotnet/flx.SILQ/Statements/Print.cs
+      path: dotnet/flx.SILQ/Statements/Select.cs
       branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Accept
-    path: ../dotnet/flx.SILQ/Statements/Print.cs
-    startLine: 15
+    path: ../dotnet/flx.SILQ/Statements/Select.cs
+    startLine: 13
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Statements
-  summary: Accepts a visitor to process this print statement.
+  summary: Accepts a visitor to process this "Select" statement.
   example: []
   syntax:
     content: public override void Accept(IVisitor visitor)
     parameters:
     - id: visitor
       type: flx.SILQ.Statements.IVisitor
-      description: The visitor that will process the print statement.
+      description: The visitor that processes this statement.
     content.vb: Public Overrides Sub Accept(visitor As IVisitor)
   overridden: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
-  overload: flx.SILQ.Statements.Print.Accept*
+  overload: flx.SILQ.Statements.Select.Accept*
 references:
 - uid: flx.SILQ.Statements
   commentId: N:flx.SILQ.Statements
@@ -232,26 +223,26 @@ references:
     name: Statement
     href: flx.SILQ.Statements.Statement.html
   - name: )
-- uid: System.IEquatable{flx.SILQ.Statements.Print}
-  commentId: T:System.IEquatable{flx.SILQ.Statements.Print}
+- uid: System.IEquatable{flx.SILQ.Statements.Select}
+  commentId: T:System.IEquatable{flx.SILQ.Statements.Select}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<Print>
-  nameWithType: IEquatable<Print>
-  fullName: System.IEquatable<flx.SILQ.Statements.Print>
-  nameWithType.vb: IEquatable(Of Print)
-  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.Print)
-  name.vb: IEquatable(Of Print)
+  name: IEquatable<Select>
+  nameWithType: IEquatable<Select>
+  fullName: System.IEquatable<flx.SILQ.Statements.Select>
+  nameWithType.vb: IEquatable(Of Select)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.Select)
+  name.vb: IEquatable(Of Select)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: <
-  - uid: flx.SILQ.Statements.Print
-    name: Print
-    href: flx.SILQ.Statements.Print.html
+  - uid: flx.SILQ.Statements.Select
+    name: Select
+    href: flx.SILQ.Statements.Select.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -261,9 +252,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: flx.SILQ.Statements.Print
-    name: Print
-    href: flx.SILQ.Statements.Print.html
+  - uid: flx.SILQ.Statements.Select
+    name: Select
+    href: flx.SILQ.Statements.Select.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -519,58 +510,42 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: flx.SILQ.Statements.Print.#ctor*
-  commentId: Overload:flx.SILQ.Statements.Print.#ctor
-  href: flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print__ctor_flx_SILQ_Expressions_Expression_
-  name: Print
-  nameWithType: Print.Print
-  fullName: flx.SILQ.Statements.Print.Print
-  nameWithType.vb: Print.New
-  fullName.vb: flx.SILQ.Statements.Print.New
+- uid: flx.SILQ.Statements.Select.#ctor*
+  commentId: Overload:flx.SILQ.Statements.Select.#ctor
+  href: flx.SILQ.Statements.Select.html#flx_SILQ_Statements_Select__ctor_flx_SILQ_Expressions_Expression___
+  name: Select
+  nameWithType: Select.Select
+  fullName: flx.SILQ.Statements.Select.Select
+  nameWithType.vb: Select.New
+  fullName.vb: flx.SILQ.Statements.Select.New
   name.vb: New
-- uid: flx.SILQ.Expressions.Expression
-  commentId: T:flx.SILQ.Expressions.Expression
-  parent: flx.SILQ.Expressions
+- uid: flx.SILQ.Expressions.Expression[]
+  isExternal: true
   href: flx.SILQ.Expressions.Expression.html
-  name: Expression
-  nameWithType: Expression
-  fullName: flx.SILQ.Expressions.Expression
-- uid: flx.SILQ.Expressions
-  commentId: N:flx.SILQ.Expressions
-  href: flx.html
-  name: flx.SILQ.Expressions
-  nameWithType: flx.SILQ.Expressions
-  fullName: flx.SILQ.Expressions
+  name: Expression[]
+  nameWithType: Expression[]
+  fullName: flx.SILQ.Expressions.Expression[]
+  nameWithType.vb: Expression()
+  fullName.vb: flx.SILQ.Expressions.Expression()
+  name.vb: Expression()
   spec.csharp:
-  - uid: flx
-    name: flx
-    href: flx.html
-  - name: .
-  - uid: flx.SILQ
-    name: SILQ
-    href: flx.SILQ.html
-  - name: .
-  - uid: flx.SILQ.Expressions
-    name: Expressions
-    href: flx.SILQ.Expressions.html
+  - uid: flx.SILQ.Expressions.Expression
+    name: Expression
+    href: flx.SILQ.Expressions.Expression.html
+  - name: '['
+  - name: ']'
   spec.vb:
-  - uid: flx
-    name: flx
-    href: flx.html
-  - name: .
-  - uid: flx.SILQ
-    name: SILQ
-    href: flx.SILQ.html
-  - name: .
-  - uid: flx.SILQ.Expressions
-    name: Expressions
-    href: flx.SILQ.Expressions.html
-- uid: flx.SILQ.Statements.Print.Expression*
-  commentId: Overload:flx.SILQ.Statements.Print.Expression
-  href: flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Expression
-  name: Expression
-  nameWithType: Print.Expression
-  fullName: flx.SILQ.Statements.Print.Expression
+  - uid: flx.SILQ.Expressions.Expression
+    name: Expression
+    href: flx.SILQ.Expressions.Expression.html
+  - name: (
+  - name: )
+- uid: flx.SILQ.Statements.Select.Expressions*
+  commentId: Overload:flx.SILQ.Statements.Select.Expressions
+  href: flx.SILQ.Statements.Select.html#flx_SILQ_Statements_Select_Expressions
+  name: Expressions
+  nameWithType: Select.Expressions
+  fullName: flx.SILQ.Statements.Select.Expressions
 - uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
   commentId: M:flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
   parent: flx.SILQ.Statements.Statement
@@ -596,12 +571,12 @@ references:
     name: IVisitor
     href: flx.SILQ.Statements.IVisitor.html
   - name: )
-- uid: flx.SILQ.Statements.Print.Accept*
-  commentId: Overload:flx.SILQ.Statements.Print.Accept
-  href: flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Accept_flx_SILQ_Statements_IVisitor_
+- uid: flx.SILQ.Statements.Select.Accept*
+  commentId: Overload:flx.SILQ.Statements.Select.Accept
+  href: flx.SILQ.Statements.Select.html#flx_SILQ_Statements_Select_Accept_flx_SILQ_Statements_IVisitor_
   name: Accept
-  nameWithType: Print.Accept
-  fullName: flx.SILQ.Statements.Print.Accept
+  nameWithType: Select.Accept
+  fullName: flx.SILQ.Statements.Select.Accept
 - uid: flx.SILQ.Statements.IVisitor
   commentId: T:flx.SILQ.Statements.IVisitor
   parent: flx.SILQ.Statements

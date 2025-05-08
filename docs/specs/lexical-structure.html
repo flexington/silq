@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/main/.docfx/specs/lexical-structure.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/feat/sandr0-p/select/.docfx/specs/lexical-structure.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -132,7 +132,7 @@ condition           → expression | function ;
 </code></pre>
 <h3 id="projections">Projections</h3>
 <p>Projections allow to choose specific <code>members</code> of an <code>object</code> with the <code>select</code> keyword followed by the <code>member</code>s to be projected. The <code>object</code> member access rules apply. The projected <code>member</code>s can be access using the <code>alias</code> followed by the <code>member IDENTIFIER</code>. The <code>projection</code> will be available once an <code>alias</code> has been defined and the <code>query</code> has concluded.</p>
-<pre><code class="lang-bnf">projection          → &quot;select&quot; member | &quot;{&quot; member ( &quot;,&quot; member)* &quot;}&quot; ;
+<pre><code class="lang-bnf">projection          → &quot;select&quot; &quot;{&quot; member ( &quot;,&quot; member)* &quot;}&quot; ;
 </code></pre>
 <h3 id="aliases">Aliases</h3>
 <p><code>Alias</code>es act in the capacity of variables and make the result of an query available for further use throughout the script. An <code>alias IDENTIFIER</code> can only be used once, it's value can not be changed.</p>
@@ -173,7 +173,7 @@ DATE                → &quot;YYYY-MM-DD&quot;
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/main/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

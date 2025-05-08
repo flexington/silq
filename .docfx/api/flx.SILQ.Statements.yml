@@ -7,6 +7,7 @@ items:
   - flx.SILQ.Statements.From
   - flx.SILQ.Statements.IVisitor
   - flx.SILQ.Statements.Print
+  - flx.SILQ.Statements.Select
   - flx.SILQ.Statements.Statement
   - flx.SILQ.Statements.Where
   langs:
@@ -40,6 +41,13 @@ references:
   name: Print
   nameWithType: Print
   fullName: flx.SILQ.Statements.Print
+- uid: flx.SILQ.Statements.Select
+  commentId: T:flx.SILQ.Statements.Select
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Select.html
+  name: Select
+  nameWithType: Select
+  fullName: flx.SILQ.Statements.Select
 - uid: flx.SILQ.Statements.Statement
   commentId: T:flx.SILQ.Statements.Statement
   parent: flx.SILQ.Statements

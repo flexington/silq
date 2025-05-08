@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Literal.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Literal
     path: ../dotnet/flx.SILQ/Expressions/Literal.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Literal.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: .ctor
     path: ../dotnet/flx.SILQ/Expressions/Literal.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Literal.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Value
     path: ../dotnet/flx.SILQ/Expressions/Literal.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Literal.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Expressions/Literal.cs
