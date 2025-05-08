@@ -367,4 +367,19 @@ public class InterpreterTests
         // TODO: Implement the assertion for the result of the From statement
         throw new NotImplementedException("Assertion for From statement result is not implemented.");
     }
+
+    [TestMethod]
+    public void Interpret_WhenWhereStatementWithCondition_ReturnsResult()
+    {
+        // Arrange
+        var condition = new Literal(true);
+        var whereStatement = new Where(condition);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([whereStatement]);
+
+        // Assert
+        throw new NotImplementedException("Assertion for Where statement result is not implemented.");
+    }
 }

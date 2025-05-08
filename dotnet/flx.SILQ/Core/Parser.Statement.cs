@@ -30,6 +30,7 @@ public partial class Parser
         while (!IsAtEnd())
         {
             statements.Add(Statement());
+            if (Match(TokenType.SEMICOLON)) continue; // Ignore semicolon
         }
 
         return statements;
@@ -43,6 +44,7 @@ public partial class Parser
     {
         if (Match(TokenType.PRINT)) return Print();
         if (Match(TokenType.FROM)) return From();
+        if (Match(TokenType.WHERE)) return Where();
 
         throw new ParserError(Peek(), "Expect statement.");
     }
@@ -65,7 +67,13 @@ public partial class Parser
     private Statement From()
     {
         Expression expression = Expression();
-        Consume(TokenType.SEMICOLON, "Expect ';' after value.");
         return new From(expression);
+    }
+
+    private Statement Where()
+    {
+        Expression expression = Expression();
+        
+        return new Where(expression);
     }
 }

@@ -17,4 +17,10 @@ public interface IVisitor
     /// </summary>
     /// <param name="from">The from statement to visit.</param>
     void Visit(From from);
+
+    /// <summary>
+    /// Visits a <see cref="Where"/> statement node.
+    /// </summary>
+    /// <param name="where">The where statement to visit.</param>
+    void Visit(Where where);
 }

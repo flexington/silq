@@ -20,4 +20,9 @@ public partial class Interpreter : IVisitor
     {
         throw new NotImplementedException();
     }
+
+    public void Visit(Where where)
+    {
+        throw new NotImplementedException();
+    }
 }
