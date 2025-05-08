@@ -26,6 +26,11 @@ public enum TokenType
     BANG_EQUAL,
 
     /// <summary>
+    /// Comma ','
+    /// </summary>
+    COMMA,
+
+    /// <summary>
     /// 'count' keyword
     /// </summary>
     COUNT,
@@ -96,6 +101,11 @@ public enum TokenType
     LAST,
 
     /// <summary>
+    /// Left brace '{'
+    /// </summary>
+    LEFT_BRACE,
+
+    /// <summary>
     /// Left brace '('
     /// </summary>
     LEFT_PAREN,
@@ -149,6 +159,11 @@ public enum TokenType
     /// 'print' keyword
     /// </summary>
     PRINT,
+
+    /// <summary>
+    /// Right brace '}'
+    /// </summary>
+    RIGHT_BRACE,
 
     /// <summary>
     /// Right brace ')'

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
@@ -542,8 +543,6 @@ public class ParserTests
         // Arrange
         var tokens = new List<Token>
         {
-            new Token(TokenType.FROM, "from", null, 1),
-            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.WHERE, "where", null, 1),
             new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.EQUAL_EQUAL, "==", null, 1),
@@ -559,10 +558,66 @@ public class ParserTests
         // Assert
         Assert.IsNotNull(statement);
         Assert.IsNotNull(statement.First());
+        Assert.IsInstanceOfType(statement.First(), typeof(Where));
+        Assert.IsNotNull(((Where)statement.First()).Expression);
+    }
 
-        Assert.IsInstanceOfType(statement.ElementAt(0), typeof(From));
-        Assert.IsNotNull(((From)statement.ElementAt(0)).Expression);
-        Assert.IsInstanceOfType(statement.ElementAt(1), typeof(Where));
-        Assert.IsNotNull(((Where)statement.ElementAt(1)).Expression);
+    [TestMethod]
+    public void ParseStatement_WhenSelectStatementWithSingleMember_ReturnsSelectStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.SELECT, "select", null, 1),
+            new Token(TokenType.LEFT_BRACE, "{", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.RIGHT_BRACE, "}", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Select));
+
+        var selectStatement = (Select)statement.First();
+        Assert.IsNotNull(selectStatement.Expressions);
+        Assert.AreEqual(1, selectStatement.Expressions.Length);
+        Assert.IsInstanceOfType(selectStatement.Expressions[0], typeof(Variable));
+    }
+
+    [TestMethod]
+    public void ParseStatement_WhenSelectStatementWithMultipleMembers_ReturnsSelectStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.SELECT, "select", null, 1),
+            new Token(TokenType.LEFT_BRACE, "{", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.COMMA, ",", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar2", null, 1),
+            new Token(TokenType.RIGHT_BRACE, "}", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+        var parser = new Parser();
+
+        // Act
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Select));
+
+        var selectStatement = (Select)statement.First();
+        Assert.IsNotNull(selectStatement.Expressions);
+        Assert.AreEqual(2, selectStatement.Expressions.Length);
+        Assert.IsInstanceOfType(selectStatement.Expressions[0], typeof(Variable));
+        Assert.IsInstanceOfType(selectStatement.Expressions[1], typeof(Variable));
     }
 }

@@ -23,4 +23,10 @@ public interface IVisitor
     /// </summary>
     /// <param name="where">The where statement to visit.</param>
     void Visit(Where where);
+
+    /// <summary>
+    /// Visits a <see cref="Select"/> statement node.
+    /// </summary>
+    /// <param name="select">The select statement to visit.</param>
+    void Visit(Select select);
 }

@@ -45,6 +45,7 @@ public partial class Parser
         if (Match(TokenType.PRINT)) return Print();
         if (Match(TokenType.FROM)) return From();
         if (Match(TokenType.WHERE)) return Where();
+        if (Match(TokenType.SELECT)) return Select();
 
         throw new ParserError(Peek(), "Expect statement.");
     }
@@ -70,10 +71,35 @@ public partial class Parser
         return new From(expression);
     }
 
+    /// <summary>
+    /// Parses a where statement, which consists of an expression followed by a semicolon.
+    /// </summary>
+    /// <returns>A <see cref="Where"/> statement containing the parsed expression.</returns>
     private Statement Where()
     {
         Expression expression = Expression();
-        
+
         return new Where(expression);
+    }
+
+    /// <summary>
+    /// Parses a select statement, which consists of an expression followed by a semicolon.
+    /// </summary>
+    /// <returns>A <see cref="Select"/> statement containing the parsed expression.</returns>
+    private Statement Select()
+    {
+        List<Expression> expressions = new List<Expression>();
+        Consume(TokenType.LEFT_BRACE, "Expect '{' before expression.");
+        expressions.Add(Expression());
+
+        while (!IsAtEnd() && !Check(TokenType.RIGHT_BRACE))
+        {
+            if (Match(TokenType.COMMA)) expressions.Add(Expression());
+            else throw new ParserError(Peek(), "Expect ',' or '}' after expression.");
+        }
+
+        Consume(TokenType.RIGHT_BRACE, "Expect '}' after expression.");
+
+        return new Select([.. expressions]);
     }
 }
