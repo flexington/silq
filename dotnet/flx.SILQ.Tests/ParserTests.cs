@@ -535,4 +535,34 @@ public class ParserTests
         Assert.IsInstanceOfType(statement.First(), typeof(From));
         Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
     }
+
+    [TestMethod]
+    public void ParseStatement_WhenWhereStatement_ReturnsWhereStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.WHERE, "where", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.EQUAL_EQUAL, "==", null, 1),
+            new Token(TokenType.NUMBER, "123", 123.0, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+        var parser = new Parser();
+
+        // Act
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsNotNull(statement.First());
+
+        Assert.IsInstanceOfType(statement.ElementAt(0), typeof(From));
+        Assert.IsNotNull(((From)statement.ElementAt(0)).Expression);
+        Assert.IsInstanceOfType(statement.ElementAt(1), typeof(Where));
+        Assert.IsNotNull(((Where)statement.ElementAt(1)).Expression);
+    }
 }

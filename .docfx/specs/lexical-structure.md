@@ -44,10 +44,10 @@ modifier            → "first" | "last" | "count" ;
 ```
 
 ### Objects
-Objects allow access to data structures provided by the framework implementing `SILQ`. Depending on the context provided to the interpreter and the functionality of the implementing framework, the object can be accesses to use the generalised `x` or an `IDENTIFIER`. Member access always requires an `IDENTIFIER`. Members with a `private`, `protected`, `internal` or similar access modifier will be ignored where applicable.
+Objects allow access to data structures provided by the framework implementing `SILQ`. The object can be accesses to using an `IDENTIFIER`. Members can be accessed using the dot-notation. Members with a `private`, `protected`, `internal` or similar access modifier will be ignored where applicable.
 
 ```bnf
-object              → "x" | IDENTIFIER ( ( "." member? )? )* ;
+object              → IDENTIFIER ( ( "." member? )? )* ;
 member              → IDENTIFIER ;
 ```
 
