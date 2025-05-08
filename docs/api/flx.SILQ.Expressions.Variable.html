@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Binary | SILQ </title>
+      <title>Class Variable | SILQ </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Binary | SILQ ">
+      <meta name="title" content="Class Variable | SILQ ">
       
-      
+      <meta name="description" content="Represents a variable expression in the syntax tree.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/main/apiSpec/new?filename=flx_SILQ_Expressions_Binary.md&amp;value=---%0Auid%3A%20flx.SILQ.Expressions.Binary%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/main/apiSpec/new?filename=flx_SILQ_Expressions_Variable.md&amp;value=---%0Auid%3A%20flx.SILQ.Expressions.Variable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="flx.SILQ.Expressions.Binary">
+        <article data-uid="flx.SILQ.Expressions.Variable">
 
 
 
-  <h1 id="flx_SILQ_Expressions_Binary" data-uid="flx.SILQ.Expressions.Binary" class="text-break">
-Class Binary  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h1 id="flx_SILQ_Expressions_Variable" data-uid="flx.SILQ.Expressions.Variable" class="text-break">
+Class Variable  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Variable.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,11 +97,12 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
   <dl><dt>Assembly</dt><dd>flx.SILQ.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents a variable expression in the syntax tree.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record Binary : Expression, IEquatable&lt;Expression&gt;, IEquatable&lt;Binary&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public record Variable : Expression, IEquatable&lt;Expression&gt;, IEquatable&lt;Variable&gt;</code></pre>
   </div>
 
 
@@ -112,7 +113,7 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></div>
-      <div><span class="xref">Binary</span></div>
+      <div><span class="xref">Variable</span></div>
     </dd>
   </dl>
 
@@ -120,7 +121,7 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>&gt;</div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Binary.html">Binary</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a>&gt;</div>
     </dd>
   </dl>
 
@@ -160,28 +161,26 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
 </h2>
 
 
-  <a id="flx_SILQ_Expressions_Binary__ctor_" data-uid="flx.SILQ.Expressions.Binary.#ctor*"></a>
+  <a id="flx_SILQ_Expressions_Variable__ctor_" data-uid="flx.SILQ.Expressions.Variable.#ctor*"></a>
 
-  <h3 id="flx_SILQ_Expressions_Binary__ctor_flx_SILQ_Expressions_Expression_flx_SILQ_Models_Token_flx_SILQ_Expressions_Expression_" data-uid="flx.SILQ.Expressions.Binary.#ctor(flx.SILQ.Expressions.Expression,flx.SILQ.Models.Token,flx.SILQ.Expressions.Expression)">
-  Binary(Expression, Token, Expression)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Expressions_Variable__ctor_flx_SILQ_Models_Token_" data-uid="flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)">
+  Variable(Token)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Variable.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Represents a variable expression in the syntax tree.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Binary(Expression Left, Token Operator, Expression Right)</code></pre>
+    <pre><code class="lang-csharp hljs">public Variable(Token Name)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>Left</code> <a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-    <dd></dd>
-    <dt><code>Operator</code> <a class="xref" href="flx.SILQ.Models.Token.html">Token</a></dt>
-    <dd></dd>
-    <dt><code>Right</code> <a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-    <dd></dd>
+    <dt><code>Name</code> <a class="xref" href="flx.SILQ.Models.Token.html">Token</a></dt>
+    <dd><p>The token representing the name of the variable.</p>
+</dd>
   </dl>
 
 
@@ -199,49 +198,19 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
 </h2>
 
 
-  <a id="flx_SILQ_Expressions_Binary_Left_" data-uid="flx.SILQ.Expressions.Binary.Left*"></a>
+  <a id="flx_SILQ_Expressions_Variable_Name_" data-uid="flx.SILQ.Expressions.Variable.Name*"></a>
 
-  <h3 id="flx_SILQ_Expressions_Binary_Left" data-uid="flx.SILQ.Expressions.Binary.Left">
-  Left
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Expressions_Variable_Name" data-uid="flx.SILQ.Expressions.Variable.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Variable.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The token representing the name of the variable.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Expression Left { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="flx_SILQ_Expressions_Binary_Operator_" data-uid="flx.SILQ.Expressions.Binary.Operator*"></a>
-
-  <h3 id="flx_SILQ_Expressions_Binary_Operator" data-uid="flx.SILQ.Expressions.Binary.Operator">
-  Operator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Token Operator { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Token Name { get; init; }</code></pre>
   </div>
 
 
@@ -261,49 +230,19 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="flx_SILQ_Expressions_Binary_Right_" data-uid="flx.SILQ.Expressions.Binary.Right*"></a>
-
-  <h3 id="flx_SILQ_Expressions_Binary_Right" data-uid="flx.SILQ.Expressions.Binary.Right">
-  Right
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Expression Right { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="flx_SILQ_Expressions_Binary_Accept_" data-uid="flx.SILQ.Expressions.Binary.Accept*"></a>
+  <a id="flx_SILQ_Expressions_Variable_Accept_" data-uid="flx.SILQ.Expressions.Variable.Accept*"></a>
 
-  <h3 id="flx_SILQ_Expressions_Binary_Accept__1_flx_SILQ_Expressions_IVisitor___0__" data-uid="flx.SILQ.Expressions.Binary.Accept``1(flx.SILQ.Expressions.IVisitor{``0})">
+  <h3 id="flx_SILQ_Expressions_Variable_Accept__1_flx_SILQ_Expressions_IVisitor___0__" data-uid="flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})">
   Accept&lt;T&gt;(IVisitor&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Variable.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Accepts a visitor to process this variable expression.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -313,7 +252,8 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>visitor</code> <a class="xref" href="flx.SILQ.Expressions.IVisitor-1.html">IVisitor</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>The visitor that will process the variable expression.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -341,7 +281,7 @@ Class Binary  <a class="header-action link-secondary" title="View source" href="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Binary.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Expressions/Variable.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

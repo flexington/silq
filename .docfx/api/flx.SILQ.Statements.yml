@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
+  id: flx.SILQ.Statements
+  children:
+  - flx.SILQ.Statements.From
+  - flx.SILQ.Statements.IVisitor
+  - flx.SILQ.Statements.Print
+  - flx.SILQ.Statements.Statement
+  - flx.SILQ.Statements.Where
+  langs:
+  - csharp
+  - vb
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
+  type: Namespace
+  assemblies:
+  - flx.SILQ
+references:
+- uid: flx.SILQ.Statements.From
+  commentId: T:flx.SILQ.Statements.From
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.From.html
+  name: From
+  nameWithType: From
+  fullName: flx.SILQ.Statements.From
+- uid: flx.SILQ.Statements.IVisitor
+  commentId: T:flx.SILQ.Statements.IVisitor
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.IVisitor.html
+  name: IVisitor
+  nameWithType: IVisitor
+  fullName: flx.SILQ.Statements.IVisitor
+- uid: flx.SILQ.Statements.Print
+  commentId: T:flx.SILQ.Statements.Print
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Print.html
+  name: Print
+  nameWithType: Print
+  fullName: flx.SILQ.Statements.Print
+- uid: flx.SILQ.Statements.Statement
+  commentId: T:flx.SILQ.Statements.Statement
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Statement.html
+  name: Statement
+  nameWithType: Statement
+  fullName: flx.SILQ.Statements.Statement
+- uid: flx.SILQ.Statements.Where
+  commentId: T:flx.SILQ.Statements.Where
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Where.html
+  name: Where
+  nameWithType: Where
+  fullName: flx.SILQ.Statements.Where
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
+  href: flx.html
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html

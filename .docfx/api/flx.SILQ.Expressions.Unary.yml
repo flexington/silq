@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Unary.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Unary
     path: ../dotnet/flx.SILQ/Expressions/Unary.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Unary.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: .ctor
     path: ../dotnet/flx.SILQ/Expressions/Unary.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Unary.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Operator
     path: ../dotnet/flx.SILQ/Expressions/Unary.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Unary.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Right
     path: ../dotnet/flx.SILQ/Expressions/Unary.cs
@@ -150,7 +150,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Unary.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Expressions/Unary.cs

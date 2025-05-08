@@ -48,6 +48,9 @@ items:
   - uid: flx.SILQ.Expressions.Unary
     name: Unary
     type: Class
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    type: Class
 - uid: flx.SILQ.Models
   name: flx.SILQ.Models
   type: Namespace
@@ -61,4 +64,23 @@ items:
   - uid: flx.SILQ.Models.TokenType
     name: TokenType
     type: Enum
+- uid: flx.SILQ.Statements
+  name: flx.SILQ.Statements
+  type: Namespace
+  items:
+  - uid: flx.SILQ.Statements.From
+    name: From
+    type: Class
+  - uid: flx.SILQ.Statements.IVisitor
+    name: IVisitor
+    type: Interface
+  - uid: flx.SILQ.Statements.Print
+    name: Print
+    type: Class
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    type: Class
+  - uid: flx.SILQ.Statements.Where
+    name: Where
+    type: Class
 memberLayout: SamePage

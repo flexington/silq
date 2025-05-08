@@ -1,0 +1,190 @@
+### YamlMime:ManagedReference
+items:
+- uid: flx.SILQ.Statements.IVisitor
+  commentId: T:flx.SILQ.Statements.IVisitor
+  id: IVisitor
+  parent: flx.SILQ.Statements
+  children:
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  langs:
+  - csharp
+  - vb
+  name: IVisitor
+  nameWithType: IVisitor
+  fullName: flx.SILQ.Statements.IVisitor
+  type: Interface
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: IVisitor
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 6
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: >-
+    Visitor interface for statement nodes in the SILQ AST.
+
+    Implementations should provide logic for each supported statement type.
+  example: []
+  syntax:
+    content: public interface IVisitor
+    content.vb: Public Interface IVisitor
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  id: Visit(flx.SILQ.Statements.Print)
+  parent: flx.SILQ.Statements.IVisitor
+  langs:
+  - csharp
+  - vb
+  name: Visit(Print)
+  nameWithType: IVisitor.Visit(Print)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 12
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: Visits a <xref href="flx.SILQ.Statements.Print" data-throw-if-not-resolved="false"></xref> statement node.
+  example: []
+  syntax:
+    content: void Visit(Print print)
+    parameters:
+    - id: print
+      type: flx.SILQ.Statements.Print
+      description: The print statement to visit.
+    content.vb: Sub Visit(print As Print)
+  overload: flx.SILQ.Statements.IVisitor.Visit*
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  id: Visit(flx.SILQ.Statements.From)
+  parent: flx.SILQ.Statements.IVisitor
+  langs:
+  - csharp
+  - vb
+  name: Visit(From)
+  nameWithType: IVisitor.Visit(From)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 18
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: Visits a <xref href="flx.SILQ.Statements.From" data-throw-if-not-resolved="false"></xref> statement node.
+  example: []
+  syntax:
+    content: void Visit(From from)
+    parameters:
+    - id: from
+      type: flx.SILQ.Statements.From
+      description: The from statement to visit.
+    content.vb: Sub Visit(from As From)
+  overload: flx.SILQ.Statements.IVisitor.Visit*
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  id: Visit(flx.SILQ.Statements.Where)
+  parent: flx.SILQ.Statements.IVisitor
+  langs:
+  - csharp
+  - vb
+  name: Visit(Where)
+  nameWithType: IVisitor.Visit(Where)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 24
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: Visits a <xref href="flx.SILQ.Statements.Where" data-throw-if-not-resolved="false"></xref> statement node.
+  example: []
+  syntax:
+    content: void Visit(Where where)
+    parameters:
+    - id: where
+      type: flx.SILQ.Statements.Where
+      description: The where statement to visit.
+    content.vb: Sub Visit(where As Where)
+  overload: flx.SILQ.Statements.IVisitor.Visit*
+references:
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
+  href: flx.html
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
+- uid: flx.SILQ.Statements.Print
+  commentId: T:flx.SILQ.Statements.Print
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Print.html
+  name: Print
+  nameWithType: Print
+  fullName: flx.SILQ.Statements.Print
+- uid: flx.SILQ.Statements.IVisitor.Visit*
+  commentId: Overload:flx.SILQ.Statements.IVisitor.Visit
+  href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_
+  name: Visit
+  nameWithType: IVisitor.Visit
+  fullName: flx.SILQ.Statements.IVisitor.Visit
+- uid: flx.SILQ.Statements.From
+  commentId: T:flx.SILQ.Statements.From
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.From.html
+  name: From
+  nameWithType: From
+  fullName: flx.SILQ.Statements.From
+- uid: flx.SILQ.Statements.Where
+  commentId: T:flx.SILQ.Statements.Where
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Where.html
+  name: Where
+  nameWithType: Where
+  fullName: flx.SILQ.Statements.Where

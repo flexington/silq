@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/.docfx/specs/lexical-structure.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/main/.docfx/specs/lexical-structure.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -120,8 +120,8 @@
 <pre><code class="lang-bnf">modifier            → &quot;first&quot; | &quot;last&quot; | &quot;count&quot; ;
 </code></pre>
 <h3 id="objects">Objects</h3>
-<p>Objects allow access to data structures provided by the framework implementing <code>SILQ</code>. Depending on the context provided to the interpreter and the functionality of the implementing framework, the object can be accesses to use the generalised <code>x</code> or an <code>IDENTIFIER</code>. Member access always requires an <code>IDENTIFIER</code>. Members with a <code>private</code>, <code>protected</code>, <code>internal</code> or similar access modifier will be ignored where applicable.</p>
-<pre><code class="lang-bnf">object              → &quot;x&quot; | IDENTIFIER ( ( &quot;.&quot; member? )? )* ;
+<p>Objects allow access to data structures provided by the framework implementing <code>SILQ</code>. The object can be accesses to using an <code>IDENTIFIER</code>. Members can be accessed using the dot-notation. Members with a <code>private</code>, <code>protected</code>, <code>internal</code> or similar access modifier will be ignored where applicable.</p>
+<pre><code class="lang-bnf">object              → IDENTIFIER ( ( &quot;.&quot; member? )? )* ;
 member              → IDENTIFIER ;
 </code></pre>
 <h3 id="where-clauses">Where Clauses</h3>
@@ -173,7 +173,7 @@ DATE                → &quot;YYYY-MM-DD&quot;
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/main/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

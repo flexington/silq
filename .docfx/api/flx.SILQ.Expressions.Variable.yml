@@ -1,42 +1,42 @@
 ### YamlMime:ManagedReference
 items:
-- uid: flx.SILQ.Expressions.Binary
-  commentId: T:flx.SILQ.Expressions.Binary
-  id: Binary
+- uid: flx.SILQ.Expressions.Variable
+  commentId: T:flx.SILQ.Expressions.Variable
+  id: Variable
   parent: flx.SILQ.Expressions
   children:
-  - flx.SILQ.Expressions.Binary.#ctor(flx.SILQ.Expressions.Expression,flx.SILQ.Models.Token,flx.SILQ.Expressions.Expression)
-  - flx.SILQ.Expressions.Binary.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  - flx.SILQ.Expressions.Binary.Left
-  - flx.SILQ.Expressions.Binary.Operator
-  - flx.SILQ.Expressions.Binary.Right
+  - flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  - flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  - flx.SILQ.Expressions.Variable.Name
   langs:
   - csharp
   - vb
-  name: Binary
-  nameWithType: Binary
-  fullName: flx.SILQ.Expressions.Binary
+  name: Variable
+  nameWithType: Variable
+  fullName: flx.SILQ.Expressions.Variable
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
+      path: dotnet/flx.SILQ/Expressions/Variable.cs
       branch: main
       repo: https://github.com/flexington/silq.git
-    id: Binary
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 4
+    id: Variable
+    path: ../dotnet/flx.SILQ/Expressions/Variable.cs
+    startLine: 8
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
+  summary: Represents a variable expression in the syntax tree.
+  example: []
   syntax:
-    content: 'public record Binary : Expression, IEquatable<Expression>, IEquatable<Binary>'
-    content.vb: Public Class Binary Inherits Expression Implements IEquatable(Of Expression), IEquatable(Of Binary)
+    content: 'public record Variable : Expression, IEquatable<Expression>, IEquatable<Variable>'
+    content.vb: Public Class Variable Inherits Expression Implements IEquatable(Of Expression), IEquatable(Of Variable)
   inheritance:
   - System.Object
   - flx.SILQ.Expressions.Expression
   implements:
   - System.IEquatable{flx.SILQ.Expressions.Expression}
-  - System.IEquatable{flx.SILQ.Expressions.Binary}
+  - System.IEquatable{flx.SILQ.Expressions.Variable}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -45,166 +45,111 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: flx.SILQ.Expressions.Binary.#ctor(flx.SILQ.Expressions.Expression,flx.SILQ.Models.Token,flx.SILQ.Expressions.Expression)
-  commentId: M:flx.SILQ.Expressions.Binary.#ctor(flx.SILQ.Expressions.Expression,flx.SILQ.Models.Token,flx.SILQ.Expressions.Expression)
-  id: '#ctor(flx.SILQ.Expressions.Expression,flx.SILQ.Models.Token,flx.SILQ.Expressions.Expression)'
-  parent: flx.SILQ.Expressions.Binary
+- uid: flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  commentId: M:flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  id: '#ctor(flx.SILQ.Models.Token)'
+  parent: flx.SILQ.Expressions.Variable
   langs:
   - csharp
   - vb
-  name: Binary(Expression, Token, Expression)
-  nameWithType: Binary.Binary(Expression, Token, Expression)
-  fullName: flx.SILQ.Expressions.Binary.Binary(flx.SILQ.Expressions.Expression, flx.SILQ.Models.Token, flx.SILQ.Expressions.Expression)
+  name: Variable(Token)
+  nameWithType: Variable.Variable(Token)
+  fullName: flx.SILQ.Expressions.Variable.Variable(flx.SILQ.Models.Token)
   type: Constructor
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
+      path: dotnet/flx.SILQ/Expressions/Variable.cs
       branch: main
       repo: https://github.com/flexington/silq.git
     id: .ctor
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 4
+    path: ../dotnet/flx.SILQ/Expressions/Variable.cs
+    startLine: 8
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
+  summary: Represents a variable expression in the syntax tree.
+  example: []
   syntax:
-    content: public Binary(Expression Left, Token Operator, Expression Right)
+    content: public Variable(Token Name)
     parameters:
-    - id: Left
-      type: flx.SILQ.Expressions.Expression
-    - id: Operator
+    - id: Name
       type: flx.SILQ.Models.Token
-    - id: Right
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Sub New(Left As Expression, [Operator] As Token, Right As Expression)
-  overload: flx.SILQ.Expressions.Binary.#ctor*
-  nameWithType.vb: Binary.New(Expression, Token, Expression)
-  fullName.vb: flx.SILQ.Expressions.Binary.New(flx.SILQ.Expressions.Expression, flx.SILQ.Models.Token, flx.SILQ.Expressions.Expression)
-  name.vb: New(Expression, Token, Expression)
-- uid: flx.SILQ.Expressions.Binary.Left
-  commentId: P:flx.SILQ.Expressions.Binary.Left
-  id: Left
-  parent: flx.SILQ.Expressions.Binary
+      description: The token representing the name of the variable.
+    content.vb: Public Sub New(Name As Token)
+  overload: flx.SILQ.Expressions.Variable.#ctor*
+  nameWithType.vb: Variable.New(Token)
+  fullName.vb: flx.SILQ.Expressions.Variable.New(flx.SILQ.Models.Token)
+  name.vb: New(Token)
+- uid: flx.SILQ.Expressions.Variable.Name
+  commentId: P:flx.SILQ.Expressions.Variable.Name
+  id: Name
+  parent: flx.SILQ.Expressions.Variable
   langs:
   - csharp
   - vb
-  name: Left
-  nameWithType: Binary.Left
-  fullName: flx.SILQ.Expressions.Binary.Left
+  name: Name
+  nameWithType: Variable.Name
+  fullName: flx.SILQ.Expressions.Variable.Name
   type: Property
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
+      path: dotnet/flx.SILQ/Expressions/Variable.cs
       branch: main
       repo: https://github.com/flexington/silq.git
-    id: Left
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 4
+    id: Name
+    path: ../dotnet/flx.SILQ/Expressions/Variable.cs
+    startLine: 8
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
+  summary: The token representing the name of the variable.
+  example: []
   syntax:
-    content: public Expression Left { get; init; }
-    parameters: []
-    return:
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Property Left As Expression
-  overload: flx.SILQ.Expressions.Binary.Left*
-- uid: flx.SILQ.Expressions.Binary.Operator
-  commentId: P:flx.SILQ.Expressions.Binary.Operator
-  id: Operator
-  parent: flx.SILQ.Expressions.Binary
-  langs:
-  - csharp
-  - vb
-  name: Operator
-  nameWithType: Binary.Operator
-  fullName: flx.SILQ.Expressions.Binary.Operator
-  type: Property
-  source:
-    remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
-      branch: main
-      repo: https://github.com/flexington/silq.git
-    id: Operator
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 4
-  assemblies:
-  - flx.SILQ
-  namespace: flx.SILQ.Expressions
-  syntax:
-    content: public Token Operator { get; init; }
+    content: public Token Name { get; init; }
     parameters: []
     return:
       type: flx.SILQ.Models.Token
-    content.vb: Public Property [Operator] As Token
-  overload: flx.SILQ.Expressions.Binary.Operator*
-- uid: flx.SILQ.Expressions.Binary.Right
-  commentId: P:flx.SILQ.Expressions.Binary.Right
-  id: Right
-  parent: flx.SILQ.Expressions.Binary
-  langs:
-  - csharp
-  - vb
-  name: Right
-  nameWithType: Binary.Right
-  fullName: flx.SILQ.Expressions.Binary.Right
-  type: Property
-  source:
-    remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
-      branch: main
-      repo: https://github.com/flexington/silq.git
-    id: Right
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 4
-  assemblies:
-  - flx.SILQ
-  namespace: flx.SILQ.Expressions
-  syntax:
-    content: public Expression Right { get; init; }
-    parameters: []
-    return:
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Property Right As Expression
-  overload: flx.SILQ.Expressions.Binary.Right*
-- uid: flx.SILQ.Expressions.Binary.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  commentId: M:flx.SILQ.Expressions.Binary.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+    content.vb: Public Property Name As Token
+  overload: flx.SILQ.Expressions.Variable.Name*
+- uid: flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  commentId: M:flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   id: Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  parent: flx.SILQ.Expressions.Binary
+  parent: flx.SILQ.Expressions.Variable
   langs:
   - csharp
   - vb
   name: Accept<T>(IVisitor<T>)
-  nameWithType: Binary.Accept<T>(IVisitor<T>)
-  fullName: flx.SILQ.Expressions.Binary.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
+  nameWithType: Variable.Accept<T>(IVisitor<T>)
+  fullName: flx.SILQ.Expressions.Variable.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
   type: Method
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Binary.cs
+      path: dotnet/flx.SILQ/Expressions/Variable.cs
       branch: main
       repo: https://github.com/flexington/silq.git
     id: Accept
-    path: ../dotnet/flx.SILQ/Expressions/Binary.cs
-    startLine: 6
+    path: ../dotnet/flx.SILQ/Expressions/Variable.cs
+    startLine: 14
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
+  summary: Accepts a visitor to process this variable expression.
   example: []
   syntax:
     content: public override T Accept<T>(IVisitor<T> visitor)
     parameters:
     - id: visitor
       type: flx.SILQ.Expressions.IVisitor{{T}}
+      description: The visitor that will process the variable expression.
     typeParameters:
     - id: T
     return:
       type: '{T}'
     content.vb: Public Overrides Function Accept(Of T)(visitor As IVisitor(Of T)) As T
   overridden: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{{T}})
-  overload: flx.SILQ.Expressions.Binary.Accept*
-  nameWithType.vb: Binary.Accept(Of T)(IVisitor(Of T))
-  fullName.vb: flx.SILQ.Expressions.Binary.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
+  overload: flx.SILQ.Expressions.Variable.Accept*
+  nameWithType.vb: Variable.Accept(Of T)(IVisitor(Of T))
+  fullName.vb: flx.SILQ.Expressions.Variable.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
   name.vb: Accept(Of T)(IVisitor(Of T))
 references:
 - uid: flx.SILQ.Expressions
@@ -288,26 +233,26 @@ references:
     name: Expression
     href: flx.SILQ.Expressions.Expression.html
   - name: )
-- uid: System.IEquatable{flx.SILQ.Expressions.Binary}
-  commentId: T:System.IEquatable{flx.SILQ.Expressions.Binary}
+- uid: System.IEquatable{flx.SILQ.Expressions.Variable}
+  commentId: T:System.IEquatable{flx.SILQ.Expressions.Variable}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<Binary>
-  nameWithType: IEquatable<Binary>
-  fullName: System.IEquatable<flx.SILQ.Expressions.Binary>
-  nameWithType.vb: IEquatable(Of Binary)
-  fullName.vb: System.IEquatable(Of flx.SILQ.Expressions.Binary)
-  name.vb: IEquatable(Of Binary)
+  name: IEquatable<Variable>
+  nameWithType: IEquatable<Variable>
+  fullName: System.IEquatable<flx.SILQ.Expressions.Variable>
+  nameWithType.vb: IEquatable(Of Variable)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Expressions.Variable)
+  name.vb: IEquatable(Of Variable)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: <
-  - uid: flx.SILQ.Expressions.Binary
-    name: Binary
-    href: flx.SILQ.Expressions.Binary.html
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -317,9 +262,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: flx.SILQ.Expressions.Binary
-    name: Binary
-    href: flx.SILQ.Expressions.Binary.html
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -575,14 +520,14 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: flx.SILQ.Expressions.Binary.#ctor*
-  commentId: Overload:flx.SILQ.Expressions.Binary.#ctor
-  href: flx.SILQ.Expressions.Binary.html#flx_SILQ_Expressions_Binary__ctor_flx_SILQ_Expressions_Expression_flx_SILQ_Models_Token_flx_SILQ_Expressions_Expression_
-  name: Binary
-  nameWithType: Binary.Binary
-  fullName: flx.SILQ.Expressions.Binary.Binary
-  nameWithType.vb: Binary.New
-  fullName.vb: flx.SILQ.Expressions.Binary.New
+- uid: flx.SILQ.Expressions.Variable.#ctor*
+  commentId: Overload:flx.SILQ.Expressions.Variable.#ctor
+  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable__ctor_flx_SILQ_Models_Token_
+  name: Variable
+  nameWithType: Variable.Variable
+  fullName: flx.SILQ.Expressions.Variable.Variable
+  nameWithType.vb: Variable.New
+  fullName.vb: flx.SILQ.Expressions.Variable.New
   name.vb: New
 - uid: flx.SILQ.Models.Token
   commentId: T:flx.SILQ.Models.Token
@@ -621,24 +566,12 @@ references:
   - uid: flx.SILQ.Models
     name: Models
     href: flx.SILQ.Models.html
-- uid: flx.SILQ.Expressions.Binary.Left*
-  commentId: Overload:flx.SILQ.Expressions.Binary.Left
-  href: flx.SILQ.Expressions.Binary.html#flx_SILQ_Expressions_Binary_Left
-  name: Left
-  nameWithType: Binary.Left
-  fullName: flx.SILQ.Expressions.Binary.Left
-- uid: flx.SILQ.Expressions.Binary.Operator*
-  commentId: Overload:flx.SILQ.Expressions.Binary.Operator
-  href: flx.SILQ.Expressions.Binary.html#flx_SILQ_Expressions_Binary_Operator
-  name: Operator
-  nameWithType: Binary.Operator
-  fullName: flx.SILQ.Expressions.Binary.Operator
-- uid: flx.SILQ.Expressions.Binary.Right*
-  commentId: Overload:flx.SILQ.Expressions.Binary.Right
-  href: flx.SILQ.Expressions.Binary.html#flx_SILQ_Expressions_Binary_Right
-  name: Right
-  nameWithType: Binary.Right
-  fullName: flx.SILQ.Expressions.Binary.Right
+- uid: flx.SILQ.Expressions.Variable.Name*
+  commentId: Overload:flx.SILQ.Expressions.Variable.Name
+  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Name
+  name: Name
+  nameWithType: Variable.Name
+  fullName: flx.SILQ.Expressions.Variable.Name
 - uid: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{{T}})
   commentId: M:flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   parent: flx.SILQ.Expressions.Expression
@@ -684,12 +617,12 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: flx.SILQ.Expressions.Binary.Accept*
-  commentId: Overload:flx.SILQ.Expressions.Binary.Accept
-  href: flx.SILQ.Expressions.Binary.html#flx_SILQ_Expressions_Binary_Accept__1_flx_SILQ_Expressions_IVisitor___0__
+- uid: flx.SILQ.Expressions.Variable.Accept*
+  commentId: Overload:flx.SILQ.Expressions.Variable.Accept
+  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Accept__1_flx_SILQ_Expressions_IVisitor___0__
   name: Accept
-  nameWithType: Binary.Accept
-  fullName: flx.SILQ.Expressions.Binary.Accept
+  nameWithType: Variable.Accept
+  fullName: flx.SILQ.Expressions.Variable.Accept
 - uid: flx.SILQ.Expressions.IVisitor{{T}}
   commentId: T:flx.SILQ.Expressions.IVisitor{``0}
   parent: flx.SILQ.Expressions

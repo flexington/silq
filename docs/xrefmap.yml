@@ -13,6 +13,15 @@ references:
   commentId: T:flx.SILQ.Core.Interpreter
   fullName: flx.SILQ.Core.Interpreter
   nameWithType: Interpreter
+- uid: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
+  name: Interpret(List<Statement>)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Interpret_System_Collections_Generic_List_flx_SILQ_Statements_Statement__
+  commentId: M:flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
+  name.vb: Interpret(List(Of Statement))
+  fullName: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List<flx.SILQ.Statements.Statement>)
+  fullName.vb: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List(Of flx.SILQ.Statements.Statement))
+  nameWithType: Interpreter.Interpret(List<Statement>)
+  nameWithType.vb: Interpreter.Interpret(List(Of Statement))
 - uid: flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)
   name: Interpret(Expression)
   href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Interpret_flx_SILQ_Expressions_Expression_
@@ -50,6 +59,30 @@ references:
   commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Unary)
   fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Unary)
   nameWithType: Interpreter.Visit(Unary)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  name: Visit(Variable)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Variable_
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  nameWithType: Interpreter.Visit(Variable)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  name: Visit(From)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_From_
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  nameWithType: Interpreter.Visit(From)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  name: Visit(Print)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_Print_
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  nameWithType: Interpreter.Visit(Print)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  name: Visit(Where)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_Where_
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  nameWithType: Interpreter.Visit(Where)
 - uid: flx.SILQ.Core.Interpreter.Visit*
   name: Visit
   href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Visit_
@@ -79,6 +112,22 @@ references:
   isSpec: "True"
   fullName: flx.SILQ.Core.Parser.ParseExpression
   nameWithType: Parser.ParseExpression
+- uid: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  name: ParseStatements(List<Token>)
+  href: api/flx.SILQ.Core.Parser.html#flx_SILQ_Core_Parser_ParseStatements_System_Collections_Generic_List_flx_SILQ_Models_Token__
+  commentId: M:flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  name.vb: ParseStatements(List(Of Token))
+  fullName: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List<flx.SILQ.Models.Token>)
+  fullName.vb: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List(Of flx.SILQ.Models.Token))
+  nameWithType: Parser.ParseStatements(List<Token>)
+  nameWithType.vb: Parser.ParseStatements(List(Of Token))
+- uid: flx.SILQ.Core.Parser.ParseStatements*
+  name: ParseStatements
+  href: api/flx.SILQ.Core.Parser.html#flx_SILQ_Core_Parser_ParseStatements_
+  commentId: Overload:flx.SILQ.Core.Parser.ParseStatements
+  isSpec: "True"
+  fullName: flx.SILQ.Core.Parser.ParseStatements
+  nameWithType: Parser.ParseStatements
 - uid: flx.SILQ.Core.Tokenizer
   name: Tokenizer
   href: api/flx.SILQ.Core.Tokenizer.html
@@ -472,6 +521,14 @@ references:
   fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Unary)
   nameWithType: IVisitor<T>.Visit(Unary)
   nameWithType.vb: IVisitor(Of T).Visit(Unary)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  name: Visit(Variable)
+  href: api/flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Variable)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Variable)
+  nameWithType: IVisitor<T>.Visit(Variable)
+  nameWithType.vb: IVisitor(Of T).Visit(Variable)
 - uid: flx.SILQ.Expressions.IVisitor`1.Visit*
   name: Visit
   href: api/flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_
@@ -602,6 +659,60 @@ references:
   isSpec: "True"
   fullName: flx.SILQ.Expressions.Unary.Right
   nameWithType: Unary.Right
+- uid: flx.SILQ.Expressions.Variable
+  name: Variable
+  href: api/flx.SILQ.Expressions.Variable.html
+  commentId: T:flx.SILQ.Expressions.Variable
+  fullName: flx.SILQ.Expressions.Variable
+  nameWithType: Variable
+- uid: flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  name: Variable(Token)
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable__ctor_flx_SILQ_Models_Token_
+  commentId: M:flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  name.vb: New(Token)
+  fullName: flx.SILQ.Expressions.Variable.Variable(flx.SILQ.Models.Token)
+  fullName.vb: flx.SILQ.Expressions.Variable.New(flx.SILQ.Models.Token)
+  nameWithType: Variable.Variable(Token)
+  nameWithType.vb: Variable.New(Token)
+- uid: flx.SILQ.Expressions.Variable.#ctor*
+  name: Variable
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable__ctor_
+  commentId: Overload:flx.SILQ.Expressions.Variable.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: flx.SILQ.Expressions.Variable.Variable
+  fullName.vb: flx.SILQ.Expressions.Variable.New
+  nameWithType: Variable.Variable
+  nameWithType.vb: Variable.New
+- uid: flx.SILQ.Expressions.Variable.Accept*
+  name: Accept
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Accept_
+  commentId: Overload:flx.SILQ.Expressions.Variable.Accept
+  isSpec: "True"
+  fullName: flx.SILQ.Expressions.Variable.Accept
+  nameWithType: Variable.Accept
+- uid: flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  name: Accept<T>(IVisitor<T>)
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Accept__1_flx_SILQ_Expressions_IVisitor___0__
+  commentId: M:flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  name.vb: Accept(Of T)(IVisitor(Of T))
+  fullName: flx.SILQ.Expressions.Variable.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
+  fullName.vb: flx.SILQ.Expressions.Variable.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
+  nameWithType: Variable.Accept<T>(IVisitor<T>)
+  nameWithType.vb: Variable.Accept(Of T)(IVisitor(Of T))
+- uid: flx.SILQ.Expressions.Variable.Name
+  name: Name
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Name
+  commentId: P:flx.SILQ.Expressions.Variable.Name
+  fullName: flx.SILQ.Expressions.Variable.Name
+  nameWithType: Variable.Name
+- uid: flx.SILQ.Expressions.Variable.Name*
+  name: Name
+  href: api/flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Name_
+  commentId: Overload:flx.SILQ.Expressions.Variable.Name
+  isSpec: "True"
+  fullName: flx.SILQ.Expressions.Variable.Name
+  nameWithType: Variable.Name
 - uid: flx.SILQ.Models
   name: flx.SILQ.Models
   href: api/flx.SILQ.Models.html
@@ -1016,3 +1127,212 @@ references:
   commentId: F:flx.SILQ.Models.TokenType.WHERE
   fullName: flx.SILQ.Models.TokenType.WHERE
   nameWithType: TokenType.WHERE
+- uid: flx.SILQ.Statements
+  name: flx.SILQ.Statements
+  href: api/flx.SILQ.Statements.html
+  commentId: N:flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+- uid: flx.SILQ.Statements.From
+  name: From
+  href: api/flx.SILQ.Statements.From.html
+  commentId: T:flx.SILQ.Statements.From
+  fullName: flx.SILQ.Statements.From
+  nameWithType: From
+- uid: flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
+  name: From(Expression)
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Expression_
+  commentId: M:flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
+  name.vb: New(Expression)
+  fullName: flx.SILQ.Statements.From.From(flx.SILQ.Expressions.Expression)
+  fullName.vb: flx.SILQ.Statements.From.New(flx.SILQ.Expressions.Expression)
+  nameWithType: From.From(Expression)
+  nameWithType.vb: From.New(Expression)
+- uid: flx.SILQ.Statements.From.#ctor*
+  name: From
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_
+  commentId: Overload:flx.SILQ.Statements.From.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: flx.SILQ.Statements.From.From
+  fullName.vb: flx.SILQ.Statements.From.New
+  nameWithType: From.From
+  nameWithType.vb: From.New
+- uid: flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  name: Accept(IVisitor)
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Accept_flx_SILQ_Statements_IVisitor_
+  commentId: M:flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  fullName: flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  nameWithType: From.Accept(IVisitor)
+- uid: flx.SILQ.Statements.From.Accept*
+  name: Accept
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Accept_
+  commentId: Overload:flx.SILQ.Statements.From.Accept
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.From.Accept
+  nameWithType: From.Accept
+- uid: flx.SILQ.Statements.From.Expression
+  name: Expression
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Expression
+  commentId: P:flx.SILQ.Statements.From.Expression
+  fullName: flx.SILQ.Statements.From.Expression
+  nameWithType: From.Expression
+- uid: flx.SILQ.Statements.From.Expression*
+  name: Expression
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Expression_
+  commentId: Overload:flx.SILQ.Statements.From.Expression
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.From.Expression
+  nameWithType: From.Expression
+- uid: flx.SILQ.Statements.IVisitor
+  name: IVisitor
+  href: api/flx.SILQ.Statements.IVisitor.html
+  commentId: T:flx.SILQ.Statements.IVisitor
+  fullName: flx.SILQ.Statements.IVisitor
+  nameWithType: IVisitor
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  name: Visit(From)
+  href: api/flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_From_
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  nameWithType: IVisitor.Visit(From)
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  name: Visit(Print)
+  href: api/flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  nameWithType: IVisitor.Visit(Print)
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  name: Visit(Where)
+  href: api/flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Where_
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  nameWithType: IVisitor.Visit(Where)
+- uid: flx.SILQ.Statements.IVisitor.Visit*
+  name: Visit
+  href: api/flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_
+  commentId: Overload:flx.SILQ.Statements.IVisitor.Visit
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.IVisitor.Visit
+  nameWithType: IVisitor.Visit
+- uid: flx.SILQ.Statements.Print
+  name: Print
+  href: api/flx.SILQ.Statements.Print.html
+  commentId: T:flx.SILQ.Statements.Print
+  fullName: flx.SILQ.Statements.Print
+  nameWithType: Print
+- uid: flx.SILQ.Statements.Print.#ctor(flx.SILQ.Expressions.Expression)
+  name: Print(Expression)
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print__ctor_flx_SILQ_Expressions_Expression_
+  commentId: M:flx.SILQ.Statements.Print.#ctor(flx.SILQ.Expressions.Expression)
+  name.vb: New(Expression)
+  fullName: flx.SILQ.Statements.Print.Print(flx.SILQ.Expressions.Expression)
+  fullName.vb: flx.SILQ.Statements.Print.New(flx.SILQ.Expressions.Expression)
+  nameWithType: Print.Print(Expression)
+  nameWithType.vb: Print.New(Expression)
+- uid: flx.SILQ.Statements.Print.#ctor*
+  name: Print
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print__ctor_
+  commentId: Overload:flx.SILQ.Statements.Print.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: flx.SILQ.Statements.Print.Print
+  fullName.vb: flx.SILQ.Statements.Print.New
+  nameWithType: Print.Print
+  nameWithType.vb: Print.New
+- uid: flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
+  name: Accept(IVisitor)
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Accept_flx_SILQ_Statements_IVisitor_
+  commentId: M:flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
+  fullName: flx.SILQ.Statements.Print.Accept(flx.SILQ.Statements.IVisitor)
+  nameWithType: Print.Accept(IVisitor)
+- uid: flx.SILQ.Statements.Print.Accept*
+  name: Accept
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Accept_
+  commentId: Overload:flx.SILQ.Statements.Print.Accept
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.Print.Accept
+  nameWithType: Print.Accept
+- uid: flx.SILQ.Statements.Print.Expression
+  name: Expression
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Expression
+  commentId: P:flx.SILQ.Statements.Print.Expression
+  fullName: flx.SILQ.Statements.Print.Expression
+  nameWithType: Print.Expression
+- uid: flx.SILQ.Statements.Print.Expression*
+  name: Expression
+  href: api/flx.SILQ.Statements.Print.html#flx_SILQ_Statements_Print_Expression_
+  commentId: Overload:flx.SILQ.Statements.Print.Expression
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.Print.Expression
+  nameWithType: Print.Expression
+- uid: flx.SILQ.Statements.Statement
+  name: Statement
+  href: api/flx.SILQ.Statements.Statement.html
+  commentId: T:flx.SILQ.Statements.Statement
+  fullName: flx.SILQ.Statements.Statement
+  nameWithType: Statement
+- uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  name: Accept(IVisitor)
+  href: api/flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
+  commentId: M:flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  fullName: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  nameWithType: Statement.Accept(IVisitor)
+- uid: flx.SILQ.Statements.Statement.Accept*
+  name: Accept
+  href: api/flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_
+  commentId: Overload:flx.SILQ.Statements.Statement.Accept
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.Statement.Accept
+  nameWithType: Statement.Accept
+- uid: flx.SILQ.Statements.Where
+  name: Where
+  href: api/flx.SILQ.Statements.Where.html
+  commentId: T:flx.SILQ.Statements.Where
+  fullName: flx.SILQ.Statements.Where
+  nameWithType: Where
+- uid: flx.SILQ.Statements.Where.#ctor(flx.SILQ.Expressions.Expression)
+  name: Where(Expression)
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where__ctor_flx_SILQ_Expressions_Expression_
+  commentId: M:flx.SILQ.Statements.Where.#ctor(flx.SILQ.Expressions.Expression)
+  name.vb: New(Expression)
+  fullName: flx.SILQ.Statements.Where.Where(flx.SILQ.Expressions.Expression)
+  fullName.vb: flx.SILQ.Statements.Where.New(flx.SILQ.Expressions.Expression)
+  nameWithType: Where.Where(Expression)
+  nameWithType.vb: Where.New(Expression)
+- uid: flx.SILQ.Statements.Where.#ctor*
+  name: Where
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where__ctor_
+  commentId: Overload:flx.SILQ.Statements.Where.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: flx.SILQ.Statements.Where.Where
+  fullName.vb: flx.SILQ.Statements.Where.New
+  nameWithType: Where.Where
+  nameWithType.vb: Where.New
+- uid: flx.SILQ.Statements.Where.Accept(flx.SILQ.Statements.IVisitor)
+  name: Accept(IVisitor)
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where_Accept_flx_SILQ_Statements_IVisitor_
+  commentId: M:flx.SILQ.Statements.Where.Accept(flx.SILQ.Statements.IVisitor)
+  fullName: flx.SILQ.Statements.Where.Accept(flx.SILQ.Statements.IVisitor)
+  nameWithType: Where.Accept(IVisitor)
+- uid: flx.SILQ.Statements.Where.Accept*
+  name: Accept
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where_Accept_
+  commentId: Overload:flx.SILQ.Statements.Where.Accept
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.Where.Accept
+  nameWithType: Where.Accept
+- uid: flx.SILQ.Statements.Where.Expression
+  name: Expression
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where_Expression
+  commentId: P:flx.SILQ.Statements.Where.Expression
+  fullName: flx.SILQ.Statements.Where.Expression
+  nameWithType: Where.Expression
+- uid: flx.SILQ.Statements.Where.Expression*
+  name: Expression
+  href: api/flx.SILQ.Statements.Where.html#flx_SILQ_Statements_Where_Expression_
+  commentId: Overload:flx.SILQ.Statements.Where.Expression
+  isSpec: "True"
+  fullName: flx.SILQ.Statements.Where.Expression
+  nameWithType: Where.Expression

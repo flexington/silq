@@ -5,11 +5,16 @@ items:
   id: Interpreter
   parent: flx.SILQ.Core
   children:
+  - flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
   - flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)
   - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Binary)
   - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Grouping)
   - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Literal)
   - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Unary)
+  - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
   langs:
   - csharp
   - vb
@@ -19,11 +24,11 @@ items:
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: chor/sandr0-p/docs
+      path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Interpreter
-    path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
     startLine: 9
   assemblies:
   - flx.SILQ
@@ -31,12 +36,13 @@ items:
   summary: Provides core evaluation logic for the SILQ interpreter, including arithmetic operations, type checking, and expression evaluation.
   example: []
   syntax:
-    content: 'public class Interpreter : IVisitor<object>'
-    content.vb: Public Class Interpreter Implements IVisitor(Of Object)
+    content: 'public class Interpreter : IVisitor<object>, IVisitor'
+    content.vb: Public Class Interpreter Implements IVisitor(Of Object), IVisitor
   inheritance:
   - System.Object
   implements:
   - flx.SILQ.Expressions.IVisitor{System.Object}
+  - flx.SILQ.Statements.IVisitor
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -59,11 +65,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Base.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Interpret
     path: ../dotnet/flx.SILQ/Core/Interpreter.Base.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -80,6 +86,44 @@ items:
       description: The string representation of the evaluated expression.
     content.vb: Public Function Interpret(expression As Expression) As String
   overload: flx.SILQ.Core.Interpreter.Interpret*
+- uid: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
+  commentId: M:flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
+  id: Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Interpret(List<Statement>)
+  nameWithType: Interpreter.Interpret(List<Statement>)
+  fullName: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List<flx.SILQ.Statements.Statement>)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Base.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Interpret
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Base.cs
+    startLine: 37
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: >-
+    Interprets a list of statements by executing each statement in order.
+
+    Throws a <xref href="flx.SILQ.Errors.RuntimeError" data-throw-if-not-resolved="false"></xref> if an error occurs during execution.
+  example: []
+  syntax:
+    content: public void Interpret(List<Statement> statements)
+    parameters:
+    - id: statements
+      type: System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+      description: The list of statements to interpret.
+    content.vb: Public Sub Interpret(statements As List(Of Statement))
+  overload: flx.SILQ.Core.Interpreter.Interpret*
+  nameWithType.vb: Interpreter.Interpret(List(Of Statement))
+  fullName.vb: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List(Of flx.SILQ.Statements.Statement))
+  name.vb: Interpret(List(Of Statement))
 - uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Literal)
   commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Literal)
   id: Visit(flx.SILQ.Expressions.Literal)
@@ -94,7 +138,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -131,7 +175,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -168,7 +212,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -205,7 +249,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -228,6 +272,148 @@ items:
   overload: flx.SILQ.Core.Interpreter.Visit*
   implements:
   - flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Grouping)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  id: Visit(flx.SILQ.Expressions.Variable)
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Visit(Variable)
+  nameWithType: Interpreter.Visit(Variable)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
+    startLine: 100
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: Visits a <xref href="flx.SILQ.Expressions.Variable" data-throw-if-not-resolved="false"></xref> expression and retrieves its value from the environment.
+  example: []
+  syntax:
+    content: public object Visit(Variable variable)
+    parameters:
+    - id: variable
+      type: flx.SILQ.Expressions.Variable
+      description: The variable expression to evaluate.
+    return:
+      type: System.Object
+      description: The value of the variable from the environment.
+    content.vb: Public Function Visit(variable As Variable) As Object
+  overload: flx.SILQ.Core.Interpreter.Visit*
+  implements:
+  - flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Variable)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  id: Visit(flx.SILQ.Statements.Print)
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Visit(Print)
+  nameWithType: Interpreter.Visit(Print)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+    startLine: 16
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: >-
+    Implements the visitor method for the <xref href="flx.SILQ.Statements.Print" data-throw-if-not-resolved="false"></xref> statement.
+
+    Evaluates the expression and writes its string representation to the console.
+  example: []
+  syntax:
+    content: public void Visit(Print print)
+    parameters:
+    - id: print
+      type: flx.SILQ.Statements.Print
+      description: The print statement to execute.
+    content.vb: Public Sub Visit(print As Print)
+  overload: flx.SILQ.Core.Interpreter.Visit*
+  implements:
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  id: Visit(flx.SILQ.Statements.From)
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Visit(From)
+  nameWithType: Interpreter.Visit(From)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+    startLine: 26
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: Implements the visitor method for the <xref href="flx.SILQ.Statements.From" data-throw-if-not-resolved="false"></xref> statement.
+  example: []
+  syntax:
+    content: public void Visit(From from)
+    parameters:
+    - id: from
+      type: flx.SILQ.Statements.From
+      description: The "From" statement to process.
+    content.vb: Public Sub Visit(from As From)
+  overload: flx.SILQ.Core.Interpreter.Visit*
+  implements:
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+- uid: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  commentId: M:flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  id: Visit(flx.SILQ.Statements.Where)
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Visit(Where)
+  nameWithType: Interpreter.Visit(Where)
+  fullName: flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
+    startLine: 35
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: Implements the visitor method for the <xref href="flx.SILQ.Statements.Where" data-throw-if-not-resolved="false"></xref> statement.
+  example: []
+  syntax:
+    content: public void Visit(Where where)
+    parameters:
+    - id: where
+      type: flx.SILQ.Statements.Where
+      description: The "Where" statement to process.
+    content.vb: Public Sub Visit(where As Where)
+  overload: flx.SILQ.Core.Interpreter.Visit*
+  implements:
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
 references:
 - uid: flx.SILQ.Core
   commentId: N:flx.SILQ.Core
@@ -303,6 +489,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: flx.SILQ.Statements.IVisitor
+  commentId: T:flx.SILQ.Statements.IVisitor
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.IVisitor.html
+  name: IVisitor
+  nameWithType: IVisitor
+  fullName: flx.SILQ.Statements.IVisitor
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -584,6 +777,36 @@ references:
   - uid: flx.SILQ.Expressions
     name: Expressions
     href: flx.SILQ.Expressions.html
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
+  href: flx.html
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
 - uid: flx.SILQ.Core.Interpreter.Interpret*
   commentId: Overload:flx.SILQ.Core.Interpreter.Interpret
   href: flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Interpret_flx_SILQ_Expressions_Expression_
@@ -608,6 +831,110 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: flx.SILQ.Errors.RuntimeError
+  commentId: T:flx.SILQ.Errors.RuntimeError
+  href: flx.SILQ.Errors.RuntimeError.html
+  name: RuntimeError
+  nameWithType: RuntimeError
+  fullName: flx.SILQ.Errors.RuntimeError
+- uid: System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+  commentId: T:System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Statement>
+  nameWithType: List<Statement>
+  fullName: System.Collections.Generic.List<flx.SILQ.Statements.Statement>
+  nameWithType.vb: List(Of Statement)
+  fullName.vb: System.Collections.Generic.List(Of flx.SILQ.Statements.Statement)
+  name.vb: List(Of Statement)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: flx.SILQ.Expressions.Literal
   commentId: T:flx.SILQ.Expressions.Literal
   parent: flx.SILQ.Expressions
@@ -857,4 +1184,161 @@ references:
   - uid: flx.SILQ.Expressions.Grouping
     name: Grouping
     href: flx.SILQ.Expressions.Grouping.html
+  - name: )
+- uid: flx.SILQ.Expressions.Variable
+  commentId: T:flx.SILQ.Expressions.Variable
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Variable.html
+  name: Variable
+  nameWithType: Variable
+  fullName: flx.SILQ.Expressions.Variable
+- uid: flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Variable)
+  commentId: M:flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Variable)
+  parent: flx.SILQ.Expressions.IVisitor{System.Object}
+  definition: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  name: Visit(Variable)
+  nameWithType: IVisitor<object>.Visit(Variable)
+  fullName: flx.SILQ.Expressions.IVisitor<object>.Visit(flx.SILQ.Expressions.Variable)
+  nameWithType.vb: IVisitor(Of Object).Visit(Variable)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of Object).Visit(flx.SILQ.Expressions.Variable)
+  spec.csharp:
+  - uid: flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Variable)
+    name: Visit
+    href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  - name: (
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Expressions.IVisitor{System.Object}.Visit(flx.SILQ.Expressions.Variable)
+    name: Visit
+    href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  - name: (
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
+  - name: )
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  name: Visit(Variable)
+  nameWithType: IVisitor<T>.Visit(Variable)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Variable)
+  nameWithType.vb: IVisitor(Of T).Visit(Variable)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Variable)
+  spec.csharp:
+  - uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+    name: Visit
+    href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  - name: (
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+    name: Visit
+    href: flx.SILQ.Expressions.IVisitor-1.html#flx_SILQ_Expressions_IVisitor_1_Visit_flx_SILQ_Expressions_Variable_
+  - name: (
+  - uid: flx.SILQ.Expressions.Variable
+    name: Variable
+    href: flx.SILQ.Expressions.Variable.html
+  - name: )
+- uid: flx.SILQ.Statements.Print
+  commentId: T:flx.SILQ.Statements.Print
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Print.html
+  name: Print
+  nameWithType: Print
+  fullName: flx.SILQ.Statements.Print
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  parent: flx.SILQ.Statements.IVisitor
+  href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_
+  name: Visit(Print)
+  nameWithType: IVisitor.Visit(Print)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  spec.csharp:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_
+  - name: (
+  - uid: flx.SILQ.Statements.Print
+    name: Print
+    href: flx.SILQ.Statements.Print.html
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_
+  - name: (
+  - uid: flx.SILQ.Statements.Print
+    name: Print
+    href: flx.SILQ.Statements.Print.html
+  - name: )
+- uid: flx.SILQ.Statements.From
+  commentId: T:flx.SILQ.Statements.From
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.From.html
+  name: From
+  nameWithType: From
+  fullName: flx.SILQ.Statements.From
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  parent: flx.SILQ.Statements.IVisitor
+  href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_From_
+  name: Visit(From)
+  nameWithType: IVisitor.Visit(From)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  spec.csharp:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_From_
+  - name: (
+  - uid: flx.SILQ.Statements.From
+    name: From
+    href: flx.SILQ.Statements.From.html
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_From_
+  - name: (
+  - uid: flx.SILQ.Statements.From
+    name: From
+    href: flx.SILQ.Statements.From.html
+  - name: )
+- uid: flx.SILQ.Statements.Where
+  commentId: T:flx.SILQ.Statements.Where
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Where.html
+  name: Where
+  nameWithType: Where
+  fullName: flx.SILQ.Statements.Where
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  parent: flx.SILQ.Statements.IVisitor
+  href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Where_
+  name: Visit(Where)
+  nameWithType: IVisitor.Visit(Where)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+  spec.csharp:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Where_
+  - name: (
+  - uid: flx.SILQ.Statements.Where
+    name: Where
+    href: flx.SILQ.Statements.Where.html
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
+    name: Visit
+    href: flx.SILQ.Statements.IVisitor.html#flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Where_
+  - name: (
+  - uid: flx.SILQ.Statements.Where
+    name: Where
+    href: flx.SILQ.Statements.Where.html
   - name: )

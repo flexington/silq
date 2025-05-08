@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: TokenType
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: AND
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: AS
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -135,7 +135,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: BANG
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: BANG_EQUAL
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -191,7 +191,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: COUNT
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -219,7 +219,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: DOT
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -247,7 +247,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: EOF
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -275,7 +275,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: EQUAL
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -303,7 +303,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: EQUAL_EQUAL
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -331,7 +331,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: "FALSE"
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -359,7 +359,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: FIRST
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -387,7 +387,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: FROM
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -415,7 +415,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: GREATER
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -443,7 +443,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: GREATER_EQUAL
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -471,7 +471,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: IN
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -499,7 +499,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: IDENTIFIER
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -527,7 +527,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: IS
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -555,7 +555,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: LAST
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -583,7 +583,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: LEFT_PAREN
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -611,7 +611,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: LESS
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -637,7 +637,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: LESS_EQUAL
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -663,7 +663,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: LIKE
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -691,7 +691,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: MINUS
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -719,7 +719,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: NOT
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -747,7 +747,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: "NULL"
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -775,7 +775,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: NUMBER
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -803,7 +803,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: OR
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -831,7 +831,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: PLUS
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -859,7 +859,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: PRINT
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -887,7 +887,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: RIGHT_PAREN
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -915,7 +915,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: SELECT
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -943,7 +943,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: SEMICOLON
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -971,7 +971,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: SLASH
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -999,7 +999,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: STAR
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -1027,7 +1027,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: STRING
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -1055,7 +1055,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: "TRUE"
     path: ../dotnet/flx.SILQ/Models/TokenType.cs
@@ -1083,7 +1083,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/TokenType.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: WHERE
     path: ../dotnet/flx.SILQ/Models/TokenType.cs

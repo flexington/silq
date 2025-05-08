@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/chor/sandr0-p/docs/apiSpec/new?filename=flx_SILQ_Core_Interpreter.md&amp;value=---%0Auid%3A%20flx.SILQ.Core.Interpreter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/main/apiSpec/new?filename=flx_SILQ_Core_Interpreter.md&amp;value=---%0Auid%3A%20flx.SILQ.Core.Interpreter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="flx_SILQ_Core_Interpreter" data-uid="flx.SILQ.Core.Interpreter" class="text-break">
-Class Interpreter  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class Interpreter  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Statement.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Interpreter : IVisitor&lt;object&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Interpreter : IVisitor&lt;object&gt;, IVisitor</code></pre>
   </div>
 
 
@@ -120,6 +120,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="flx.SILQ.Expressions.IVisitor-1.html">IVisitor</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</div>
+      <div><a class="xref" href="flx.SILQ.Statements.IVisitor.html">IVisitor</a></div>
     </dd>
   </dl>
 
@@ -161,9 +162,43 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
   <a id="flx_SILQ_Core_Interpreter_Interpret_" data-uid="flx.SILQ.Core.Interpreter.Interpret*"></a>
 
+  <h3 id="flx_SILQ_Core_Interpreter_Interpret_System_Collections_Generic_List_flx_SILQ_Statements_Statement__" data-uid="flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})">
+  Interpret(List&lt;Statement&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Base.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Interprets a list of statements by executing each statement in order.
+Throws a <a class="xref" href="flx.SILQ.Errors.RuntimeError.html">RuntimeError</a> if an error occurs during execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Interpret(List&lt;Statement&gt; statements)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>statements</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a>&gt;</dt>
+    <dd><p>The list of statements to interpret.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Core_Interpreter_Interpret_" data-uid="flx.SILQ.Core.Interpreter.Interpret*"></a>
+
   <h3 id="flx_SILQ_Core_Interpreter_Interpret_flx_SILQ_Expressions_Expression_" data-uid="flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)">
   Interpret(Expression)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Base.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Base.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Interprets the given expression by evaluating it and converting the result to a string.</p>
@@ -202,7 +237,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Binary_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Binary)">
   Visit(Binary)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Expressions.Binary.html">Binary</a> expression and evaluates it according to its operator and operands.</p>
@@ -241,7 +276,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Grouping_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Grouping)">
   Visit(Grouping)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Expressions.Grouping.html">Grouping</a> expression and evaluates its contained expression.</p>
@@ -280,7 +315,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Literal_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Literal)">
   Visit(Literal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Expressions.Literal.html">Literal</a> expression and returns its value, converting to double if possible.</p>
@@ -319,7 +354,7 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Unary_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Unary)">
   Visit(Unary)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Expressions.Unary.html">Unary</a> expression and evaluates it according to its operator.</p>
@@ -354,11 +389,150 @@ Class Interpreter  <a class="header-action link-secondary" title="View source" h
 
 
 
+  <a id="flx_SILQ_Core_Interpreter_Visit_" data-uid="flx.SILQ.Core.Interpreter.Visit*"></a>
+
+  <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Expressions_Variable_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Variable)">
+  Visit(Variable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a> expression and retrieves its value from the environment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Visit(Variable variable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>variable</code> <a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a></dt>
+    <dd><p>The variable expression to evaluate.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value of the variable from the environment.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Core_Interpreter_Visit_" data-uid="flx.SILQ.Core.Interpreter.Visit*"></a>
+
+  <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_From_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.From)">
+  Visit(From)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Statement.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the visitor method for the <a class="xref" href="flx.SILQ.Statements.From.html">From</a> statement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Visit(From from)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="flx.SILQ.Statements.From.html">From</a></dt>
+    <dd><p>The &quot;From&quot; statement to process.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Core_Interpreter_Visit_" data-uid="flx.SILQ.Core.Interpreter.Visit*"></a>
+
+  <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_Print_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Print)">
+  Visit(Print)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Statement.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the visitor method for the <a class="xref" href="flx.SILQ.Statements.Print.html">Print</a> statement.
+Evaluates the expression and writes its string representation to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Visit(Print print)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>print</code> <a class="xref" href="flx.SILQ.Statements.Print.html">Print</a></dt>
+    <dd><p>The print statement to execute.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Core_Interpreter_Visit_" data-uid="flx.SILQ.Core.Interpreter.Visit*"></a>
+
+  <h3 id="flx_SILQ_Core_Interpreter_Visit_flx_SILQ_Statements_Where_" data-uid="flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Statements.Where)">
+  Visit(Where)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Statement.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the visitor method for the <a class="xref" href="flx.SILQ.Statements.Where.html">Where</a> statement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Visit(Where where)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>where</code> <a class="xref" href="flx.SILQ.Statements.Where.html">Where</a></dt>
+    <dd><p>The &quot;Where&quot; statement to process.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/chor/sandr0-p/docs/dotnet/flx.SILQ/Core/Interpreter.Expression.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/main/dotnet/flx.SILQ/Core/Interpreter.Statement.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

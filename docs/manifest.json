@@ -36,7 +36,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "flx.SILQ.Core.Parser",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Core.Parser.yml\" sourcestartlinenumber=\"1\">Provides utility methods for parsing tokens into expressions and statements in the SILQ language.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -208,6 +208,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Variable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Variable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Variable",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Expressions.Variable.yml\" sourcestartlinenumber=\"1\">Represents a variable expression in the syntax tree.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/flx.SILQ.Expressions.yml",
       "output": {
         ".html": {
@@ -274,6 +288,90 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "flx.SILQ.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.From.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.From.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.From",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.From.yml\" sourcestartlinenumber=\"1\">Represents a &quot;from&quot; statement in the SILQ language.\nThis statement is used to specify the source of data for a query.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.IVisitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.IVisitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.IVisitor",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.IVisitor.yml\" sourcestartlinenumber=\"1\">Visitor interface for statement nodes in the SILQ AST.\nImplementations should provide logic for each supported statement type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.Print.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.Print.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.Print",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.Print.yml\" sourcestartlinenumber=\"1\">Represents a print statement in the SILQ language.\nWhen executed, evaluates the contained expression and outputs its value.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.Statement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.Statement.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.Statement",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.Statement.yml\" sourcestartlinenumber=\"1\">Represents the abstract base class for all statement nodes in the SILQ abstract syntax tree (AST).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.Where.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.Where.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.Where",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.Where.yml\" sourcestartlinenumber=\"1\">Represents a &quot;Where&quot; statement in the SILQ language.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements",
       "Summary": null
     },
     {

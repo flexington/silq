@@ -10,6 +10,7 @@ items:
   - flx.SILQ.Expressions.IVisitor`1
   - flx.SILQ.Expressions.Literal
   - flx.SILQ.Expressions.Unary
+  - flx.SILQ.Expressions.Variable
   langs:
   - csharp
   - vb
@@ -80,6 +81,13 @@ references:
   name: Unary
   nameWithType: Unary
   fullName: flx.SILQ.Expressions.Unary
+- uid: flx.SILQ.Expressions.Variable
+  commentId: T:flx.SILQ.Expressions.Variable
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Variable.html
+  name: Variable
+  nameWithType: Variable
+  fullName: flx.SILQ.Expressions.Variable
 - uid: flx.SILQ.Expressions
   commentId: N:flx.SILQ.Expressions
   href: flx.html

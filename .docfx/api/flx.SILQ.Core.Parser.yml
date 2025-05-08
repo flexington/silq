@@ -6,6 +6,7 @@ items:
   parent: flx.SILQ.Core
   children:
   - flx.SILQ.Core.Parser.ParseExpression(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  - flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
   langs:
   - csharp
   - vb
@@ -15,15 +16,17 @@ items:
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Core/Parser.Expression.cs
-      branch: chor/sandr0-p/docs
+      path: dotnet/flx.SILQ/Core/Parser.Statement.cs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Parser
-    path: ../dotnet/flx.SILQ/Core/Parser.Expression.cs
-    startLine: 7
+    path: ../dotnet/flx.SILQ/Core/Parser.Statement.cs
+    startLine: 12
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
+  summary: Provides utility methods for parsing tokens into expressions and statements in the SILQ language.
+  example: []
   syntax:
     content: public class Parser
     content.vb: Public Class Parser
@@ -51,26 +54,72 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Parser.Expression.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: ParseExpression
     path: ../dotnet/flx.SILQ/Core/Parser.Expression.cs
-    startLine: 12
+    startLine: 18
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
+  summary: Parses a list of tokens into an expression AST.
+  example: []
   syntax:
     content: public Expression ParseExpression(List<Token> tokens)
     parameters:
     - id: tokens
       type: System.Collections.Generic.List{flx.SILQ.Models.Token}
+      description: The list of tokens to parse.
     return:
       type: flx.SILQ.Expressions.Expression
+      description: The root <xref href="flx.SILQ.Core.Parser.Expression" data-throw-if-not-resolved="false"></xref> node.
     content.vb: Public Function ParseExpression(tokens As List(Of Token)) As Expression
   overload: flx.SILQ.Core.Parser.ParseExpression*
+  exceptions:
+  - type: flx.SILQ.Errors.ParserError
+    commentId: T:flx.SILQ.Errors.ParserError
+    description: Thrown if the token list is empty or parsing fails.
   nameWithType.vb: Parser.ParseExpression(List(Of Token))
   fullName.vb: flx.SILQ.Core.Parser.ParseExpression(System.Collections.Generic.List(Of flx.SILQ.Models.Token))
   name.vb: ParseExpression(List(Of Token))
+- uid: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  commentId: M:flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  id: ParseStatements(System.Collections.Generic.List{flx.SILQ.Models.Token})
+  parent: flx.SILQ.Core.Parser
+  langs:
+  - csharp
+  - vb
+  name: ParseStatements(List<Token>)
+  nameWithType: Parser.ParseStatements(List<Token>)
+  fullName: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List<flx.SILQ.Models.Token>)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Parser.Statement.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: ParseStatements
+    path: ../dotnet/flx.SILQ/Core/Parser.Statement.cs
+    startLine: 19
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: Parses a list of tokens into a list of statements.
+  example: []
+  syntax:
+    content: public List<Statement> ParseStatements(List<Token> tokens)
+    parameters:
+    - id: tokens
+      type: System.Collections.Generic.List{flx.SILQ.Models.Token}
+      description: The list of tokens to parse.
+    return:
+      type: System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+      description: A list of parsed <xref href="flx.SILQ.Core.Parser.Statement" data-throw-if-not-resolved="false"></xref> objects.
+    content.vb: Public Function ParseStatements(tokens As List(Of Token)) As List(Of Statement)
+  overload: flx.SILQ.Core.Parser.ParseStatements*
+  nameWithType.vb: Parser.ParseStatements(List(Of Token))
+  fullName.vb: flx.SILQ.Core.Parser.ParseStatements(System.Collections.Generic.List(Of flx.SILQ.Models.Token))
+  name.vb: ParseStatements(List(Of Token))
 references:
 - uid: flx.SILQ.Core
   commentId: N:flx.SILQ.Core
@@ -339,6 +388,27 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: flx.SILQ.Core.Parser.Expression
+  commentId: M:flx.SILQ.Core.Parser.Expression
+  name: Expression()
+  nameWithType: Parser.Expression()
+  fullName: flx.SILQ.Core.Parser.Expression()
+  spec.csharp:
+  - uid: flx.SILQ.Core.Parser.Expression
+    name: Expression
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Core.Parser.Expression
+    name: Expression
+  - name: (
+  - name: )
+- uid: flx.SILQ.Errors.ParserError
+  commentId: T:flx.SILQ.Errors.ParserError
+  href: flx.SILQ.Errors.ParserError.html
+  name: ParserError
+  nameWithType: ParserError
+  fullName: flx.SILQ.Errors.ParserError
 - uid: flx.SILQ.Core.Parser.ParseExpression*
   commentId: Overload:flx.SILQ.Core.Parser.ParseExpression
   href: flx.SILQ.Core.Parser.html#flx_SILQ_Core_Parser_ParseExpression_System_Collections_Generic_List_flx_SILQ_Models_Token__
@@ -480,3 +550,57 @@ references:
   - uid: flx.SILQ.Expressions
     name: Expressions
     href: flx.SILQ.Expressions.html
+- uid: flx.SILQ.Core.Parser.Statement
+  commentId: M:flx.SILQ.Core.Parser.Statement
+  name: Statement()
+  nameWithType: Parser.Statement()
+  fullName: flx.SILQ.Core.Parser.Statement()
+  spec.csharp:
+  - uid: flx.SILQ.Core.Parser.Statement
+    name: Statement
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: flx.SILQ.Core.Parser.Statement
+    name: Statement
+  - name: (
+  - name: )
+- uid: flx.SILQ.Core.Parser.ParseStatements*
+  commentId: Overload:flx.SILQ.Core.Parser.ParseStatements
+  href: flx.SILQ.Core.Parser.html#flx_SILQ_Core_Parser_ParseStatements_System_Collections_Generic_List_flx_SILQ_Models_Token__
+  name: ParseStatements
+  nameWithType: Parser.ParseStatements
+  fullName: flx.SILQ.Core.Parser.ParseStatements
+- uid: System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+  commentId: T:System.Collections.Generic.List{flx.SILQ.Statements.Statement}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Statement>
+  nameWithType: List<Statement>
+  fullName: System.Collections.Generic.List<flx.SILQ.Statements.Statement>
+  nameWithType.vb: List(Of Statement)
+  fullName.vb: System.Collections.Generic.List(Of flx.SILQ.Statements.Statement)
+  name.vb: List(Of Statement)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: )

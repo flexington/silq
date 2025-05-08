@@ -1,42 +1,45 @@
 ### YamlMime:ManagedReference
 items:
-- uid: flx.SILQ.Expressions.Expression
-  commentId: T:flx.SILQ.Expressions.Expression
-  id: Expression
-  parent: flx.SILQ.Expressions
+- uid: flx.SILQ.Statements.From
+  commentId: T:flx.SILQ.Statements.From
+  id: From
+  parent: flx.SILQ.Statements
   children:
-  - flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  - flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
+  - flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  - flx.SILQ.Statements.From.Expression
   langs:
   - csharp
   - vb
-  name: Expression
-  nameWithType: Expression
-  fullName: flx.SILQ.Expressions.Expression
+  name: From
+  nameWithType: From
+  fullName: flx.SILQ.Statements.From
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Expression.cs
+      path: dotnet/flx.SILQ/Statements/From.cs
       branch: main
       repo: https://github.com/flexington/silq.git
-    id: Expression
-    path: ../dotnet/flx.SILQ/Expressions/Expression.cs
-    startLine: 2
+    id: From
+    path: ../dotnet/flx.SILQ/Statements/From.cs
+    startLine: 8
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Expressions
+  namespace: flx.SILQ.Statements
+  summary: >-
+    Represents a "from" statement in the SILQ language.
+
+    This statement is used to specify the source of data for a query.
+  example: []
   syntax:
-    content: 'public abstract record Expression : IEquatable<Expression>'
-    content.vb: Public MustInherit Class Expression Implements IEquatable(Of Expression)
+    content: 'public record From : Statement, IEquatable<Statement>, IEquatable<From>'
+    content.vb: Public Class From Inherits Statement Implements IEquatable(Of Statement), IEquatable(Of From)
   inheritance:
   - System.Object
-  derivedClasses:
-  - flx.SILQ.Expressions.Binary
-  - flx.SILQ.Expressions.Grouping
-  - flx.SILQ.Expressions.Literal
-  - flx.SILQ.Expressions.Unary
-  - flx.SILQ.Expressions.Variable
+  - flx.SILQ.Statements.Statement
   implements:
-  - System.IEquatable{flx.SILQ.Expressions.Expression}
+  - System.IEquatable{flx.SILQ.Statements.Statement}
+  - System.IEquatable{flx.SILQ.Statements.From}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -45,49 +48,112 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  commentId: M:flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  id: Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  parent: flx.SILQ.Expressions.Expression
+- uid: flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
+  commentId: M:flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
+  id: '#ctor(flx.SILQ.Expressions.Expression)'
+  parent: flx.SILQ.Statements.From
   langs:
   - csharp
   - vb
-  name: Accept<T>(IVisitor<T>)
-  nameWithType: Expression.Accept<T>(IVisitor<T>)
-  fullName: flx.SILQ.Expressions.Expression.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
+  name: From(Expression)
+  nameWithType: From.From(Expression)
+  fullName: flx.SILQ.Statements.From.From(flx.SILQ.Expressions.Expression)
+  type: Constructor
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/From.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: .ctor
+    path: ../dotnet/flx.SILQ/Statements/From.cs
+    startLine: 8
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: >-
+    Represents a "from" statement in the SILQ language.
+
+    This statement is used to specify the source of data for a query.
+  example: []
+  syntax:
+    content: public From(Expression Expression)
+    parameters:
+    - id: Expression
+      type: flx.SILQ.Expressions.Expression
+    content.vb: Public Sub New(Expression As Expression)
+  overload: flx.SILQ.Statements.From.#ctor*
+  nameWithType.vb: From.New(Expression)
+  fullName.vb: flx.SILQ.Statements.From.New(flx.SILQ.Expressions.Expression)
+  name.vb: New(Expression)
+- uid: flx.SILQ.Statements.From.Expression
+  commentId: P:flx.SILQ.Statements.From.Expression
+  id: Expression
+  parent: flx.SILQ.Statements.From
+  langs:
+  - csharp
+  - vb
+  name: Expression
+  nameWithType: From.Expression
+  fullName: flx.SILQ.Statements.From.Expression
+  type: Property
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/From.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Expression
+    path: ../dotnet/flx.SILQ/Statements/From.cs
+    startLine: 8
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  syntax:
+    content: public Expression Expression { get; init; }
+    parameters: []
+    return:
+      type: flx.SILQ.Expressions.Expression
+    content.vb: Public Property Expression As Expression
+  overload: flx.SILQ.Statements.From.Expression*
+- uid: flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  commentId: M:flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
+  id: Accept(flx.SILQ.Statements.IVisitor)
+  parent: flx.SILQ.Statements.From
+  langs:
+  - csharp
+  - vb
+  name: Accept(IVisitor)
+  nameWithType: From.Accept(IVisitor)
+  fullName: flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)
   type: Method
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Expression.cs
+      path: dotnet/flx.SILQ/Statements/From.cs
       branch: main
       repo: https://github.com/flexington/silq.git
     id: Accept
-    path: ../dotnet/flx.SILQ/Expressions/Expression.cs
-    startLine: 4
+    path: ../dotnet/flx.SILQ/Statements/From.cs
+    startLine: 14
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Expressions
+  namespace: flx.SILQ.Statements
+  summary: Accepts a visitor to process this from statement.
+  example: []
   syntax:
-    content: public abstract T Accept<T>(IVisitor<T> visitor)
+    content: public override void Accept(IVisitor visitor)
     parameters:
     - id: visitor
-      type: flx.SILQ.Expressions.IVisitor{{T}}
-    typeParameters:
-    - id: T
-    return:
-      type: '{T}'
-    content.vb: Public MustOverride Function Accept(Of T)(visitor As IVisitor(Of T)) As T
-  overload: flx.SILQ.Expressions.Expression.Accept*
-  nameWithType.vb: Expression.Accept(Of T)(IVisitor(Of T))
-  fullName.vb: flx.SILQ.Expressions.Expression.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
-  name.vb: Accept(Of T)(IVisitor(Of T))
+      type: flx.SILQ.Statements.IVisitor
+      description: The visitor that will process the from statement.
+    content.vb: Public Overrides Sub Accept(visitor As IVisitor)
+  overridden: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  overload: flx.SILQ.Statements.From.Accept*
 references:
-- uid: flx.SILQ.Expressions
-  commentId: N:flx.SILQ.Expressions
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
   href: flx.html
-  name: flx.SILQ.Expressions
-  nameWithType: flx.SILQ.Expressions
-  fullName: flx.SILQ.Expressions
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
   spec.csharp:
   - uid: flx
     name: flx
@@ -97,9 +163,9 @@ references:
     name: SILQ
     href: flx.SILQ.html
   - name: .
-  - uid: flx.SILQ.Expressions
-    name: Expressions
-    href: flx.SILQ.Expressions.html
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
   spec.vb:
   - uid: flx
     name: flx
@@ -109,9 +175,9 @@ references:
     name: SILQ
     href: flx.SILQ.html
   - name: .
-  - uid: flx.SILQ.Expressions
-    name: Expressions
-    href: flx.SILQ.Expressions.html
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -123,26 +189,33 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.IEquatable{flx.SILQ.Expressions.Expression}
-  commentId: T:System.IEquatable{flx.SILQ.Expressions.Expression}
+- uid: flx.SILQ.Statements.Statement
+  commentId: T:flx.SILQ.Statements.Statement
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Statement.html
+  name: Statement
+  nameWithType: Statement
+  fullName: flx.SILQ.Statements.Statement
+- uid: System.IEquatable{flx.SILQ.Statements.Statement}
+  commentId: T:System.IEquatable{flx.SILQ.Statements.Statement}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<Expression>
-  nameWithType: IEquatable<Expression>
-  fullName: System.IEquatable<flx.SILQ.Expressions.Expression>
-  nameWithType.vb: IEquatable(Of Expression)
-  fullName.vb: System.IEquatable(Of flx.SILQ.Expressions.Expression)
-  name.vb: IEquatable(Of Expression)
+  name: IEquatable<Statement>
+  nameWithType: IEquatable<Statement>
+  fullName: System.IEquatable<flx.SILQ.Statements.Statement>
+  nameWithType.vb: IEquatable(Of Statement)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.Statement)
+  name.vb: IEquatable(Of Statement)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: <
-  - uid: flx.SILQ.Expressions.Expression
-    name: Expression
-    href: flx.SILQ.Expressions.Expression.html
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -152,9 +225,42 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: flx.SILQ.Expressions.Expression
-    name: Expression
-    href: flx.SILQ.Expressions.Expression.html
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: )
+- uid: System.IEquatable{flx.SILQ.Statements.From}
+  commentId: T:System.IEquatable{flx.SILQ.Statements.From}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<From>
+  nameWithType: IEquatable<From>
+  fullName: System.IEquatable<flx.SILQ.Statements.From>
+  nameWithType.vb: IEquatable(Of From)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.From)
+  name.vb: IEquatable(Of From)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: flx.SILQ.Statements.From
+    name: From
+    href: flx.SILQ.Statements.From.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: flx.SILQ.Statements.From
+    name: From
+    href: flx.SILQ.Statements.From.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -410,71 +516,93 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: flx.SILQ.Expressions.Expression.Accept*
-  commentId: Overload:flx.SILQ.Expressions.Expression.Accept
-  href: flx.SILQ.Expressions.Expression.html#flx_SILQ_Expressions_Expression_Accept__1_flx_SILQ_Expressions_IVisitor___0__
-  name: Accept
-  nameWithType: Expression.Accept
-  fullName: flx.SILQ.Expressions.Expression.Accept
-- uid: flx.SILQ.Expressions.IVisitor{{T}}
-  commentId: T:flx.SILQ.Expressions.IVisitor{``0}
+- uid: flx.SILQ.Statements.From.#ctor*
+  commentId: Overload:flx.SILQ.Statements.From.#ctor
+  href: flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Expression_
+  name: From
+  nameWithType: From.From
+  fullName: flx.SILQ.Statements.From.From
+  nameWithType.vb: From.New
+  fullName.vb: flx.SILQ.Statements.From.New
+  name.vb: New
+- uid: flx.SILQ.Expressions.Expression
+  commentId: T:flx.SILQ.Expressions.Expression
   parent: flx.SILQ.Expressions
-  definition: flx.SILQ.Expressions.IVisitor`1
-  href: flx.SILQ.Expressions.IVisitor-1.html
-  name: IVisitor<T>
-  nameWithType: IVisitor<T>
-  fullName: flx.SILQ.Expressions.IVisitor<T>
-  nameWithType.vb: IVisitor(Of T)
-  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T)
-  name.vb: IVisitor(Of T)
+  href: flx.SILQ.Expressions.Expression.html
+  name: Expression
+  nameWithType: Expression
+  fullName: flx.SILQ.Expressions.Expression
+- uid: flx.SILQ.Expressions
+  commentId: N:flx.SILQ.Expressions
+  href: flx.html
+  name: flx.SILQ.Expressions
+  nameWithType: flx.SILQ.Expressions
+  fullName: flx.SILQ.Expressions
   spec.csharp:
-  - uid: flx.SILQ.Expressions.IVisitor`1
-    name: IVisitor
-    href: flx.SILQ.Expressions.IVisitor-1.html
-  - name: <
-  - name: T
-  - name: '>'
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html
   spec.vb:
-  - uid: flx.SILQ.Expressions.IVisitor`1
-    name: IVisitor
-    href: flx.SILQ.Expressions.IVisitor-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: flx.SILQ.Expressions.IVisitor`1
-  commentId: T:flx.SILQ.Expressions.IVisitor`1
-  href: flx.SILQ.Expressions.IVisitor-1.html
-  name: IVisitor<T>
-  nameWithType: IVisitor<T>
-  fullName: flx.SILQ.Expressions.IVisitor<T>
-  nameWithType.vb: IVisitor(Of T)
-  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T)
-  name.vb: IVisitor(Of T)
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Expressions
+    name: Expressions
+    href: flx.SILQ.Expressions.html
+- uid: flx.SILQ.Statements.From.Expression*
+  commentId: Overload:flx.SILQ.Statements.From.Expression
+  href: flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Expression
+  name: Expression
+  nameWithType: From.Expression
+  fullName: flx.SILQ.Statements.From.Expression
+- uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  commentId: M:flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  parent: flx.SILQ.Statements.Statement
+  href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
+  name: Accept(IVisitor)
+  nameWithType: Statement.Accept(IVisitor)
+  fullName: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
   spec.csharp:
-  - uid: flx.SILQ.Expressions.IVisitor`1
-    name: IVisitor
-    href: flx.SILQ.Expressions.IVisitor-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: flx.SILQ.Expressions.IVisitor`1
-    name: IVisitor
-    href: flx.SILQ.Expressions.IVisitor-1.html
+  - uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+    name: Accept
+    href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
   - name: (
-  - name: Of
-  - name: " "
-  - name: T
+  - uid: flx.SILQ.Statements.IVisitor
+    name: IVisitor
+    href: flx.SILQ.Statements.IVisitor.html
   - name: )
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
+  spec.vb:
+  - uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+    name: Accept
+    href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
+  - name: (
+  - uid: flx.SILQ.Statements.IVisitor
+    name: IVisitor
+    href: flx.SILQ.Statements.IVisitor.html
+  - name: )
+- uid: flx.SILQ.Statements.From.Accept*
+  commentId: Overload:flx.SILQ.Statements.From.Accept
+  href: flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Accept_flx_SILQ_Statements_IVisitor_
+  name: Accept
+  nameWithType: From.Accept
+  fullName: flx.SILQ.Statements.From.Accept
+- uid: flx.SILQ.Statements.IVisitor
+  commentId: T:flx.SILQ.Statements.IVisitor
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.IVisitor.html
+  name: IVisitor
+  nameWithType: IVisitor
+  fullName: flx.SILQ.Statements.IVisitor

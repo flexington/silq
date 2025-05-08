@@ -9,6 +9,7 @@ items:
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Grouping)
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Literal)
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Unary)
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
   langs:
   - csharp
   - vb
@@ -19,7 +20,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -49,7 +50,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -82,7 +83,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -115,7 +116,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -148,7 +149,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: chor/sandr0-p/docs
+      branch: main
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -167,6 +168,39 @@ items:
   overload: flx.SILQ.Expressions.IVisitor`1.Visit*
   nameWithType.vb: IVisitor(Of T).Visit(Grouping)
   fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Grouping)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Variable)
+  id: Visit(flx.SILQ.Expressions.Variable)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Variable)
+  nameWithType: IVisitor<T>.Visit(Variable)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Variable)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: main
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 8
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Variable variable)
+    parameters:
+    - id: variable
+      type: flx.SILQ.Expressions.Variable
+    return:
+      type: '{T}'
+    content.vb: Function Visit(variable As Variable) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Variable)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Variable)
 references:
 - uid: flx.SILQ.Expressions
   commentId: N:flx.SILQ.Expressions
@@ -244,3 +278,10 @@ references:
   name: Grouping
   nameWithType: Grouping
   fullName: flx.SILQ.Expressions.Grouping
+- uid: flx.SILQ.Expressions.Variable
+  commentId: T:flx.SILQ.Expressions.Variable
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Variable.html
+  name: Variable
+  nameWithType: Variable
+  fullName: flx.SILQ.Expressions.Variable

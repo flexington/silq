@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace flx.SILQ.Expressions | SILQ </title>
+      <title>Namespace flx.SILQ.Statements | SILQ </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace flx.SILQ.Expressions | SILQ ">
+      <meta name="title" content="Namespace flx.SILQ.Statements | SILQ ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -84,9 +84,9 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="flx.SILQ.Expressions">
+        <article data-uid="flx.SILQ.Statements">
 
-  <h1 id="flx_SILQ_Expressions" data-uid="flx.SILQ.Expressions" class="text-break">Namespace flx.SILQ.Expressions</h1>
+  <h1 id="flx_SILQ_Statements" data-uid="flx.SILQ.Statements" class="text-break">Namespace flx.SILQ.Statements</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
@@ -95,36 +95,35 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Binary.html">Binary</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="flx.SILQ.Statements.From.html">From</a></dt>
+      <dd><p>Represents a &quot;from&quot; statement in the SILQ language.
+This statement is used to specify the source of data for a query.</p>
+</dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="flx.SILQ.Statements.Print.html">Print</a></dt>
+      <dd><p>Represents a print statement in the SILQ language.
+When executed, evaluates the contained expression and outputs its value.</p>
+</dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Grouping.html">Grouping</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a></dt>
+      <dd><p>Represents the abstract base class for all statement nodes in the SILQ abstract syntax tree (AST).</p>
+</dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Literal.html">Literal</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Unary.html">Unary</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a></dt>
-      <dd><p>Represents a variable expression in the syntax tree.</p>
+      <dt><a class="xref" href="flx.SILQ.Statements.Where.html">Where</a></dt>
+      <dd><p>Represents a &quot;Where&quot; statement in the SILQ language.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="flx.SILQ.Expressions.IVisitor-1.html">IVisitor&lt;T&gt;</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="flx.SILQ.Statements.IVisitor.html">IVisitor</a></dt>
+      <dd><p>Visitor interface for statement nodes in the SILQ AST.
+Implementations should provide logic for each supported statement type.</p>
+</dd>
     </dl>
 
 
