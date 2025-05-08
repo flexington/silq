@@ -17,4 +17,9 @@ public class Visitor : IVisitor
     {
         throw new NotImplementedException();
     }
+
+    public void Visit(From from)
+    {
+        throw new NotImplementedException();
+    }
 }
