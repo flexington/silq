@@ -382,4 +382,22 @@ public class InterpreterTests
         // Assert
         throw new NotImplementedException("Assertion for Where statement result is not implemented.");
     }
+
+    [TestMethod]
+    public void Interpret_WhenSelectStatement_ReturnsResult()
+    {
+        // Arrange
+        var expressions = new[] {
+            new Variable(new Token(TokenType.IDENTIFIER, "myVar", null, 1)) ,
+            new Variable(new Token(TokenType.IDENTIFIER, "myVar2", null, 1))
+        };
+        var selectStatement = new Select(expressions);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([selectStatement]);
+
+        // Assert
+        throw new NotImplementedException("Assertion for Select statement result is not implemented.");
+    }
 }

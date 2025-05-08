@@ -37,4 +37,13 @@ public partial class Interpreter : IVisitor
     {
         throw new NotImplementedException();
     }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="Select"/> statement.
+    /// </summary>
+    /// <param name="select">The "Select" statement to process.</param>
+    public void Visit(Select select)
+    {
+        throw new NotImplementedException();
+    }
 }

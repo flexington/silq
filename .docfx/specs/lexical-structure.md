@@ -64,7 +64,7 @@ condition           → expression | function ;
 Projections allow to choose specific `members` of an `object` with the `select` keyword followed by the `member`s to be projected. The `object` member access rules apply. The projected `member`s can be access using the `alias` followed by the `member IDENTIFIER`. The `projection` will be available once an `alias` has been defined and the `query` has concluded.
 
 ```bnf
-projection          → "select" member | "{" member ( "," member)* "}" ;
+projection          → "select" "{" member ( "," member)* "}" ;
 ```
 
 ### Aliases

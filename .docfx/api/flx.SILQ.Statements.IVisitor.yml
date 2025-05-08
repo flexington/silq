@@ -7,6 +7,7 @@ items:
   children:
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
   langs:
   - csharp
@@ -18,7 +19,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -48,7 +49,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -80,7 +81,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -112,7 +113,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -129,6 +130,38 @@ items:
       type: flx.SILQ.Statements.Where
       description: The where statement to visit.
     content.vb: Sub Visit(where As Where)
+  overload: flx.SILQ.Statements.IVisitor.Visit*
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)
+  id: Visit(flx.SILQ.Statements.Select)
+  parent: flx.SILQ.Statements.IVisitor
+  langs:
+  - csharp
+  - vb
+  name: Visit(Select)
+  nameWithType: IVisitor.Visit(Select)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: feat/sandr0-p/select
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 30
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: Visits a <xref href="flx.SILQ.Statements.Select" data-throw-if-not-resolved="false"></xref> statement node.
+  example: []
+  syntax:
+    content: void Visit(Select select)
+    parameters:
+    - id: select
+      type: flx.SILQ.Statements.Select
+      description: The select statement to visit.
+    content.vb: Sub Visit([select] As [Select])
   overload: flx.SILQ.Statements.IVisitor.Visit*
 references:
 - uid: flx.SILQ.Statements
@@ -188,3 +221,10 @@ references:
   name: Where
   nameWithType: Where
   fullName: flx.SILQ.Statements.Where
+- uid: flx.SILQ.Statements.Select
+  commentId: T:flx.SILQ.Statements.Select
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Select.html
+  name: Select
+  nameWithType: Select
+  fullName: flx.SILQ.Statements.Select

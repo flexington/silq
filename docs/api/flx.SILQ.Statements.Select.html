@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Statement | SILQ </title>
+      <title>Class Select | SILQ </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Statement | SILQ ">
+      <meta name="title" content="Class Select | SILQ ">
       
-      <meta name="description" content="Represents the abstract base class for all statement nodes in the SILQ abstract syntax tree (AST).">
+      <meta name="description" content="Represents a &amp;quot;Select&amp;quot; statement in the SILQ language.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/select/apiSpec/new?filename=flx_SILQ_Statements_Statement.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.Statement%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/select/apiSpec/new?filename=flx_SILQ_Statements_Select.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.Select%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="flx.SILQ.Statements.Statement">
+        <article data-uid="flx.SILQ.Statements.Select">
 
 
 
-  <h1 id="flx_SILQ_Statements_Statement" data-uid="flx.SILQ.Statements.Statement" class="text-break">
-Class Statement  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Statement.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  <h1 id="flx_SILQ_Statements_Select" data-uid="flx.SILQ.Statements.Select" class="text-break">
+Class Select  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Select.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,12 +97,12 @@ Class Statement  <a class="header-action link-secondary" title="View source" hre
   <dl><dt>Assembly</dt><dd>flx.SILQ.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents the abstract base class for all statement nodes in the SILQ abstract syntax tree (AST).</p>
+  <div class="markdown summary"><p>Represents a &quot;Select&quot; statement in the SILQ language.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract record Statement : IEquatable&lt;Statement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public record Select : Statement, IEquatable&lt;Statement&gt;, IEquatable&lt;Select&gt;</code></pre>
   </div>
 
 
@@ -112,7 +112,8 @@ Class Statement  <a class="header-action link-secondary" title="View source" hre
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">Statement</span></div>
+      <div><a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a></div>
+      <div><span class="xref">Select</span></div>
     </dd>
   </dl>
 
@@ -120,18 +121,10 @@ Class Statement  <a class="header-action link-secondary" title="View source" hre
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Statements.Select.html">Select</a>&gt;</div>
     </dd>
   </dl>
 
-  <dl class="typelist derived">
-    <dt>Derived</dt>
-    <dd>
-      <div><a class="xref" href="flx.SILQ.Statements.From.html">From</a></div>
-      <div><a class="xref" href="flx.SILQ.Statements.Print.html">Print</a></div>
-      <div><a class="xref" href="flx.SILQ.Statements.Select.html">Select</a></div>
-      <div><a class="xref" href="flx.SILQ.Statements.Where.html">Where</a></div>
-    </dd>
-  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
@@ -164,29 +157,100 @@ Class Statement  <a class="header-action link-secondary" title="View source" hre
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="flx_SILQ_Statements_Statement_Accept_" data-uid="flx.SILQ.Statements.Statement.Accept*"></a>
+  <a id="flx_SILQ_Statements_Select__ctor_" data-uid="flx.SILQ.Statements.Select.#ctor*"></a>
 
-  <h3 id="flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_" data-uid="flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)">
-  Accept(IVisitor)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Statement.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Statements_Select__ctor_flx_SILQ_Expressions_Expression___" data-uid="flx.SILQ.Statements.Select.#ctor(flx.SILQ.Expressions.Expression[])">
+  Select(Expression[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Select.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Accepts a visitor that processes this statement node.</p>
+  <div class="markdown level1 summary"><p>Represents a &quot;Select&quot; statement in the SILQ language.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void Accept(IVisitor visitor)</code></pre>
+    <pre><code class="lang-csharp hljs">public Select(Expression[] Expressions)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Expressions</code> <a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="flx_SILQ_Statements_Select_Expressions_" data-uid="flx.SILQ.Statements.Select.Expressions*"></a>
+
+  <h3 id="flx_SILQ_Statements_Select_Expressions" data-uid="flx.SILQ.Statements.Select.Expressions">
+  Expressions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Select.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Expression[] Expressions { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="flx_SILQ_Statements_Select_Accept_" data-uid="flx.SILQ.Statements.Select.Accept*"></a>
+
+  <h3 id="flx_SILQ_Statements_Select_Accept_flx_SILQ_Statements_IVisitor_" data-uid="flx.SILQ.Statements.Select.Accept(flx.SILQ.Statements.IVisitor)">
+  Accept(IVisitor)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Select.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Accepts a visitor to process this &quot;Select&quot; statement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Accept(IVisitor visitor)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>visitor</code> <a class="xref" href="flx.SILQ.Statements.IVisitor.html">IVisitor</a></dt>
-    <dd><p>The visitor to process the statement.</p>
+    <dd><p>The visitor that processes this statement.</p>
 </dd>
   </dl>
 
@@ -205,7 +269,7 @@ Class Statement  <a class="header-action link-secondary" title="View source" hre
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Statement.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/select/dotnet/flx.SILQ/Statements/Select.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

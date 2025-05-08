@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Statement
     path: ../dotnet/flx.SILQ/Statements/Statement.cs
@@ -34,6 +34,7 @@ items:
   derivedClasses:
   - flx.SILQ.Statements.From
   - flx.SILQ.Statements.Print
+  - flx.SILQ.Statements.Select
   - flx.SILQ.Statements.Where
   implements:
   - System.IEquatable{flx.SILQ.Statements.Statement}
@@ -59,7 +60,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: main
+      branch: feat/sandr0-p/select
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Statements/Statement.cs
