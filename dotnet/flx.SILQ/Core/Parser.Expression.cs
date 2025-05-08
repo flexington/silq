@@ -149,7 +149,7 @@ public partial class Parser
             if (previous.TokenType == TokenType.STRING) return new Literal(previous.Literal);
         }
 
-        if (Match(TokenType.IDENTIFIER, TokenType.LIST)) return new Variable(Previous());
+        if (Match(TokenType.IDENTIFIER)) return new Variable(Previous());
 
         if (Match(TokenType.LEFT_PAREN))
         {
