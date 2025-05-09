@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Statement
     path: ../dotnet/flx.SILQ/Statements/Statement.cs
@@ -34,6 +34,7 @@ items:
   derivedClasses:
   - flx.SILQ.Statements.As
   - flx.SILQ.Statements.From
+  - flx.SILQ.Statements.Function
   - flx.SILQ.Statements.Print
   - flx.SILQ.Statements.Select
   - flx.SILQ.Statements.Where
@@ -61,7 +62,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Statements/Statement.cs

@@ -6,6 +6,7 @@ items:
   children:
   - flx.SILQ.Expressions.Binary
   - flx.SILQ.Expressions.Expression
+  - flx.SILQ.Expressions.Function
   - flx.SILQ.Expressions.Grouping
   - flx.SILQ.Expressions.IVisitor`1
   - flx.SILQ.Expressions.Literal
@@ -35,6 +36,13 @@ references:
   name: Expression
   nameWithType: Expression
   fullName: flx.SILQ.Expressions.Expression
+- uid: flx.SILQ.Expressions.Function
+  commentId: T:flx.SILQ.Expressions.Function
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Function.html
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Expressions.Function
 - uid: flx.SILQ.Expressions.Grouping
   commentId: T:flx.SILQ.Expressions.Grouping
   parent: flx.SILQ.Expressions

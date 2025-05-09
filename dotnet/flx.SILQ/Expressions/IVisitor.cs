@@ -7,4 +7,5 @@ public interface IVisitor<T>
     T Visit(Binary binary);
     T Visit(Grouping grouping);
     T Visit(Variable variable);
+    T Visit(Function function);
 }

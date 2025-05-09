@@ -152,6 +152,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Expressions.Function.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Expressions.Function.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Expressions.Function",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/flx.SILQ.Expressions.Grouping.yml",
       "output": {
         ".html": {
@@ -317,6 +331,20 @@
       "IsMRef": true,
       "Title": "flx.SILQ.Statements.From",
       "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.From.yml\" sourcestartlinenumber=\"1\">Represents a &quot;from&quot; statement in the SILQ language.\nThis statement is used to specify the source of data for a query.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.Function.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.Function.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.Function",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.Function.yml\" sourcestartlinenumber=\"1\">Represents a function statement in the SILQ language.</p>\n"
     },
     {
       "type": "ManagedReference",

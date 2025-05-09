@@ -103,4 +103,14 @@ public partial class Interpreter : IVisitor<object>
         // return _environment.Get(variable.Name);
         return null; // Placeholder for actual environment retrieval
     }
+
+    /// <summary>
+    /// Visits a <see cref="Function"/> expression and processes its behavior.
+    /// </summary>
+    /// <param name="function">The function expression to evaluate.</param>
+    /// <returns>The result of the function evaluation.</returns>
+    public object Visit(Function function)
+    {
+        throw new NotImplementedException();
+    }
 }

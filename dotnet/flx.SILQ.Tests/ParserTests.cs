@@ -364,7 +364,7 @@ public class ParserTests
     }
 
     [TestMethod]
-    public void ParseExpression_WhenIdentifier_ThrowsIdentifierExpression()
+    public void ParseExpression_WhenIdentifier_ReturnsIdentifierExpression()
     {
         // Arrange
         var tokens = new List<Token>
@@ -488,6 +488,76 @@ public class ParserTests
         Assert.IsInstanceOfType(binary.Right, typeof(Literal));
         Assert.AreEqual(1.0, ((Literal)binary.Left).Value);
         Assert.AreEqual(2.0, ((Literal)binary.Right).Value);
+    }
+
+    [TestMethod]
+    public void ParseExpression_WhenFunctionWithSingleArgument_ReturnsFunctionCall()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.IDENTIFIER, "myFunc", null, 1),
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.NUMBER, "123", 123.0, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+
+        Assert.IsInstanceOfType(expression, typeof(Expressions.Function));
+        var function = (Expressions.Function)expression;
+        Assert.IsNotNull(function.Name);
+        Assert.AreEqual("myFunc", function.Name.Lexeme);
+        Assert.IsNotNull(function.Arguments);
+        Assert.AreEqual(1, function.Arguments.Count);
+
+        Assert.IsInstanceOfType(function.Arguments[0], typeof(Literal));
+        var value = (Literal)function.Arguments[0];
+        Assert.AreEqual(123.0, value.Value);
+    }
+
+    [TestMethod]
+    public void ParseExpression_WhenFunctionWithMultipleArguments_ReturnsFunctionCall()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.IDENTIFIER, "myFunc", null, 1),
+            new Token(TokenType.LEFT_PAREN, "(", null, 1),
+            new Token(TokenType.STRING, "\"param\'", "param", 1),
+            new Token(TokenType.COMMA, ",", null, 1),
+            new Token(TokenType.NUMBER, "456", 456.0, 1),
+            new Token(TokenType.RIGHT_PAREN, ")", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+         // Assert
+        Assert.IsNotNull(expression);
+
+        Assert.IsInstanceOfType(expression, typeof(Expressions.Function));
+        var function = (Expressions.Function)expression;
+        Assert.IsNotNull(function.Name);
+        Assert.AreEqual("myFunc", function.Name.Lexeme);
+        Assert.IsNotNull(function.Arguments);
+        Assert.AreEqual(2, function.Arguments.Count);
+
+        Assert.IsInstanceOfType(function.Arguments[0], typeof(Literal));
+        var value_1 = (Literal)function.Arguments[0];
+        Assert.AreEqual("param", value_1.Value);
+
+        Assert.IsInstanceOfType(function.Arguments[1], typeof(Literal));
+        var value_2 = (Literal)function.Arguments[1];
+        Assert.AreEqual(456.0, value_2.Value);
     }
 
     [TestMethod]

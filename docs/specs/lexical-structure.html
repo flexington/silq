@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/.docfx/specs/lexical-structure.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/blob/feat/sandr0-p/function/.docfx/specs/lexical-structure.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -145,7 +145,7 @@ condition           → expression | function ;
 <h3 id="function">Function</h3>
 <p><code>Function</code>s allow the access to functionality provided by the underlying framework. This means, that depending on framework choice, functions may behave differently. <code>Function</code>s can not be declared with <code>SILQ</code>.</p>
 <pre><code class="lang-bnf">function            → IDENTIFIER &quot;(&quot; parameter? &quot;)&quot; ;
-parameter           → IDENTIFIER ( &quot;,&quot; IDENTIFIER )* ;
+parameter           → expression ( &quot;,&quot; expression )* ;
 </code></pre>
 <h3 id="expression">Expression</h3>
 <p>An <code>expression</code> produces a new value by applying operators to a set of given values. The below grammar outlines the available operations as well as precedence.</p>
@@ -173,7 +173,7 @@ DATE                → &quot;YYYY-MM-DD&quot;
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/.docfx/specs/lexical-structure.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

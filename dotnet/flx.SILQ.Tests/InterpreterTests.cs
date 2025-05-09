@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
@@ -414,5 +415,21 @@ public class InterpreterTests
 
         // Assert
         throw new NotImplementedException("Assertion for As statement result is not implemented.");
+    }
+
+    [TestMethod]
+    public void Interpret_WhenFunctionStatement_ReturnsResult()
+    {
+        // Arrange
+        var functionName = new Token(TokenType.IDENTIFIER, "myFunction", null, 1);
+        var parameters = new List<Expression> { new Literal("param"), new Literal(2.0) };
+        var functionStatement = new Statements.Function(functionName, parameters);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([functionStatement]);
+
+        // Assert
+        throw new NotImplementedException("Assertion for Function statement result is not implemented.");
     }
 }

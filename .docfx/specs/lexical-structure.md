@@ -83,7 +83,7 @@ alias               → "alias" IDENTIFIER ;
 
 ```bnf
 function            → IDENTIFIER "(" parameter? ")" ;
-parameter           → IDENTIFIER ( "," IDENTIFIER )* ;
+parameter           → expression ( "," expression )* ;
 ```
 
 ### Expression

@@ -35,4 +35,10 @@ public interface IVisitor
     /// </summary>
     /// <param name="statement">The as statement to visit.</param>
     void Visit(As statement);
+
+    /// <summary>
+    /// Visits a <see cref="Function"/> statement node.
+    /// </summary>
+    /// <param name="statement">The function statement to visit.</param>
+    void Visit(Function statement);
 }

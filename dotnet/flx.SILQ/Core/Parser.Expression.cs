@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
@@ -149,7 +151,11 @@ public partial class Parser
             if (previous.TokenType == TokenType.STRING) return new Literal(previous.Literal);
         }
 
-        if (Match(TokenType.IDENTIFIER)) return Identifier();
+        if (Match(TokenType.IDENTIFIER))
+        {
+            if (Peek().TokenType == TokenType.LEFT_PAREN) return Function();
+            else return Identifier();
+        }
 
         if (Match(TokenType.LEFT_PAREN))
         {
@@ -180,5 +186,25 @@ public partial class Parser
 
 
         return new Variable(token, null);
+    }
+
+    private Function Function()
+    {
+        var args = new List<Expression>();
+
+        var name = Previous();
+
+        Consume(TokenType.LEFT_PAREN, "Expected '(' after function name");
+
+        args.Add(Expression());
+
+        while (Match(TokenType.COMMA))
+        {
+            args.Add(Expression());
+        }
+
+        Consume(TokenType.RIGHT_PAREN, "Expected ')' after function arguments");
+
+        return new Function(name, args);
     }
 }

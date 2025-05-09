@@ -1,40 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: flx.SILQ.Expressions.Grouping
-  commentId: T:flx.SILQ.Expressions.Grouping
-  id: Grouping
+- uid: flx.SILQ.Expressions.Function
+  commentId: T:flx.SILQ.Expressions.Function
+  id: Function
   parent: flx.SILQ.Expressions
   children:
-  - flx.SILQ.Expressions.Grouping.#ctor(flx.SILQ.Expressions.Expression)
-  - flx.SILQ.Expressions.Grouping.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  - flx.SILQ.Expressions.Grouping.Expression
+  - flx.SILQ.Expressions.Function.#ctor(flx.SILQ.Models.Token,System.Collections.Generic.List{flx.SILQ.Expressions.Expression})
+  - flx.SILQ.Expressions.Function.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  - flx.SILQ.Expressions.Function.Arguments
+  - flx.SILQ.Expressions.Function.Name
   langs:
   - csharp
   - vb
-  name: Grouping
-  nameWithType: Grouping
-  fullName: flx.SILQ.Expressions.Grouping
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Expressions.Function
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Grouping.cs
+      path: dotnet/flx.SILQ/Expressions/Function.cs
       branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
-    id: Grouping
-    path: ../dotnet/flx.SILQ/Expressions/Grouping.cs
-    startLine: 2
+    id: Function
+    path: ../dotnet/flx.SILQ/Expressions/Function.cs
+    startLine: 5
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
   syntax:
-    content: 'public record Grouping : Expression, IEquatable<Expression>, IEquatable<Grouping>'
-    content.vb: Public Class Grouping Inherits Expression Implements IEquatable(Of Expression), IEquatable(Of Grouping)
+    content: 'public record Function : Expression, IEquatable<Expression>, IEquatable<Function>'
+    content.vb: Public Class [Function] Inherits Expression Implements IEquatable(Of Expression), IEquatable(Of Function)
   inheritance:
   - System.Object
   - flx.SILQ.Expressions.Expression
   implements:
   - System.IEquatable{flx.SILQ.Expressions.Expression}
-  - System.IEquatable{flx.SILQ.Expressions.Grouping}
+  - System.IEquatable{flx.SILQ.Expressions.Function}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -43,86 +44,117 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: flx.SILQ.Expressions.Grouping.#ctor(flx.SILQ.Expressions.Expression)
-  commentId: M:flx.SILQ.Expressions.Grouping.#ctor(flx.SILQ.Expressions.Expression)
-  id: '#ctor(flx.SILQ.Expressions.Expression)'
-  parent: flx.SILQ.Expressions.Grouping
+- uid: flx.SILQ.Expressions.Function.#ctor(flx.SILQ.Models.Token,System.Collections.Generic.List{flx.SILQ.Expressions.Expression})
+  commentId: M:flx.SILQ.Expressions.Function.#ctor(flx.SILQ.Models.Token,System.Collections.Generic.List{flx.SILQ.Expressions.Expression})
+  id: '#ctor(flx.SILQ.Models.Token,System.Collections.Generic.List{flx.SILQ.Expressions.Expression})'
+  parent: flx.SILQ.Expressions.Function
   langs:
   - csharp
   - vb
-  name: Grouping(Expression)
-  nameWithType: Grouping.Grouping(Expression)
-  fullName: flx.SILQ.Expressions.Grouping.Grouping(flx.SILQ.Expressions.Expression)
+  name: Function(Token, List<Expression>)
+  nameWithType: Function.Function(Token, List<Expression>)
+  fullName: flx.SILQ.Expressions.Function.Function(flx.SILQ.Models.Token, System.Collections.Generic.List<flx.SILQ.Expressions.Expression>)
   type: Constructor
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Grouping.cs
+      path: dotnet/flx.SILQ/Expressions/Function.cs
       branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: .ctor
-    path: ../dotnet/flx.SILQ/Expressions/Grouping.cs
-    startLine: 2
+    path: ../dotnet/flx.SILQ/Expressions/Function.cs
+    startLine: 5
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
   syntax:
-    content: public Grouping(Expression Expression)
+    content: public Function(Token Name, List<Expression> Arguments)
     parameters:
-    - id: Expression
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Sub New(Expression As Expression)
-  overload: flx.SILQ.Expressions.Grouping.#ctor*
-  nameWithType.vb: Grouping.New(Expression)
-  fullName.vb: flx.SILQ.Expressions.Grouping.New(flx.SILQ.Expressions.Expression)
-  name.vb: New(Expression)
-- uid: flx.SILQ.Expressions.Grouping.Expression
-  commentId: P:flx.SILQ.Expressions.Grouping.Expression
-  id: Expression
-  parent: flx.SILQ.Expressions.Grouping
+    - id: Name
+      type: flx.SILQ.Models.Token
+    - id: Arguments
+      type: System.Collections.Generic.List{flx.SILQ.Expressions.Expression}
+    content.vb: Public Sub New(Name As Token, Arguments As List(Of Expression))
+  overload: flx.SILQ.Expressions.Function.#ctor*
+  nameWithType.vb: Function.New(Token, List(Of Expression))
+  fullName.vb: flx.SILQ.Expressions.Function.New(flx.SILQ.Models.Token, System.Collections.Generic.List(Of flx.SILQ.Expressions.Expression))
+  name.vb: New(Token, List(Of Expression))
+- uid: flx.SILQ.Expressions.Function.Name
+  commentId: P:flx.SILQ.Expressions.Function.Name
+  id: Name
+  parent: flx.SILQ.Expressions.Function
   langs:
   - csharp
   - vb
-  name: Expression
-  nameWithType: Grouping.Expression
-  fullName: flx.SILQ.Expressions.Grouping.Expression
+  name: Name
+  nameWithType: Function.Name
+  fullName: flx.SILQ.Expressions.Function.Name
   type: Property
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Grouping.cs
+      path: dotnet/flx.SILQ/Expressions/Function.cs
       branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
-    id: Expression
-    path: ../dotnet/flx.SILQ/Expressions/Grouping.cs
-    startLine: 2
+    id: Name
+    path: ../dotnet/flx.SILQ/Expressions/Function.cs
+    startLine: 5
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
   syntax:
-    content: public Expression Expression { get; init; }
+    content: public Token Name { get; init; }
     parameters: []
     return:
-      type: flx.SILQ.Expressions.Expression
-    content.vb: Public Property Expression As Expression
-  overload: flx.SILQ.Expressions.Grouping.Expression*
-- uid: flx.SILQ.Expressions.Grouping.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  commentId: M:flx.SILQ.Expressions.Grouping.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+      type: flx.SILQ.Models.Token
+    content.vb: Public Property Name As Token
+  overload: flx.SILQ.Expressions.Function.Name*
+- uid: flx.SILQ.Expressions.Function.Arguments
+  commentId: P:flx.SILQ.Expressions.Function.Arguments
+  id: Arguments
+  parent: flx.SILQ.Expressions.Function
+  langs:
+  - csharp
+  - vb
+  name: Arguments
+  nameWithType: Function.Arguments
+  fullName: flx.SILQ.Expressions.Function.Arguments
+  type: Property
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/Function.cs
+      branch: feat/sandr0-p/function
+      repo: https://github.com/flexington/silq.git
+    id: Arguments
+    path: ../dotnet/flx.SILQ/Expressions/Function.cs
+    startLine: 5
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: public List<Expression> Arguments { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{flx.SILQ.Expressions.Expression}
+    content.vb: Public Property Arguments As List(Of Expression)
+  overload: flx.SILQ.Expressions.Function.Arguments*
+- uid: flx.SILQ.Expressions.Function.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  commentId: M:flx.SILQ.Expressions.Function.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   id: Accept``1(flx.SILQ.Expressions.IVisitor{``0})
-  parent: flx.SILQ.Expressions.Grouping
+  parent: flx.SILQ.Expressions.Function
   langs:
   - csharp
   - vb
   name: Accept<T>(IVisitor<T>)
-  nameWithType: Grouping.Accept<T>(IVisitor<T>)
-  fullName: flx.SILQ.Expressions.Grouping.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
+  nameWithType: Function.Accept<T>(IVisitor<T>)
+  fullName: flx.SILQ.Expressions.Function.Accept<T>(flx.SILQ.Expressions.IVisitor<T>)
   type: Method
   source:
     remote:
-      path: dotnet/flx.SILQ/Expressions/Grouping.cs
+      path: dotnet/flx.SILQ/Expressions/Function.cs
       branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Accept
-    path: ../dotnet/flx.SILQ/Expressions/Grouping.cs
-    startLine: 4
+    path: ../dotnet/flx.SILQ/Expressions/Function.cs
+    startLine: 7
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
@@ -138,9 +170,9 @@ items:
       type: '{T}'
     content.vb: Public Overrides Function Accept(Of T)(visitor As IVisitor(Of T)) As T
   overridden: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{{T}})
-  overload: flx.SILQ.Expressions.Grouping.Accept*
-  nameWithType.vb: Grouping.Accept(Of T)(IVisitor(Of T))
-  fullName.vb: flx.SILQ.Expressions.Grouping.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
+  overload: flx.SILQ.Expressions.Function.Accept*
+  nameWithType.vb: Function.Accept(Of T)(IVisitor(Of T))
+  fullName.vb: flx.SILQ.Expressions.Function.Accept(Of T)(flx.SILQ.Expressions.IVisitor(Of T))
   name.vb: Accept(Of T)(IVisitor(Of T))
 references:
 - uid: flx.SILQ.Expressions
@@ -224,26 +256,26 @@ references:
     name: Expression
     href: flx.SILQ.Expressions.Expression.html
   - name: )
-- uid: System.IEquatable{flx.SILQ.Expressions.Grouping}
-  commentId: T:System.IEquatable{flx.SILQ.Expressions.Grouping}
+- uid: System.IEquatable{flx.SILQ.Expressions.Function}
+  commentId: T:System.IEquatable{flx.SILQ.Expressions.Function}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<Grouping>
-  nameWithType: IEquatable<Grouping>
-  fullName: System.IEquatable<flx.SILQ.Expressions.Grouping>
-  nameWithType.vb: IEquatable(Of Grouping)
-  fullName.vb: System.IEquatable(Of flx.SILQ.Expressions.Grouping)
-  name.vb: IEquatable(Of Grouping)
+  name: IEquatable<Function>
+  nameWithType: IEquatable<Function>
+  fullName: System.IEquatable<flx.SILQ.Expressions.Function>
+  nameWithType.vb: IEquatable(Of Function)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Expressions.Function)
+  name.vb: IEquatable(Of Function)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: <
-  - uid: flx.SILQ.Expressions.Grouping
-    name: Grouping
-    href: flx.SILQ.Expressions.Grouping.html
+  - uid: flx.SILQ.Expressions.Function
+    name: Function
+    href: flx.SILQ.Expressions.Function.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -253,9 +285,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: flx.SILQ.Expressions.Grouping
-    name: Grouping
-    href: flx.SILQ.Expressions.Grouping.html
+  - uid: flx.SILQ.Expressions.Function
+    name: Function
+    href: flx.SILQ.Expressions.Function.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -511,21 +543,162 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: flx.SILQ.Expressions.Grouping.#ctor*
-  commentId: Overload:flx.SILQ.Expressions.Grouping.#ctor
-  href: flx.SILQ.Expressions.Grouping.html#flx_SILQ_Expressions_Grouping__ctor_flx_SILQ_Expressions_Expression_
-  name: Grouping
-  nameWithType: Grouping.Grouping
-  fullName: flx.SILQ.Expressions.Grouping.Grouping
-  nameWithType.vb: Grouping.New
-  fullName.vb: flx.SILQ.Expressions.Grouping.New
+- uid: flx.SILQ.Expressions.Function.#ctor*
+  commentId: Overload:flx.SILQ.Expressions.Function.#ctor
+  href: flx.SILQ.Expressions.Function.html#flx_SILQ_Expressions_Function__ctor_flx_SILQ_Models_Token_System_Collections_Generic_List_flx_SILQ_Expressions_Expression__
+  name: Function
+  nameWithType: Function.Function
+  fullName: flx.SILQ.Expressions.Function.Function
+  nameWithType.vb: Function.New
+  fullName.vb: flx.SILQ.Expressions.Function.New
   name.vb: New
-- uid: flx.SILQ.Expressions.Grouping.Expression*
-  commentId: Overload:flx.SILQ.Expressions.Grouping.Expression
-  href: flx.SILQ.Expressions.Grouping.html#flx_SILQ_Expressions_Grouping_Expression
-  name: Expression
-  nameWithType: Grouping.Expression
-  fullName: flx.SILQ.Expressions.Grouping.Expression
+- uid: flx.SILQ.Models.Token
+  commentId: T:flx.SILQ.Models.Token
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.Token.html
+  name: Token
+  nameWithType: Token
+  fullName: flx.SILQ.Models.Token
+- uid: System.Collections.Generic.List{flx.SILQ.Expressions.Expression}
+  commentId: T:System.Collections.Generic.List{flx.SILQ.Expressions.Expression}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Expression>
+  nameWithType: List<Expression>
+  fullName: System.Collections.Generic.List<flx.SILQ.Expressions.Expression>
+  nameWithType.vb: List(Of Expression)
+  fullName.vb: System.Collections.Generic.List(Of flx.SILQ.Expressions.Expression)
+  name.vb: List(Of Expression)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: flx.SILQ.Expressions.Expression
+    name: Expression
+    href: flx.SILQ.Expressions.Expression.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: flx.SILQ.Expressions.Expression
+    name: Expression
+    href: flx.SILQ.Expressions.Expression.html
+  - name: )
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  href: flx.html
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
+  spec.csharp:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: flx.SILQ.Expressions.Function.Name*
+  commentId: Overload:flx.SILQ.Expressions.Function.Name
+  href: flx.SILQ.Expressions.Function.html#flx_SILQ_Expressions_Function_Name
+  name: Name
+  nameWithType: Function.Name
+  fullName: flx.SILQ.Expressions.Function.Name
+- uid: flx.SILQ.Expressions.Function.Arguments*
+  commentId: Overload:flx.SILQ.Expressions.Function.Arguments
+  href: flx.SILQ.Expressions.Function.html#flx_SILQ_Expressions_Function_Arguments
+  name: Arguments
+  nameWithType: Function.Arguments
+  fullName: flx.SILQ.Expressions.Function.Arguments
 - uid: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{{T}})
   commentId: M:flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   parent: flx.SILQ.Expressions.Expression
@@ -571,12 +744,12 @@ references:
   - name: T
   - name: )
   - name: )
-- uid: flx.SILQ.Expressions.Grouping.Accept*
-  commentId: Overload:flx.SILQ.Expressions.Grouping.Accept
-  href: flx.SILQ.Expressions.Grouping.html#flx_SILQ_Expressions_Grouping_Accept__1_flx_SILQ_Expressions_IVisitor___0__
+- uid: flx.SILQ.Expressions.Function.Accept*
+  commentId: Overload:flx.SILQ.Expressions.Function.Accept
+  href: flx.SILQ.Expressions.Function.html#flx_SILQ_Expressions_Function_Accept__1_flx_SILQ_Expressions_IVisitor___0__
   name: Accept
-  nameWithType: Grouping.Accept
-  fullName: flx.SILQ.Expressions.Grouping.Accept
+  nameWithType: Function.Accept
+  fullName: flx.SILQ.Expressions.Function.Accept
 - uid: flx.SILQ.Expressions.IVisitor{{T}}
   commentId: T:flx.SILQ.Expressions.IVisitor{``0}
   parent: flx.SILQ.Expressions
