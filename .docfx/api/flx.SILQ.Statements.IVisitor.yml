@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -94,12 +94,14 @@ items:
   summary: Visits a <xref href="flx.SILQ.Statements.From" data-throw-if-not-resolved="false"></xref> statement node.
   example: []
   syntax:
-    content: void Visit(From statement)
+    content: object Visit(From statement)
     parameters:
     - id: statement
       type: flx.SILQ.Statements.From
       description: The from statement to visit.
-    content.vb: Sub Visit(statement As From)
+    return:
+      type: System.Object
+    content.vb: Function Visit(statement As From) As Object
   overload: flx.SILQ.Statements.IVisitor.Visit*
 - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
   commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
@@ -115,7 +117,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -147,7 +149,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -179,7 +181,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -211,7 +213,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -280,6 +282,24 @@ references:
   name: From
   nameWithType: From
   fullName: flx.SILQ.Statements.From
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: flx.SILQ.Statements.Where
   commentId: T:flx.SILQ.Statements.Where
   parent: flx.SILQ.Statements

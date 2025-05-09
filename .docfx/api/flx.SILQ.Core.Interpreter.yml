@@ -5,6 +5,7 @@ items:
   id: Interpreter
   parent: flx.SILQ.Core
   children:
+  - flx.SILQ.Core.Interpreter.#ctor(System.Object)
   - flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
   - flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)
   - flx.SILQ.Core.Interpreter.Visit(flx.SILQ.Expressions.Binary)
@@ -29,11 +30,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Interpreter
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -55,6 +56,41 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: flx.SILQ.Core.Interpreter.#ctor(System.Object)
+  commentId: M:flx.SILQ.Core.Interpreter.#ctor(System.Object)
+  id: '#ctor(System.Object)'
+  parent: flx.SILQ.Core.Interpreter
+  langs:
+  - csharp
+  - vb
+  name: Interpreter(object)
+  nameWithType: Interpreter.Interpreter(object)
+  fullName: flx.SILQ.Core.Interpreter.Interpreter(object)
+  type: Constructor
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Core/Interpreter.Base.cs
+      branch: feat/sandr0-p/context
+      repo: https://github.com/flexington/silq.git
+    id: .ctor
+    path: ../dotnet/flx.SILQ/Core/Interpreter.Base.cs
+    startLine: 20
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Core
+  summary: Initializes a new instance of the <xref href="flx.SILQ.Core.Interpreter" data-throw-if-not-resolved="false"></xref> class with the specified context.
+  example: []
+  syntax:
+    content: public Interpreter(object context)
+    parameters:
+    - id: context
+      type: System.Object
+      description: The context in which the interpreter operates.
+    content.vb: Public Sub New(context As Object)
+  overload: flx.SILQ.Core.Interpreter.#ctor*
+  nameWithType.vb: Interpreter.New(Object)
+  fullName.vb: flx.SILQ.Core.Interpreter.New(Object)
+  name.vb: New(Object)
 - uid: flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)
   commentId: M:flx.SILQ.Core.Interpreter.Interpret(flx.SILQ.Expressions.Expression)
   id: Interpret(flx.SILQ.Expressions.Expression)
@@ -69,11 +105,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Base.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Interpret
     path: ../dotnet/flx.SILQ/Core/Interpreter.Base.cs
-    startLine: 19
+    startLine: 30
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -104,11 +140,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Base.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Interpret
     path: ../dotnet/flx.SILQ/Core/Interpreter.Base.cs
-    startLine: 37
+    startLine: 48
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -142,7 +178,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -179,7 +215,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -216,7 +252,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -253,7 +289,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -290,7 +326,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -327,7 +363,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Expression.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Expression.cs
@@ -364,11 +400,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -401,23 +437,25 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
   summary: Implements the visitor method for the <xref href="flx.SILQ.Statements.From" data-throw-if-not-resolved="false"></xref> statement.
   example: []
   syntax:
-    content: public void Visit(From from)
+    content: public object Visit(From from)
     parameters:
     - id: from
       type: flx.SILQ.Statements.From
       description: The "From" statement to process.
-    content.vb: Public Sub Visit(from As From)
+    return:
+      type: System.Object
+    content.vb: Public Function Visit(from As From) As Object
   overload: flx.SILQ.Core.Interpreter.Visit*
   implements:
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
@@ -435,11 +473,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 35
+    startLine: 52
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -469,11 +507,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 44
+    startLine: 61
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -503,11 +541,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 53
+    startLine: 70
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -537,15 +575,15 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Core/Interpreter.Statement.cs
-    startLine: 62
+    startLine: 79
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
-  summary: Implements the visitor method for the <xref href="flx.SILQ.Statements.Function" data-throw-if-not-resolved="false"></xref> statement.
+  summary: Implements the visitor method for the <xref href="flx.SILQ.Expressions.Function" data-throw-if-not-resolved="false"></xref> statement.
   example: []
   syntax:
     content: public void Visit(Function statement)
@@ -950,6 +988,21 @@ references:
   - uid: flx.SILQ.Statements
     name: Statements
     href: flx.SILQ.Statements.html
+- uid: flx.SILQ.Core.Interpreter
+  commentId: T:flx.SILQ.Core.Interpreter
+  href: flx.SILQ.Core.Interpreter.html
+  name: Interpreter
+  nameWithType: Interpreter
+  fullName: flx.SILQ.Core.Interpreter
+- uid: flx.SILQ.Core.Interpreter.#ctor*
+  commentId: Overload:flx.SILQ.Core.Interpreter.#ctor
+  href: flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter__ctor_System_Object_
+  name: Interpreter
+  nameWithType: Interpreter.Interpreter
+  fullName: flx.SILQ.Core.Interpreter.Interpreter
+  nameWithType.vb: Interpreter.New
+  fullName.vb: flx.SILQ.Core.Interpreter.New
+  name.vb: New
 - uid: flx.SILQ.Core.Interpreter.Interpret*
   commentId: Overload:flx.SILQ.Core.Interpreter.Interpret
   href: flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Interpret_flx_SILQ_Expressions_Expression_
@@ -1610,13 +1663,6 @@ references:
     name: As
     href: flx.SILQ.Statements.As.html
   - name: )
-- uid: flx.SILQ.Statements.Function
-  commentId: T:flx.SILQ.Statements.Function
-  parent: flx.SILQ.Statements
-  href: flx.SILQ.Statements.Function.html
-  name: Function
-  nameWithType: Function
-  fullName: flx.SILQ.Statements.Function
 - uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
   commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
   parent: flx.SILQ.Statements.IVisitor
@@ -1642,3 +1688,10 @@ references:
     name: Function
     href: flx.SILQ.Statements.Function.html
   - name: )
+- uid: flx.SILQ.Statements.Function
+  commentId: T:flx.SILQ.Statements.Function
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Function.html
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Statements.Function

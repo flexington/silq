@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Statement
     path: ../dotnet/flx.SILQ/Statements/Statement.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/Statement.cs
-      branch: feat/sandr0-p/function
+      branch: feat/sandr0-p/context
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Statements/Statement.cs

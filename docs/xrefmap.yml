@@ -13,6 +13,25 @@ references:
   commentId: T:flx.SILQ.Core.Interpreter
   fullName: flx.SILQ.Core.Interpreter
   nameWithType: Interpreter
+- uid: flx.SILQ.Core.Interpreter.#ctor(System.Object)
+  name: Interpreter(object)
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter__ctor_System_Object_
+  commentId: M:flx.SILQ.Core.Interpreter.#ctor(System.Object)
+  name.vb: New(Object)
+  fullName: flx.SILQ.Core.Interpreter.Interpreter(object)
+  fullName.vb: flx.SILQ.Core.Interpreter.New(Object)
+  nameWithType: Interpreter.Interpreter(object)
+  nameWithType.vb: Interpreter.New(Object)
+- uid: flx.SILQ.Core.Interpreter.#ctor*
+  name: Interpreter
+  href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter__ctor_
+  commentId: Overload:flx.SILQ.Core.Interpreter.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: flx.SILQ.Core.Interpreter.Interpreter
+  fullName.vb: flx.SILQ.Core.Interpreter.New
+  nameWithType: Interpreter.Interpreter
+  nameWithType.vb: Interpreter.New
 - uid: flx.SILQ.Core.Interpreter.Interpret(System.Collections.Generic.List{flx.SILQ.Statements.Statement})
   name: Interpret(List<Statement>)
   href: api/flx.SILQ.Core.Interpreter.html#flx_SILQ_Core_Interpreter_Interpret_System_Collections_Generic_List_flx_SILQ_Statements_Statement__
@@ -1320,15 +1339,15 @@ references:
   commentId: T:flx.SILQ.Statements.From
   fullName: flx.SILQ.Statements.From
   nameWithType: From
-- uid: flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
-  name: From(Expression)
-  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Expression_
-  commentId: M:flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)
-  name.vb: New(Expression)
-  fullName: flx.SILQ.Statements.From.From(flx.SILQ.Expressions.Expression)
-  fullName.vb: flx.SILQ.Statements.From.New(flx.SILQ.Expressions.Expression)
-  nameWithType: From.From(Expression)
-  nameWithType.vb: From.New(Expression)
+- uid: flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Variable)
+  name: From(Variable)
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Variable_
+  commentId: M:flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Variable)
+  name.vb: New(Variable)
+  fullName: flx.SILQ.Statements.From.From(flx.SILQ.Expressions.Variable)
+  fullName.vb: flx.SILQ.Statements.From.New(flx.SILQ.Expressions.Variable)
+  nameWithType: From.From(Variable)
+  nameWithType.vb: From.New(Variable)
 - uid: flx.SILQ.Statements.From.#ctor*
   name: From
   href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From__ctor_
@@ -1352,19 +1371,19 @@ references:
   isSpec: "True"
   fullName: flx.SILQ.Statements.From.Accept
   nameWithType: From.Accept
-- uid: flx.SILQ.Statements.From.Expression
-  name: Expression
-  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Expression
-  commentId: P:flx.SILQ.Statements.From.Expression
-  fullName: flx.SILQ.Statements.From.Expression
-  nameWithType: From.Expression
-- uid: flx.SILQ.Statements.From.Expression*
-  name: Expression
-  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Expression_
-  commentId: Overload:flx.SILQ.Statements.From.Expression
+- uid: flx.SILQ.Statements.From.Property
+  name: Property
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Property
+  commentId: P:flx.SILQ.Statements.From.Property
+  fullName: flx.SILQ.Statements.From.Property
+  nameWithType: From.Property
+- uid: flx.SILQ.Statements.From.Property*
+  name: Property
+  href: api/flx.SILQ.Statements.From.html#flx_SILQ_Statements_From_Property_
+  commentId: Overload:flx.SILQ.Statements.From.Property
   isSpec: "True"
-  fullName: flx.SILQ.Statements.From.Expression
-  nameWithType: From.Expression
+  fullName: flx.SILQ.Statements.From.Property
+  nameWithType: From.Property
 - uid: flx.SILQ.Statements.Function
   name: Function
   href: api/flx.SILQ.Statements.Function.html

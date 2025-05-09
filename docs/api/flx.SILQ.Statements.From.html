@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/function/apiSpec/new?filename=flx_SILQ_Statements_From.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.From%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/context/apiSpec/new?filename=flx_SILQ_Statements_From.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.From%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="flx_SILQ_Statements_From" data-uid="flx.SILQ.Statements.From" class="text-break">
-Class From  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class From  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/context/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -164,9 +164,9 @@ This statement is used to specify the source of data for a query.</p>
 
   <a id="flx_SILQ_Statements_From__ctor_" data-uid="flx.SILQ.Statements.From.#ctor*"></a>
 
-  <h3 id="flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Expression_" data-uid="flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Expression)">
-  From(Expression)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Statements_From__ctor_flx_SILQ_Expressions_Variable_" data-uid="flx.SILQ.Statements.From.#ctor(flx.SILQ.Expressions.Variable)">
+  From(Variable)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/context/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Represents a &quot;from&quot; statement in the SILQ language.
@@ -175,12 +175,12 @@ This statement is used to specify the source of data for a query.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public From(Expression Expression)</code></pre>
+    <pre><code class="lang-csharp hljs">public From(Variable Property)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>Expression</code> <a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
+    <dt><code>Property</code> <a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a></dt>
     <dd></dd>
   </dl>
 
@@ -199,18 +199,18 @@ This statement is used to specify the source of data for a query.</p>
 </h2>
 
 
-  <a id="flx_SILQ_Statements_From_Expression_" data-uid="flx.SILQ.Statements.From.Expression*"></a>
+  <a id="flx_SILQ_Statements_From_Property_" data-uid="flx.SILQ.Statements.From.Property*"></a>
 
-  <h3 id="flx_SILQ_Statements_From_Expression" data-uid="flx.SILQ.Statements.From.Expression">
-  Expression
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Statements_From_Property" data-uid="flx.SILQ.Statements.From.Property">
+  Property
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/context/dotnet/flx.SILQ/Statements/From.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Expression Expression { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Variable Property { get; init; }</code></pre>
   </div>
 
 
@@ -219,7 +219,7 @@ This statement is used to specify the source of data for a query.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
+    <dt><a class="xref" href="flx.SILQ.Expressions.Variable.html">Variable</a></dt>
     <dd></dd>
   </dl>
 
@@ -238,7 +238,7 @@ This statement is used to specify the source of data for a query.</p>
 
   <h3 id="flx_SILQ_Statements_From_Accept_flx_SILQ_Statements_IVisitor_" data-uid="flx.SILQ.Statements.From.Accept(flx.SILQ.Statements.IVisitor)">
   Accept(IVisitor)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/From.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/context/dotnet/flx.SILQ/Statements/From.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Accepts a visitor to process this from statement.</p>
@@ -271,7 +271,7 @@ This statement is used to specify the source of data for a query.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/From.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/context/dotnet/flx.SILQ/Statements/From.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 
