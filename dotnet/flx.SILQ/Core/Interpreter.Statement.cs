@@ -46,4 +46,13 @@ public partial class Interpreter : IVisitor
     {
         throw new NotImplementedException();
     }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="As"/> statement.
+    /// </summary>
+    /// <param name="statement">The "As" statement to process.</param>
+    public void Visit(As statement)
+    {
+        throw new NotImplementedException();
+    }
 }
