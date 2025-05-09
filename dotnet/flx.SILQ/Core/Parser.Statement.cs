@@ -68,8 +68,13 @@ public partial class Parser
     /// <returns>A <see cref="From"/> statement containing the parsed expression.</returns>
     private Statement From()
     {
-        Expression expression = Expression();
-        return new From(expression);
+        if (Match(TokenType.IDENTIFIER))
+        {
+            Variable expression = Identifier();
+            return new From(expression);
+        }
+
+        throw new ParserError(Peek(), "Expect identifier after 'from'.");
     }
 
     /// <summary>

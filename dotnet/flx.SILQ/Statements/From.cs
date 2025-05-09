@@ -6,7 +6,7 @@ namespace flx.SILQ.Statements;
 /// Represents a "from" statement in the SILQ language.
 /// This statement is used to specify the source of data for a query.
 /// </summary>
-public record From(Expression Expression) : Statement
+public record From(Variable Property) : Statement
 {
     /// <summary>
     /// Accepts a visitor to process this from statement.

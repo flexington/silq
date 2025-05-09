@@ -12,6 +12,17 @@ namespace flx.SILQ.Core;
 /// </summary>
 public partial class Interpreter
 {
+    private readonly object _context;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Interpreter"/> class with the specified context.
+    /// </summary>
+    /// <param name="context">The context in which the interpreter operates.</param>
+    public Interpreter(object context)
+    {
+        _context = context;
+    }
+
     /// <summary>
     /// Interprets the given expression by evaluating it and converting the result to a string.
     /// </summary>

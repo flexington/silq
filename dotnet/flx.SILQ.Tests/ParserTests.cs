@@ -604,7 +604,7 @@ public class ParserTests
         Assert.IsNotNull(statement.First());
 
         Assert.IsInstanceOfType(statement.First(), typeof(From));
-        Assert.IsInstanceOfType(((From)statement.First()).Expression, typeof(Variable));
+        Assert.IsInstanceOfType(((From)statement.First()).Property, typeof(Variable));
     }
 
     [TestMethod]

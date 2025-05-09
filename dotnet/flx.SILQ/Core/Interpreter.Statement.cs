@@ -1,4 +1,6 @@
 using System;
+using flx.SILQ.Errors;
+using flx.SILQ.Expressions;
 using flx.SILQ.Statements;
 
 namespace flx.SILQ.Core;
@@ -24,9 +26,24 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="From"/> statement.
     /// </summary>
     /// <param name="from">The "From" statement to process.</param>
-    public void Visit(From from)
+    public object Visit(From from)
     {
-        throw new NotImplementedException();
+        return Visit(from.Property, _context);
+    }
+
+    private object Visit(Variable property, object context)
+    {
+        if (context == null) throw new RuntimeError(property.Name, "Context is not set.");
+
+        var prop = context.GetType().GetProperty(property.Name.Lexeme);
+        if (prop == null) throw new RuntimeError(property.Name, $"The identifier '{property.Name.Lexeme}' is not defined in the current context.");
+
+        if (property.Member is not null)
+        {
+            return Visit(property.Member, prop.GetValue(context));
+        }
+
+        return prop.GetValue(context);
     }
 
     /// <summary>
@@ -60,7 +77,7 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="Function"/> statement.
     /// </summary>
     /// <param name="statement">The "Function" statement to process.</param>
-    public void Visit(Function statement)
+    public void Visit(Statements.Function statement)
     {
         throw new NotImplementedException();
     }
