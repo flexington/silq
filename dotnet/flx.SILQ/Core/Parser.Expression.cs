@@ -149,7 +149,7 @@ public partial class Parser
             if (previous.TokenType == TokenType.STRING) return new Literal(previous.Literal);
         }
 
-        if (Match(TokenType.IDENTIFIER)) return new Variable(Previous());
+        if (Match(TokenType.IDENTIFIER)) return Identifier();
 
         if (Match(TokenType.LEFT_PAREN))
         {
@@ -159,6 +159,26 @@ public partial class Parser
         }
 
         throw new ParserError(Peek(), "Expected expression");
+    }
 
+    private Variable Identifier()
+    {
+        var token = Previous();
+
+        while (Match(TokenType.DOT))
+        {
+            if (Match(TokenType.IDENTIFIER))
+            {
+                Variable right = Identifier();
+                return new Variable(token, right);
+            }
+            else
+            {
+                throw new ParserError(Peek(), "Expected identifier after '.'");
+            }
+        }
+
+
+        return new Variable(token, null);
     }
 }

@@ -356,7 +356,7 @@ public class InterpreterTests
     public void Interpret_WhenFromStatement_ReturnsResult()
     {
         // Arrange
-        var variable = new Variable(new Token(TokenType.IDENTIFIER, "myTable", null, 1));
+        var variable = new Variable(new Token(TokenType.IDENTIFIER, "myTable", null, 1), null);
         var fromStatement = new From(variable);
         var interpreter = new Interpreter();
 
@@ -388,8 +388,8 @@ public class InterpreterTests
     {
         // Arrange
         var expressions = new[] {
-            new Variable(new Token(TokenType.IDENTIFIER, "myVar", null, 1)) ,
-            new Variable(new Token(TokenType.IDENTIFIER, "myVar2", null, 1))
+            new Variable(new Token(TokenType.IDENTIFIER, "myVar", null, 1), null) ,
+            new Variable(new Token(TokenType.IDENTIFIER, "myVar2", null, 1), null)
         };
         var selectStatement = new Select(expressions);
         var interpreter = new Interpreter();

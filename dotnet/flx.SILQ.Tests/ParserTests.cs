@@ -645,4 +645,45 @@ public class ParserTests
         Assert.IsNotNull(asStatement.Name);
         Assert.AreEqual("myVar", asStatement.Name.Lexeme);
     }
+
+    [TestMethod]
+    public void ParseStatement_WhenWhereStatementWithMemberAccess_ReturnsWhereStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.WHERE, "where", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.DOT, ".", null, 1),
+            new Token(TokenType.IDENTIFIER, "myMember", null, 1),
+            new Token(TokenType.EQUAL_EQUAL, "==", null, 1),
+            new Token(TokenType.NUMBER, "123", 123.0, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Where));
+
+        var whereStatement = (Where)statement.First();
+        Assert.IsNotNull(whereStatement.Expression);
+
+        var left = ((Binary)whereStatement.Expression).Left;
+        Assert.IsNotNull(left);
+        Assert.IsInstanceOfType(left, typeof(Variable));
+
+        var variable = (Variable)left;
+        Assert.AreEqual("myVar", variable.Name.Lexeme);
+        Assert.IsNotNull(variable.Member);
+        Assert.IsInstanceOfType(variable.Member, typeof(Variable));
+
+        var member = (Variable)variable.Member;
+        Assert.AreEqual("myMember", member.Name.Lexeme);
+        Assert.IsNull(member.Member);
+    }
 }
