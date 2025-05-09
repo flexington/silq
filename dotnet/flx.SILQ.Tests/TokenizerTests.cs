@@ -19,6 +19,9 @@ public class TokenizerTests
     [DataRow("!", TokenType.BANG)]
     [DataRow("(", TokenType.LEFT_PAREN)]
     [DataRow(")", TokenType.RIGHT_PAREN)]
+    [DataRow("{", TokenType.LEFT_BRACE)]
+    [DataRow("}", TokenType.RIGHT_BRACE)]
+    [DataRow(",", TokenType.COMMA)]
     public void Tokenize_SingleCharacterTokens_ReturnsExpectedTokens(string inputChar, TokenType expectedType)
     {
         var tokenizer = new Tokenizer();

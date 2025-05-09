@@ -4,6 +4,7 @@ items:
   commentId: N:flx.SILQ.Statements
   id: flx.SILQ.Statements
   children:
+  - flx.SILQ.Statements.As
   - flx.SILQ.Statements.From
   - flx.SILQ.Statements.IVisitor
   - flx.SILQ.Statements.Print
@@ -20,6 +21,13 @@ items:
   assemblies:
   - flx.SILQ
 references:
+- uid: flx.SILQ.Statements.As
+  commentId: T:flx.SILQ.Statements.As
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.As.html
+  name: As
+  nameWithType: As
+  fullName: flx.SILQ.Statements.As
 - uid: flx.SILQ.Statements.From
   commentId: T:flx.SILQ.Statements.From
   parent: flx.SILQ.Statements

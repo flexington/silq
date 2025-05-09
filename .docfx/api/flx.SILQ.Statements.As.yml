@@ -1,42 +1,46 @@
 ### YamlMime:ManagedReference
 items:
-- uid: flx.SILQ.Models.Character
-  commentId: T:flx.SILQ.Models.Character
-  id: Character
-  parent: flx.SILQ.Models
+- uid: flx.SILQ.Statements.As
+  commentId: T:flx.SILQ.Statements.As
+  id: As
+  parent: flx.SILQ.Statements
   children:
-  - flx.SILQ.Models.Character.#ctor(System.Char,System.Int32,System.Int32)
-  - flx.SILQ.Models.Character.Column
-  - flx.SILQ.Models.Character.Line
-  - flx.SILQ.Models.Character.ToString
-  - flx.SILQ.Models.Character.Value
+  - flx.SILQ.Statements.As.#ctor(flx.SILQ.Models.Token)
+  - flx.SILQ.Statements.As.Accept(flx.SILQ.Statements.IVisitor)
+  - flx.SILQ.Statements.As.Name
   langs:
   - csharp
   - vb
-  name: Character
-  nameWithType: Character
-  fullName: flx.SILQ.Models.Character
+  name: As
+  nameWithType: As
+  fullName: flx.SILQ.Statements.As
   type: Class
   source:
     remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
+      path: dotnet/flx.SILQ/Statements/As.cs
       branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
-    id: Character
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 5
+    id: As
+    path: ../dotnet/flx.SILQ/Statements/As.cs
+    startLine: 11
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Models
-  summary: Represents a single character in the source input, including its value and position (line and column).
+  namespace: flx.SILQ.Statements
+  summary: Represents an 'As' statement in the SILQ language.
+  remarks: >-
+    This statement is used to define a specific behavior or operation in the SILQ language.
+
+    It inherits from the base <xref href="flx.SILQ.Statements.Statement" data-throw-if-not-resolved="false"></xref> class and implements the <xref href="flx.SILQ.Statements.IVisitor" data-throw-if-not-resolved="false"></xref> pattern.
   example: []
   syntax:
-    content: 'public record Character : IEquatable<Character>'
-    content.vb: Public Class Character Implements IEquatable(Of Character)
+    content: 'public record As : Statement, IEquatable<Statement>, IEquatable<As>'
+    content.vb: Public Class [As] Inherits Statement Implements IEquatable(Of Statement), IEquatable(Of As)
   inheritance:
   - System.Object
+  - flx.SILQ.Statements.Statement
   implements:
-  - System.IEquatable{flx.SILQ.Models.Character}
+  - System.IEquatable{flx.SILQ.Statements.Statement}
+  - System.IEquatable{flx.SILQ.Statements.As}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,169 +48,128 @@ items:
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: flx.SILQ.Models.Character.#ctor(System.Char,System.Int32,System.Int32)
-  commentId: M:flx.SILQ.Models.Character.#ctor(System.Char,System.Int32,System.Int32)
-  id: '#ctor(System.Char,System.Int32,System.Int32)'
-  parent: flx.SILQ.Models.Character
+  - System.Object.ToString
+- uid: flx.SILQ.Statements.As.#ctor(flx.SILQ.Models.Token)
+  commentId: M:flx.SILQ.Statements.As.#ctor(flx.SILQ.Models.Token)
+  id: '#ctor(flx.SILQ.Models.Token)'
+  parent: flx.SILQ.Statements.As
   langs:
   - csharp
   - vb
-  name: Character(char, int, int)
-  nameWithType: Character.Character(char, int, int)
-  fullName: flx.SILQ.Models.Character.Character(char, int, int)
+  name: As(Token)
+  nameWithType: As.As(Token)
+  fullName: flx.SILQ.Statements.As.As(flx.SILQ.Models.Token)
   type: Constructor
   source:
     remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
+      path: dotnet/flx.SILQ/Statements/As.cs
       branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: .ctor
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 5
+    path: ../dotnet/flx.SILQ/Statements/As.cs
+    startLine: 11
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Models
-  summary: Represents a single character in the source input, including its value and position (line and column).
+  namespace: flx.SILQ.Statements
+  summary: Represents an 'As' statement in the SILQ language.
+  remarks: >-
+    This statement is used to define a specific behavior or operation in the SILQ language.
+
+    It inherits from the base <xref href="flx.SILQ.Statements.Statement" data-throw-if-not-resolved="false"></xref> class and implements the <xref href="flx.SILQ.Statements.IVisitor" data-throw-if-not-resolved="false"></xref> pattern.
   example: []
   syntax:
-    content: public Character(char Value, int Line, int Column)
+    content: public As(Token Name)
     parameters:
-    - id: Value
-      type: System.Char
-    - id: Line
-      type: System.Int32
-    - id: Column
-      type: System.Int32
-    content.vb: Public Sub New(Value As Char, Line As Integer, Column As Integer)
-  overload: flx.SILQ.Models.Character.#ctor*
-  nameWithType.vb: Character.New(Char, Integer, Integer)
-  fullName.vb: flx.SILQ.Models.Character.New(Char, Integer, Integer)
-  name.vb: New(Char, Integer, Integer)
-- uid: flx.SILQ.Models.Character.Value
-  commentId: P:flx.SILQ.Models.Character.Value
-  id: Value
-  parent: flx.SILQ.Models.Character
+    - id: Name
+      type: flx.SILQ.Models.Token
+    content.vb: Public Sub New(Name As Token)
+  overload: flx.SILQ.Statements.As.#ctor*
+  nameWithType.vb: As.New(Token)
+  fullName.vb: flx.SILQ.Statements.As.New(flx.SILQ.Models.Token)
+  name.vb: New(Token)
+- uid: flx.SILQ.Statements.As.Name
+  commentId: P:flx.SILQ.Statements.As.Name
+  id: Name
+  parent: flx.SILQ.Statements.As
   langs:
   - csharp
   - vb
-  name: Value
-  nameWithType: Character.Value
-  fullName: flx.SILQ.Models.Character.Value
+  name: Name
+  nameWithType: As.Name
+  fullName: flx.SILQ.Statements.As.Name
   type: Property
   source:
     remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
+      path: dotnet/flx.SILQ/Statements/As.cs
       branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
-    id: Value
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 5
+    id: Name
+    path: ../dotnet/flx.SILQ/Statements/As.cs
+    startLine: 11
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Models
+  namespace: flx.SILQ.Statements
   syntax:
-    content: public char Value { get; init; }
+    content: public Token Name { get; init; }
     parameters: []
     return:
-      type: System.Char
-    content.vb: Public Property Value As Char
-  overload: flx.SILQ.Models.Character.Value*
-- uid: flx.SILQ.Models.Character.Line
-  commentId: P:flx.SILQ.Models.Character.Line
-  id: Line
-  parent: flx.SILQ.Models.Character
+      type: flx.SILQ.Models.Token
+    content.vb: Public Property Name As Token
+  overload: flx.SILQ.Statements.As.Name*
+- uid: flx.SILQ.Statements.As.Accept(flx.SILQ.Statements.IVisitor)
+  commentId: M:flx.SILQ.Statements.As.Accept(flx.SILQ.Statements.IVisitor)
+  id: Accept(flx.SILQ.Statements.IVisitor)
+  parent: flx.SILQ.Statements.As
   langs:
   - csharp
   - vb
-  name: Line
-  nameWithType: Character.Line
-  fullName: flx.SILQ.Models.Character.Line
-  type: Property
-  source:
-    remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
-      repo: https://github.com/flexington/silq.git
-    id: Line
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 5
-  assemblies:
-  - flx.SILQ
-  namespace: flx.SILQ.Models
-  syntax:
-    content: public int Line { get; init; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Line As Integer
-  overload: flx.SILQ.Models.Character.Line*
-- uid: flx.SILQ.Models.Character.Column
-  commentId: P:flx.SILQ.Models.Character.Column
-  id: Column
-  parent: flx.SILQ.Models.Character
-  langs:
-  - csharp
-  - vb
-  name: Column
-  nameWithType: Character.Column
-  fullName: flx.SILQ.Models.Character.Column
-  type: Property
-  source:
-    remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
-      repo: https://github.com/flexington/silq.git
-    id: Column
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 5
-  assemblies:
-  - flx.SILQ
-  namespace: flx.SILQ.Models
-  syntax:
-    content: public int Column { get; init; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Column As Integer
-  overload: flx.SILQ.Models.Character.Column*
-- uid: flx.SILQ.Models.Character.ToString
-  commentId: M:flx.SILQ.Models.Character.ToString
-  id: ToString
-  parent: flx.SILQ.Models.Character
-  langs:
-  - csharp
-  - vb
-  name: ToString()
-  nameWithType: Character.ToString()
-  fullName: flx.SILQ.Models.Character.ToString()
+  name: Accept(IVisitor)
+  nameWithType: As.Accept(IVisitor)
+  fullName: flx.SILQ.Statements.As.Accept(flx.SILQ.Statements.IVisitor)
   type: Method
   source:
     remote:
-      path: dotnet/flx.SILQ/Models/Character.cs
+      path: dotnet/flx.SILQ/Statements/As.cs
       branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
-    id: ToString
-    path: ../dotnet/flx.SILQ/Models/Character.cs
-    startLine: 10
+    id: Accept
+    path: ../dotnet/flx.SILQ/Statements/As.cs
+    startLine: 17
   assemblies:
   - flx.SILQ
-  namespace: flx.SILQ.Models
-  summary: "Returns a string representation of the character and its position in the format: 'Value (Line, Column)'."
+  namespace: flx.SILQ.Statements
+  summary: Accepts a visitor that implements the <xref href="flx.SILQ.Statements.IVisitor" data-throw-if-not-resolved="false"></xref> interface.
   example: []
   syntax:
-    content: public override string ToString()
-    return:
-      type: System.String
-    content.vb: Public Overrides Function ToString() As String
-  overridden: System.Object.ToString
-  overload: flx.SILQ.Models.Character.ToString*
+    content: public override void Accept(IVisitor visitor)
+    parameters:
+    - id: visitor
+      type: flx.SILQ.Statements.IVisitor
+      description: The visitor to accept.
+    content.vb: Public Overrides Sub Accept(visitor As IVisitor)
+  overridden: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  overload: flx.SILQ.Statements.As.Accept*
 references:
-- uid: flx.SILQ.Models
-  commentId: N:flx.SILQ.Models
+- uid: flx.SILQ.Statements.Statement
+  commentId: T:flx.SILQ.Statements.Statement
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Statement.html
+  name: Statement
+  nameWithType: Statement
+  fullName: flx.SILQ.Statements.Statement
+- uid: flx.SILQ.Statements.IVisitor
+  commentId: T:flx.SILQ.Statements.IVisitor
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.IVisitor.html
+  name: IVisitor
+  nameWithType: IVisitor
+  fullName: flx.SILQ.Statements.IVisitor
+- uid: flx.SILQ.Statements
+  commentId: N:flx.SILQ.Statements
   href: flx.html
-  name: flx.SILQ.Models
-  nameWithType: flx.SILQ.Models
-  fullName: flx.SILQ.Models
+  name: flx.SILQ.Statements
+  nameWithType: flx.SILQ.Statements
+  fullName: flx.SILQ.Statements
   spec.csharp:
   - uid: flx
     name: flx
@@ -216,9 +179,9 @@ references:
     name: SILQ
     href: flx.SILQ.html
   - name: .
-  - uid: flx.SILQ.Models
-    name: Models
-    href: flx.SILQ.Models.html
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
   spec.vb:
   - uid: flx
     name: flx
@@ -228,9 +191,9 @@ references:
     name: SILQ
     href: flx.SILQ.html
   - name: .
-  - uid: flx.SILQ.Models
-    name: Models
-    href: flx.SILQ.Models.html
+  - uid: flx.SILQ.Statements
+    name: Statements
+    href: flx.SILQ.Statements.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -242,26 +205,26 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.IEquatable{flx.SILQ.Models.Character}
-  commentId: T:System.IEquatable{flx.SILQ.Models.Character}
+- uid: System.IEquatable{flx.SILQ.Statements.Statement}
+  commentId: T:System.IEquatable{flx.SILQ.Statements.Statement}
   parent: System
   definition: System.IEquatable`1
   href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<Character>
-  nameWithType: IEquatable<Character>
-  fullName: System.IEquatable<flx.SILQ.Models.Character>
-  nameWithType.vb: IEquatable(Of Character)
-  fullName.vb: System.IEquatable(Of flx.SILQ.Models.Character)
-  name.vb: IEquatable(Of Character)
+  name: IEquatable<Statement>
+  nameWithType: IEquatable<Statement>
+  fullName: System.IEquatable<flx.SILQ.Statements.Statement>
+  nameWithType.vb: IEquatable(Of Statement)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.Statement)
+  name.vb: IEquatable(Of Statement)
   spec.csharp:
   - uid: System.IEquatable`1
     name: IEquatable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
   - name: <
-  - uid: flx.SILQ.Models.Character
-    name: Character
-    href: flx.SILQ.Models.Character.html
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
   - name: '>'
   spec.vb:
   - uid: System.IEquatable`1
@@ -271,9 +234,42 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: flx.SILQ.Models.Character
-    name: Character
-    href: flx.SILQ.Models.Character.html
+  - uid: flx.SILQ.Statements.Statement
+    name: Statement
+    href: flx.SILQ.Statements.Statement.html
+  - name: )
+- uid: System.IEquatable{flx.SILQ.Statements.As}
+  commentId: T:System.IEquatable{flx.SILQ.Statements.As}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<As>
+  nameWithType: IEquatable<As>
+  fullName: System.IEquatable<flx.SILQ.Statements.As>
+  nameWithType.vb: IEquatable(Of As)
+  fullName.vb: System.IEquatable(Of flx.SILQ.Statements.As)
+  name.vb: IEquatable(Of As)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: flx.SILQ.Statements.As
+    name: As
+    href: flx.SILQ.Statements.As.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: flx.SILQ.Statements.As
+    name: As
+    href: flx.SILQ.Statements.As.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -470,6 +466,30 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -505,93 +525,86 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: flx.SILQ.Models.Character.#ctor*
-  commentId: Overload:flx.SILQ.Models.Character.#ctor
-  href: flx.SILQ.Models.Character.html#flx_SILQ_Models_Character__ctor_System_Char_System_Int32_System_Int32_
-  name: Character
-  nameWithType: Character.Character
-  fullName: flx.SILQ.Models.Character.Character
-  nameWithType.vb: Character.New
-  fullName.vb: flx.SILQ.Models.Character.New
+- uid: flx.SILQ.Statements.As.#ctor*
+  commentId: Overload:flx.SILQ.Statements.As.#ctor
+  href: flx.SILQ.Statements.As.html#flx_SILQ_Statements_As__ctor_flx_SILQ_Models_Token_
+  name: As
+  nameWithType: As.As
+  fullName: flx.SILQ.Statements.As.As
+  nameWithType.vb: As.New
+  fullName.vb: flx.SILQ.Statements.As.New
   name.vb: New
-- uid: System.Char
-  commentId: T:System.Char
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.char
-  name: char
-  nameWithType: char
-  fullName: char
-  nameWithType.vb: Char
-  fullName.vb: Char
-  name.vb: Char
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: flx.SILQ.Models.Character.Value*
-  commentId: Overload:flx.SILQ.Models.Character.Value
-  href: flx.SILQ.Models.Character.html#flx_SILQ_Models_Character_Value
-  name: Value
-  nameWithType: Character.Value
-  fullName: flx.SILQ.Models.Character.Value
-- uid: flx.SILQ.Models.Character.Line*
-  commentId: Overload:flx.SILQ.Models.Character.Line
-  href: flx.SILQ.Models.Character.html#flx_SILQ_Models_Character_Line
-  name: Line
-  nameWithType: Character.Line
-  fullName: flx.SILQ.Models.Character.Line
-- uid: flx.SILQ.Models.Character.Column*
-  commentId: Overload:flx.SILQ.Models.Character.Column
-  href: flx.SILQ.Models.Character.html#flx_SILQ_Models_Character_Column
-  name: Column
-  nameWithType: Character.Column
-  fullName: flx.SILQ.Models.Character.Column
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
+- uid: flx.SILQ.Models.Token
+  commentId: T:flx.SILQ.Models.Token
+  parent: flx.SILQ.Models
+  href: flx.SILQ.Models.Token.html
+  name: Token
+  nameWithType: Token
+  fullName: flx.SILQ.Models.Token
+- uid: flx.SILQ.Models
+  commentId: N:flx.SILQ.Models
+  href: flx.html
+  name: flx.SILQ.Models
+  nameWithType: flx.SILQ.Models
+  fullName: flx.SILQ.Models
   spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+  spec.vb:
+  - uid: flx
+    name: flx
+    href: flx.html
+  - name: .
+  - uid: flx.SILQ
+    name: SILQ
+    href: flx.SILQ.html
+  - name: .
+  - uid: flx.SILQ.Models
+    name: Models
+    href: flx.SILQ.Models.html
+- uid: flx.SILQ.Statements.As.Name*
+  commentId: Overload:flx.SILQ.Statements.As.Name
+  href: flx.SILQ.Statements.As.html#flx_SILQ_Statements_As_Name
+  name: Name
+  nameWithType: As.Name
+  fullName: flx.SILQ.Statements.As.Name
+- uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  commentId: M:flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  parent: flx.SILQ.Statements.Statement
+  href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
+  name: Accept(IVisitor)
+  nameWithType: Statement.Accept(IVisitor)
+  fullName: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+  spec.csharp:
+  - uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+    name: Accept
+    href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
   - name: (
+  - uid: flx.SILQ.Statements.IVisitor
+    name: IVisitor
+    href: flx.SILQ.Statements.IVisitor.html
   - name: )
   spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - uid: flx.SILQ.Statements.Statement.Accept(flx.SILQ.Statements.IVisitor)
+    name: Accept
+    href: flx.SILQ.Statements.Statement.html#flx_SILQ_Statements_Statement_Accept_flx_SILQ_Statements_IVisitor_
   - name: (
+  - uid: flx.SILQ.Statements.IVisitor
+    name: IVisitor
+    href: flx.SILQ.Statements.IVisitor.html
   - name: )
-- uid: flx.SILQ.Models.Character.ToString*
-  commentId: Overload:flx.SILQ.Models.Character.ToString
-  href: flx.SILQ.Models.Character.html#flx_SILQ_Models_Character_ToString
-  name: ToString
-  nameWithType: Character.ToString
-  fullName: flx.SILQ.Models.Character.ToString
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+- uid: flx.SILQ.Statements.As.Accept*
+  commentId: Overload:flx.SILQ.Statements.As.Accept
+  href: flx.SILQ.Statements.As.html#flx_SILQ_Statements_As_Accept_flx_SILQ_Statements_IVisitor_
+  name: Accept
+  nameWithType: As.Accept
+  fullName: flx.SILQ.Statements.As.Accept

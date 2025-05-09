@@ -68,6 +68,9 @@ items:
   name: flx.SILQ.Statements
   type: Namespace
   items:
+  - uid: flx.SILQ.Statements.As
+    name: As
+    type: Class
   - uid: flx.SILQ.Statements.From
     name: From
     type: Class

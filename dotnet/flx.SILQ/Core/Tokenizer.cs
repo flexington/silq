@@ -59,8 +59,17 @@ public class Tokenizer
                 case ')':
                     tokens.Add(new Token(TokenType.RIGHT_PAREN, c.Value.ToString(), null, c.Line, c.Column));
                     break;
+                case '{':
+                    tokens.Add(new Token(TokenType.LEFT_BRACE, c.Value.ToString(), null, c.Line, c.Column));
+                    break;
+                case '}':
+                    tokens.Add(new Token(TokenType.RIGHT_BRACE, c.Value.ToString(), null, c.Line, c.Column));
+                    break;
                 case '.':
                     tokens.Add(new Token(TokenType.DOT, c.Value.ToString(), null, c.Line, c.Column));
+                    break;
+                case ',':
+                    tokens.Add(new Token(TokenType.COMMA, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '+':
                     tokens.Add(new Token(TokenType.PLUS, c.Value.ToString(), null, c.Line, c.Column));

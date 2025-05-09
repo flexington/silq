@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Expression.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Expression
     path: ../dotnet/flx.SILQ/Expressions/Expression.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Expression.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Expressions/Expression.cs

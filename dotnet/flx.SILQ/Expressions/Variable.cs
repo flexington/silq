@@ -6,7 +6,8 @@ namespace flx.SILQ.Expressions;
 /// Represents a variable expression in the syntax tree.
 /// </summary>
 /// <param name="Name">The token representing the name of the variable.</param>
-public record Variable(Token Name) : Expression
+/// <param name="Member">An optional member variable, allowing for nested variable access.</param>
+public record Variable(Token Name, Variable Member) : Expression
 {
     /// <summary>
     /// Accepts a visitor to process this variable expression.

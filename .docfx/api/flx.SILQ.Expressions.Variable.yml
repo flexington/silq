@@ -5,8 +5,9 @@ items:
   id: Variable
   parent: flx.SILQ.Expressions
   children:
-  - flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
+  - flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token,flx.SILQ.Expressions.Variable)
   - flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
+  - flx.SILQ.Expressions.Variable.Member
   - flx.SILQ.Expressions.Variable.Name
   langs:
   - csharp
@@ -18,11 +19,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Variable.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Variable
     path: ../dotnet/flx.SILQ/Expressions/Variable.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
@@ -45,41 +46,44 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
-  commentId: M:flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token)
-  id: '#ctor(flx.SILQ.Models.Token)'
+- uid: flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token,flx.SILQ.Expressions.Variable)
+  commentId: M:flx.SILQ.Expressions.Variable.#ctor(flx.SILQ.Models.Token,flx.SILQ.Expressions.Variable)
+  id: '#ctor(flx.SILQ.Models.Token,flx.SILQ.Expressions.Variable)'
   parent: flx.SILQ.Expressions.Variable
   langs:
   - csharp
   - vb
-  name: Variable(Token)
-  nameWithType: Variable.Variable(Token)
-  fullName: flx.SILQ.Expressions.Variable.Variable(flx.SILQ.Models.Token)
+  name: Variable(Token, Variable)
+  nameWithType: Variable.Variable(Token, Variable)
+  fullName: flx.SILQ.Expressions.Variable.Variable(flx.SILQ.Models.Token, flx.SILQ.Expressions.Variable)
   type: Constructor
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Variable.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: .ctor
     path: ../dotnet/flx.SILQ/Expressions/Variable.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
   summary: Represents a variable expression in the syntax tree.
   example: []
   syntax:
-    content: public Variable(Token Name)
+    content: public Variable(Token Name, Variable Member)
     parameters:
     - id: Name
       type: flx.SILQ.Models.Token
       description: The token representing the name of the variable.
-    content.vb: Public Sub New(Name As Token)
+    - id: Member
+      type: flx.SILQ.Expressions.Variable
+      description: An optional member variable, allowing for nested variable access.
+    content.vb: Public Sub New(Name As Token, Member As Variable)
   overload: flx.SILQ.Expressions.Variable.#ctor*
-  nameWithType.vb: Variable.New(Token)
-  fullName.vb: flx.SILQ.Expressions.Variable.New(flx.SILQ.Models.Token)
-  name.vb: New(Token)
+  nameWithType.vb: Variable.New(Token, Variable)
+  fullName.vb: flx.SILQ.Expressions.Variable.New(flx.SILQ.Models.Token, flx.SILQ.Expressions.Variable)
+  name.vb: New(Token, Variable)
 - uid: flx.SILQ.Expressions.Variable.Name
   commentId: P:flx.SILQ.Expressions.Variable.Name
   id: Name
@@ -94,11 +98,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Variable.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Name
     path: ../dotnet/flx.SILQ/Expressions/Variable.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
@@ -111,6 +115,37 @@ items:
       type: flx.SILQ.Models.Token
     content.vb: Public Property Name As Token
   overload: flx.SILQ.Expressions.Variable.Name*
+- uid: flx.SILQ.Expressions.Variable.Member
+  commentId: P:flx.SILQ.Expressions.Variable.Member
+  id: Member
+  parent: flx.SILQ.Expressions.Variable
+  langs:
+  - csharp
+  - vb
+  name: Member
+  nameWithType: Variable.Member
+  fullName: flx.SILQ.Expressions.Variable.Member
+  type: Property
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/Variable.cs
+      branch: feat/sandr0-p/dot-notation
+      repo: https://github.com/flexington/silq.git
+    id: Member
+    path: ../dotnet/flx.SILQ/Expressions/Variable.cs
+    startLine: 9
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  summary: An optional member variable, allowing for nested variable access.
+  example: []
+  syntax:
+    content: public Variable Member { get; init; }
+    parameters: []
+    return:
+      type: flx.SILQ.Expressions.Variable
+    content.vb: Public Property Member As Variable
+  overload: flx.SILQ.Expressions.Variable.Member*
 - uid: flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   commentId: M:flx.SILQ.Expressions.Variable.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   id: Accept``1(flx.SILQ.Expressions.IVisitor{``0})
@@ -125,11 +160,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/Variable.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Accept
     path: ../dotnet/flx.SILQ/Expressions/Variable.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Expressions
@@ -522,7 +557,7 @@ references:
   - name: )
 - uid: flx.SILQ.Expressions.Variable.#ctor*
   commentId: Overload:flx.SILQ.Expressions.Variable.#ctor
-  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable__ctor_flx_SILQ_Models_Token_
+  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable__ctor_flx_SILQ_Models_Token_flx_SILQ_Expressions_Variable_
   name: Variable
   nameWithType: Variable.Variable
   fullName: flx.SILQ.Expressions.Variable.Variable
@@ -536,6 +571,13 @@ references:
   name: Token
   nameWithType: Token
   fullName: flx.SILQ.Models.Token
+- uid: flx.SILQ.Expressions.Variable
+  commentId: T:flx.SILQ.Expressions.Variable
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Variable.html
+  name: Variable
+  nameWithType: Variable
+  fullName: flx.SILQ.Expressions.Variable
 - uid: flx.SILQ.Models
   commentId: N:flx.SILQ.Models
   href: flx.html
@@ -572,6 +614,12 @@ references:
   name: Name
   nameWithType: Variable.Name
   fullName: flx.SILQ.Expressions.Variable.Name
+- uid: flx.SILQ.Expressions.Variable.Member*
+  commentId: Overload:flx.SILQ.Expressions.Variable.Member
+  href: flx.SILQ.Expressions.Variable.html#flx_SILQ_Expressions_Variable_Member
+  name: Member
+  nameWithType: Variable.Member
+  fullName: flx.SILQ.Expressions.Variable.Member
 - uid: flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{{T}})
   commentId: M:flx.SILQ.Expressions.Expression.Accept``1(flx.SILQ.Expressions.IVisitor{``0})
   parent: flx.SILQ.Expressions.Expression
