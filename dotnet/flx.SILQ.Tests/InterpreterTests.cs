@@ -353,7 +353,7 @@ public class InterpreterTests
     }
 
     [TestMethod]
-    public void Interpret_WhenFromStatementWithIdentifier_ReturnsResult()
+    public void Interpret_WhenFromStatement_ReturnsResult()
     {
         // Arrange
         var variable = new Variable(new Token(TokenType.IDENTIFIER, "myTable", null, 1));
@@ -369,7 +369,7 @@ public class InterpreterTests
     }
 
     [TestMethod]
-    public void Interpret_WhenWhereStatementWithCondition_ReturnsResult()
+    public void Interpret_WhenWhereStatement_ReturnsResult()
     {
         // Arrange
         var condition = new Literal(true);
@@ -399,5 +399,20 @@ public class InterpreterTests
 
         // Assert
         throw new NotImplementedException("Assertion for Select statement result is not implemented.");
+    }
+
+    [TestMethod]
+    public void Interpret_WhenAsStatement_ReturnsResult()
+    {
+        // Arrange
+        var name = new Token(TokenType.IDENTIFIER, "myAlias", null, 1);
+        var asStatement = new As(name);
+        var interpreter = new Interpreter();
+
+        // Act
+        interpreter.Interpret([asStatement]);
+
+        // Assert
+        throw new NotImplementedException("Assertion for As statement result is not implemented.");
     }
 }

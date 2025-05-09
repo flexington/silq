@@ -620,4 +620,29 @@ public class ParserTests
         Assert.IsInstanceOfType(selectStatement.Expressions[0], typeof(Variable));
         Assert.IsInstanceOfType(selectStatement.Expressions[1], typeof(Variable));
     }
+
+    [TestMethod]
+    public void ParseStatement_WhenAsStatement_ReturnsAsStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.AS, "as", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statements = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statements);
+        Assert.IsInstanceOfType(statements.First(), typeof(As));
+
+        var asStatement = (As)statements.First();
+        Assert.IsNotNull(asStatement.Name);
+        Assert.AreEqual("myVar", asStatement.Name.Lexeme);
+    }
 }

@@ -46,6 +46,7 @@ public partial class Parser
         if (Match(TokenType.FROM)) return From();
         if (Match(TokenType.WHERE)) return Where();
         if (Match(TokenType.SELECT)) return Select();
+        if (Match(TokenType.AS)) return As();
 
         throw new ParserError(Peek(), "Expect statement.");
     }
@@ -101,5 +102,11 @@ public partial class Parser
         Consume(TokenType.RIGHT_BRACE, "Expect '}' after expression.");
 
         return new Select([.. expressions]);
+    }
+
+    private Statement As()
+    {
+        Token name = Consume(TokenType.IDENTIFIER, "Expect identifier after 'as'.");
+        return new As(name);
     }
 }

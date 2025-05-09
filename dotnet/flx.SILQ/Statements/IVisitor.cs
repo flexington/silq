@@ -9,24 +9,30 @@ public interface IVisitor
     /// <summary>
     /// Visits a <see cref="Print"/> statement node.
     /// </summary>
-    /// <param name="print">The print statement to visit.</param>
-    void Visit(Print print);
+    /// <param name="statement">The print statement to visit.</param>
+    void Visit(Print statement);
 
     /// <summary>
     /// Visits a <see cref="From"/> statement node.
     /// </summary>
-    /// <param name="from">The from statement to visit.</param>
-    void Visit(From from);
+    /// <param name="statement">The from statement to visit.</param>
+    void Visit(From statement);
 
     /// <summary>
     /// Visits a <see cref="Where"/> statement node.
     /// </summary>
-    /// <param name="where">The where statement to visit.</param>
-    void Visit(Where where);
+    /// <param name="statement">The where statement to visit.</param>
+    void Visit(Where statement);
 
     /// <summary>
     /// Visits a <see cref="Select"/> statement node.
     /// </summary>
-    /// <param name="select">The select statement to visit.</param>
-    void Visit(Select select);
+    /// <param name="statement">The select statement to visit.</param>
+    void Visit(Select statement);
+
+    /// <summary>
+    /// Visits a <see cref="As"/> statement node.
+    /// </summary>
+    /// <param name="statement">The as statement to visit.</param>
+    void Visit(As statement);
 }
