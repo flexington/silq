@@ -55,4 +55,13 @@ public partial class Interpreter : IVisitor
     {
         throw new NotImplementedException();
     }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="Function"/> statement.
+    /// </summary>
+    /// <param name="statement">The "Function" statement to process.</param>
+    public void Visit(Function statement)
+    {
+        throw new NotImplementedException();
+    }
 }
