@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Where | SILQ </title>
+      <title>Class Function | SILQ </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Where | SILQ ">
+      <meta name="title" content="Class Function | SILQ ">
       
-      <meta name="description" content="Represents a &amp;quot;Where&amp;quot; statement in the SILQ language.">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/function/apiSpec/new?filename=flx_SILQ_Statements_Where.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.Where%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/function/apiSpec/new?filename=flx_SILQ_Expressions_Function.md&amp;value=---%0Auid%3A%20flx.SILQ.Expressions.Function%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,25 +84,24 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="flx.SILQ.Statements.Where">
+        <article data-uid="flx.SILQ.Expressions.Function">
 
 
 
-  <h1 id="flx_SILQ_Statements_Where" data-uid="flx.SILQ.Statements.Where" class="text-break">
-Class Where  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/Where.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h1 id="flx_SILQ_Expressions_Function" data-uid="flx.SILQ.Expressions.Function" class="text-break">
+Class Function  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="flx.html">flx</a>.<a class="xref" href="flx.SILQ.html">SILQ</a>.<a class="xref" href="flx.SILQ.Statements.html">Statements</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="flx.html">flx</a>.<a class="xref" href="flx.SILQ.html">SILQ</a>.<a class="xref" href="flx.SILQ.Expressions.html">Expressions</a></dd></dl>
   <dl><dt>Assembly</dt><dd>flx.SILQ.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a &quot;Where&quot; statement in the SILQ language.</p>
-</div>
+  <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record Where : Statement, IEquatable&lt;Statement&gt;, IEquatable&lt;Where&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public record Function : Expression, IEquatable&lt;Expression&gt;, IEquatable&lt;Function&gt;</code></pre>
   </div>
 
 
@@ -112,16 +111,16 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a></div>
-      <div><span class="xref">Where</span></div>
+      <div><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></div>
+      <div><span class="xref">Function</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Statements.Statement.html">Statement</a>&gt;</div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Statements.Where.html">Where</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Function.html">Function</a>&gt;</div>
     </dd>
   </dl>
 
@@ -155,35 +154,32 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 
 
 
-  <h2 id="flx_SILQ_Statements_Where_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This statement is used to filter elements based on a condition.</p>
-</div>
 
 
   <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="flx_SILQ_Statements_Where__ctor_" data-uid="flx.SILQ.Statements.Where.#ctor*"></a>
+  <a id="flx_SILQ_Expressions_Function__ctor_" data-uid="flx.SILQ.Expressions.Function.#ctor*"></a>
 
-  <h3 id="flx_SILQ_Statements_Where__ctor_flx_SILQ_Expressions_Expression_" data-uid="flx.SILQ.Statements.Where.#ctor(flx.SILQ.Expressions.Expression)">
-  Where(Expression)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/Where.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Expressions_Function__ctor_flx_SILQ_Models_Token_System_Collections_Generic_List_flx_SILQ_Expressions_Expression__" data-uid="flx.SILQ.Expressions.Function.#ctor(flx.SILQ.Models.Token,System.Collections.Generic.List{flx.SILQ.Expressions.Expression})">
+  Function(Token, List&lt;Expression&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Represents a &quot;Where&quot; statement in the SILQ language.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Where(Expression Expression)</code></pre>
+    <pre><code class="lang-csharp hljs">public Function(Token Name, List&lt;Expression&gt; Arguments)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>Expression</code> <a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
-    <dd><p>The condition or set of conditions to filter elements.</p>
-</dd>
+    <dt><code>Name</code> <a class="xref" href="flx.SILQ.Models.Token.html">Token</a></dt>
+    <dd></dd>
+    <dt><code>Arguments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -193,9 +189,6 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 
 
 
-  <h4 class="section" id="flx_SILQ_Statements_Where__ctor_flx_SILQ_Expressions_Expression__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This statement is used to filter elements based on a condition.</p>
-</div>
 
 
 
@@ -204,19 +197,18 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 </h2>
 
 
-  <a id="flx_SILQ_Statements_Where_Expression_" data-uid="flx.SILQ.Statements.Where.Expression*"></a>
+  <a id="flx_SILQ_Expressions_Function_Arguments_" data-uid="flx.SILQ.Expressions.Function.Arguments*"></a>
 
-  <h3 id="flx_SILQ_Statements_Where_Expression" data-uid="flx.SILQ.Statements.Where.Expression">
-  Expression
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/Where.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Expressions_Function_Arguments" data-uid="flx.SILQ.Expressions.Function.Arguments">
+  Arguments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L6"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The condition or set of conditions to filter elements.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Expression Expression { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;Expression&gt; Arguments { get; init; }</code></pre>
   </div>
 
 
@@ -225,7 +217,38 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="flx.SILQ.Expressions.Expression.html">Expression</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Expressions_Function_Name_" data-uid="flx.SILQ.Expressions.Function.Name*"></a>
+
+  <h3 id="flx_SILQ_Expressions_Function_Name" data-uid="flx.SILQ.Expressions.Function.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Token Name { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="flx.SILQ.Models.Token.html">Token</a></dt>
     <dd></dd>
   </dl>
 
@@ -240,29 +263,37 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 </h2>
 
 
-  <a id="flx_SILQ_Statements_Where_Accept_" data-uid="flx.SILQ.Statements.Where.Accept*"></a>
+  <a id="flx_SILQ_Expressions_Function_Accept_" data-uid="flx.SILQ.Expressions.Function.Accept*"></a>
 
-  <h3 id="flx_SILQ_Statements_Where_Accept_flx_SILQ_Statements_IVisitor_" data-uid="flx.SILQ.Statements.Where.Accept(flx.SILQ.Statements.IVisitor)">
-  Accept(IVisitor)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/Where.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="flx_SILQ_Expressions_Function_Accept__1_flx_SILQ_Expressions_IVisitor___0__" data-uid="flx.SILQ.Expressions.Function.Accept``1(flx.SILQ.Expressions.IVisitor{``0})">
+  Accept&lt;T&gt;(IVisitor&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Accepts a visitor to process this &quot;Where&quot; statement.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Accept(IVisitor visitor)</code></pre>
+    <pre><code class="lang-csharp hljs">public override T Accept&lt;T&gt;(IVisitor&lt;T&gt; visitor)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>visitor</code> <a class="xref" href="flx.SILQ.Statements.IVisitor.html">IVisitor</a></dt>
-    <dd><p>The visitor that processes this statement.</p>
-</dd>
+    <dt><code>visitor</code> <a class="xref" href="flx.SILQ.Expressions.IVisitor-1.html">IVisitor</a>&lt;T&gt;</dt>
+    <dd></dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
 
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -277,7 +308,7 @@ Class Where  <a class="header-action link-secondary" title="View source" href="h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/Where.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Expressions/Function.cs/#L6" class="edit-link">Edit this page</a>
         </div>
 
 

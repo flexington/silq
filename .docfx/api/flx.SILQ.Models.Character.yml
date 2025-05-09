@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Character
     path: ../dotnet/flx.SILQ/Models/Character.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: .ctor
     path: ../dotnet/flx.SILQ/Models/Character.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Value
     path: ../dotnet/flx.SILQ/Models/Character.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Line
     path: ../dotnet/flx.SILQ/Models/Character.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Column
     path: ../dotnet/flx.SILQ/Models/Character.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Models/Character.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: ToString
     path: ../dotnet/flx.SILQ/Models/Character.cs

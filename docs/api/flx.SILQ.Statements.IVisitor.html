@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/dot-notation/apiSpec/new?filename=flx_SILQ_Statements_IVisitor.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.IVisitor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/flexington/silq/new/feat/sandr0-p/function/apiSpec/new?filename=flx_SILQ_Statements_IVisitor.md&amp;value=---%0Auid%3A%20flx.SILQ.Statements.IVisitor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="flx_SILQ_Statements_IVisitor" data-uid="flx.SILQ.Statements.IVisitor" class="text-break">
-Interface IVisitor  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Interface IVisitor  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -126,7 +126,7 @@ Implementations should provide logic for each supported statement type.</p>
 
   <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_As_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.As)">
   Visit(As)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.As.html">As</a> statement node.</p>
@@ -159,7 +159,7 @@ Implementations should provide logic for each supported statement type.</p>
 
   <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_From_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)">
   Visit(From)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.From.html">From</a> statement node.</p>
@@ -190,9 +190,42 @@ Implementations should provide logic for each supported statement type.</p>
 
   <a id="flx_SILQ_Statements_IVisitor_Visit_" data-uid="flx.SILQ.Statements.IVisitor.Visit*"></a>
 
+  <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Function_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)">
+  Visit(Function)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.Function.html">Function</a> statement node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Visit(Function statement)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>statement</code> <a class="xref" href="flx.SILQ.Statements.Function.html">Function</a></dt>
+    <dd><p>The function statement to visit.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="flx_SILQ_Statements_IVisitor_Visit_" data-uid="flx.SILQ.Statements.IVisitor.Visit*"></a>
+
   <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Print_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)">
   Visit(Print)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.Print.html">Print</a> statement node.</p>
@@ -225,7 +258,7 @@ Implementations should provide logic for each supported statement type.</p>
 
   <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Select_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)">
   Visit(Select)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.Select.html">Select</a> statement node.</p>
@@ -258,7 +291,7 @@ Implementations should provide logic for each supported statement type.</p>
 
   <h3 id="flx_SILQ_Statements_IVisitor_Visit_flx_SILQ_Statements_Where_" data-uid="flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)">
   Visit(Where)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Visits a <a class="xref" href="flx.SILQ.Statements.Where.html">Where</a> statement node.</p>
@@ -291,7 +324,7 @@ Implementations should provide logic for each supported statement type.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/dot-notation/dotnet/flx.SILQ/Statements/IVisitor.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/flexington/silq/blob/feat/sandr0-p/function/dotnet/flx.SILQ/Statements/IVisitor.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Parser.Statement.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Parser
     path: ../dotnet/flx.SILQ/Core/Parser.Statement.cs
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Parser.Expression.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: ParseExpression
     path: ../dotnet/flx.SILQ/Core/Parser.Expression.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - flx.SILQ
   namespace: flx.SILQ.Core
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Parser.Statement.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: ParseStatements
     path: ../dotnet/flx.SILQ/Core/Parser.Statement.cs

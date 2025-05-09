@@ -36,6 +36,9 @@ items:
   - uid: flx.SILQ.Expressions.Expression
     name: Expression
     type: Class
+  - uid: flx.SILQ.Expressions.Function
+    name: Function
+    type: Class
   - uid: flx.SILQ.Expressions.Grouping
     name: Grouping
     type: Class
@@ -73,6 +76,9 @@ items:
     type: Class
   - uid: flx.SILQ.Statements.From
     name: From
+    type: Class
+  - uid: flx.SILQ.Statements.Function
+    name: Function
     type: Class
   - uid: flx.SILQ.Statements.IVisitor
     name: IVisitor

@@ -6,6 +6,7 @@ items:
   children:
   - flx.SILQ.Statements.As
   - flx.SILQ.Statements.From
+  - flx.SILQ.Statements.Function
   - flx.SILQ.Statements.IVisitor
   - flx.SILQ.Statements.Print
   - flx.SILQ.Statements.Select
@@ -35,6 +36,13 @@ references:
   name: From
   nameWithType: From
   fullName: flx.SILQ.Statements.From
+- uid: flx.SILQ.Statements.Function
+  commentId: T:flx.SILQ.Statements.Function
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Function.html
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Statements.Function
 - uid: flx.SILQ.Statements.IVisitor
   commentId: T:flx.SILQ.Statements.IVisitor
   parent: flx.SILQ.Statements

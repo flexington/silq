@@ -6,6 +6,7 @@ items:
   parent: flx.SILQ.Expressions
   children:
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Binary)
+  - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Function)
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Grouping)
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Literal)
   - flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Unary)
@@ -20,7 +21,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -50,7 +51,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -83,7 +84,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -116,7 +117,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -149,7 +150,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -182,7 +183,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -201,6 +202,39 @@ items:
   overload: flx.SILQ.Expressions.IVisitor`1.Visit*
   nameWithType.vb: IVisitor(Of T).Visit(Variable)
   fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Variable)
+- uid: flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Function)
+  commentId: M:flx.SILQ.Expressions.IVisitor`1.Visit(flx.SILQ.Expressions.Function)
+  id: Visit(flx.SILQ.Expressions.Function)
+  parent: flx.SILQ.Expressions.IVisitor`1
+  langs:
+  - csharp
+  - vb
+  name: Visit(Function)
+  nameWithType: IVisitor<T>.Visit(Function)
+  fullName: flx.SILQ.Expressions.IVisitor<T>.Visit(flx.SILQ.Expressions.Function)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Expressions/IVisitor.cs
+      branch: feat/sandr0-p/function
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
+    startLine: 9
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Expressions
+  syntax:
+    content: T Visit(Function function)
+    parameters:
+    - id: function
+      type: flx.SILQ.Expressions.Function
+    return:
+      type: '{T}'
+    content.vb: Function Visit([function] As [Function]) As T
+  overload: flx.SILQ.Expressions.IVisitor`1.Visit*
+  nameWithType.vb: IVisitor(Of T).Visit(Function)
+  fullName.vb: flx.SILQ.Expressions.IVisitor(Of T).Visit(flx.SILQ.Expressions.Function)
 references:
 - uid: flx.SILQ.Expressions
   commentId: N:flx.SILQ.Expressions
@@ -285,3 +319,10 @@ references:
   name: Variable
   nameWithType: Variable
   fullName: flx.SILQ.Expressions.Variable
+- uid: flx.SILQ.Expressions.Function
+  commentId: T:flx.SILQ.Expressions.Function
+  parent: flx.SILQ.Expressions
+  href: flx.SILQ.Expressions.Function.html
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Expressions.Function

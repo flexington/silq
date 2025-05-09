@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Tokenizer.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Tokenizer
     path: ../dotnet/flx.SILQ/Core/Tokenizer.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Core/Tokenizer.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Tokenize
     path: ../dotnet/flx.SILQ/Core/Tokenizer.cs

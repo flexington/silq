@@ -7,6 +7,7 @@ items:
   children:
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.As)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.From)
+  - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Print)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Select)
   - flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Where)
@@ -20,7 +21,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -50,7 +51,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -82,7 +83,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -114,7 +115,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -146,7 +147,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -178,7 +179,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Statements/IVisitor.cs
-      branch: feat/sandr0-p/dot-notation
+      branch: feat/sandr0-p/function
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
@@ -195,6 +196,38 @@ items:
       type: flx.SILQ.Statements.As
       description: The as statement to visit.
     content.vb: Sub Visit(statement As [As])
+  overload: flx.SILQ.Statements.IVisitor.Visit*
+- uid: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
+  commentId: M:flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
+  id: Visit(flx.SILQ.Statements.Function)
+  parent: flx.SILQ.Statements.IVisitor
+  langs:
+  - csharp
+  - vb
+  name: Visit(Function)
+  nameWithType: IVisitor.Visit(Function)
+  fullName: flx.SILQ.Statements.IVisitor.Visit(flx.SILQ.Statements.Function)
+  type: Method
+  source:
+    remote:
+      path: dotnet/flx.SILQ/Statements/IVisitor.cs
+      branch: feat/sandr0-p/function
+      repo: https://github.com/flexington/silq.git
+    id: Visit
+    path: ../dotnet/flx.SILQ/Statements/IVisitor.cs
+    startLine: 42
+  assemblies:
+  - flx.SILQ
+  namespace: flx.SILQ.Statements
+  summary: Visits a <xref href="flx.SILQ.Statements.Function" data-throw-if-not-resolved="false"></xref> statement node.
+  example: []
+  syntax:
+    content: void Visit(Function statement)
+    parameters:
+    - id: statement
+      type: flx.SILQ.Statements.Function
+      description: The function statement to visit.
+    content.vb: Sub Visit(statement As [Function])
   overload: flx.SILQ.Statements.IVisitor.Visit*
 references:
 - uid: flx.SILQ.Statements
@@ -268,3 +301,10 @@ references:
   name: As
   nameWithType: As
   fullName: flx.SILQ.Statements.As
+- uid: flx.SILQ.Statements.Function
+  commentId: T:flx.SILQ.Statements.Function
+  parent: flx.SILQ.Statements
+  href: flx.SILQ.Statements.Function.html
+  name: Function
+  nameWithType: Function
+  fullName: flx.SILQ.Statements.Function
