@@ -292,6 +292,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/flx.SILQ.Statements.As.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/flx.SILQ.Statements.As.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "flx.SILQ.Statements.As",
+      "Summary": "<p sourcefile=\"api/flx.SILQ.Statements.As.yml\" sourcestartlinenumber=\"1\">Represents an 'As' statement in the SILQ language.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/flx.SILQ.Statements.From.yml",
       "output": {
         ".html": {

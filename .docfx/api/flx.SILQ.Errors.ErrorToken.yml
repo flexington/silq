@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: ErrorToken
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: .ctor
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Message
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Line
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs
@@ -150,7 +150,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Column
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Errors/ErrorToken.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: ToString
     path: ../dotnet/flx.SILQ/Errors/ErrorToken.cs

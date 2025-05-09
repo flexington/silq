@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: IVisitor
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -116,7 +116,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: dotnet/flx.SILQ/Expressions/IVisitor.cs
-      branch: feat/sandr0-p/select
+      branch: feat/sandr0-p/dot-notation
       repo: https://github.com/flexington/silq.git
     id: Visit
     path: ../dotnet/flx.SILQ/Expressions/IVisitor.cs
