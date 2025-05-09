@@ -16,7 +16,7 @@ public interface IVisitor
     /// Visits a <see cref="From"/> statement node.
     /// </summary>
     /// <param name="statement">The from statement to visit.</param>
-    void Visit(From statement);
+    object Visit(From statement);
 
     /// <summary>
     /// Visits a <see cref="Where"/> statement node.
