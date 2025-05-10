@@ -12,7 +12,8 @@ namespace flx.SILQ.Core;
 /// </summary>
 public partial class Interpreter
 {
-    private readonly object _context;
+
+    private readonly Environment _environment = new();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Interpreter"/> class with the specified context.
@@ -20,7 +21,7 @@ public partial class Interpreter
     /// <param name="context">The context in which the interpreter operates.</param>
     public Interpreter(object context)
     {
-        _context = context;
+        _environment.Define("context", context);
     }
 
     /// <summary>

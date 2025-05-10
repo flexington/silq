@@ -28,7 +28,9 @@ public partial class Interpreter : IVisitor
     /// <param name="from">The "From" statement to process.</param>
     public object Visit(From from)
     {
-        return Visit(from.Property, _context);
+        var context = _environment.Get("context");
+        if (context == null) throw new RuntimeError(from.Property.Name, "Context is not set.");
+        return Visit(from.Property, context);
     }
 
     private object Visit(Variable property, object context)
