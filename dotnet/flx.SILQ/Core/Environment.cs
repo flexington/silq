@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using flx.SILQ.Errors;
 
@@ -21,13 +22,41 @@ public class Environment
     /// </summary>
     private readonly Environment _enclosing;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Environment"/> class.
+    /// </summary>
+    /// <param name="enclosing">The enclosing environment for nested scopes.</param>
     public Environment(Environment enclosing = null)
     {
         _enclosing = enclosing;
     }
 
+    /// <summary>
+    /// Sets the context for the environment.
+    /// </summary>
+    /// <param name="context">The context object to set.</param>
+    /// <exception cref="RuntimeError">Thrown if the context is null.</exception>
+    public void SetContext(object context)
+    {
+
+        if (context == null) throw new RuntimeError("context", "Context cannot be null.");
+        _variables["context"] = context;
+    }
+
+    /// <summary>
+    /// Defines a new variable in the environment.
+    /// </summary>
+    /// <param name="name">The name of the variable to define.</param>
+    /// <param name="value">The value to assign to the variable.</param>
+    /// <exception cref="RuntimeError">Thrown if the variable name is null or empty.</exception>
+    /// <exception cref="RuntimeError">Thrown if the variable name is 'context'.</exception>
     public void Define(string name, object value)
     {
+        if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
+        if(string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be empty or whitespace.");
+        if (name == "context") throw new RuntimeError(name, "The identifier 'context' is reserved and cannot be used.");
+        if(_variables.ContainsKey(name)) throw new RuntimeError(name, $"The identifier '{name}' is already defined in the current context.");
+
         _variables[name] = value;
     }
 
@@ -39,6 +68,7 @@ public class Environment
     /// <exception cref="RuntimeError">Thrown if the variable is not defined in the environment.</exception>
     public object Get(string name)
     {
+        if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
         if (_variables.TryGetValue(name, out var value)) return value;
         if (_enclosing != null) return _enclosing.Get(name);
 
@@ -50,8 +80,12 @@ public class Environment
     /// </summary>
     /// <param name="name">The name of the variable to set.</param>
     /// <param name="value">The new value to assign to the variable.</param>
+    /// <exception cref="RuntimeError">Thrown if the variable is not defined in the environment.</exception>
+    /// <exception cref="RuntimeError">Thrown if the variable name is null or empty.</exception>
     public void Set(string name, object value)
     {
+        if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
+
         if (_variables.ContainsKey(name))
         {
             _variables[name] = value;
