@@ -56,7 +56,7 @@ public partial class Interpreter : IVisitor
             var result = Evaluate(where.Expression);
             if (result is not bool) throw new RuntimeError("where", "Expression must evaluate to a boolean.");
 
-            if ((bool)Evaluate(where.Expression)) output.Add(item);
+            if ((bool)result) output.Add(item);
         }
 
         return output;
