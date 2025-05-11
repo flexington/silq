@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
 using flx.SILQ.Statements;
@@ -9,11 +12,57 @@ namespace flx.SILQ.Core.Tests;
 public class InterpreterWhereTests
 {
     [TestMethod]
-    // where a = 1
-    public void VisitWhere()
+    public void VisitWhere_WhenContextIsNotList_ThrowsRuntimeError()
     {
         // Arrange
-        var left = new Variable(new Token(TokenType.IDENTIFIER, "a", "a", 1));
+        var context = new object();
+        var interpreter = new Interpreter(context);
+        var expression = new Literal(1);
+        var where = new Where(expression);
+
+        // Act
+        Action action = () => interpreter.Visit(where);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenContextIsEmptyList_ThrowsRuntimeError()
+    {
+        // Arrange
+        var context = new List<TestSubject>();
+        var interpreter = new Interpreter(context);
+        var expression = new Literal(1);
+        var where = new Where(expression);
+
+        // Act
+        Action action = () => interpreter.Visit(where);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenExpressionIsNotBoolean_ThrowsRuntimeError()
+    {
+        // Arrange
+        var interpreter = new Interpreter(new TestContext().Items);
+        var expression = new Literal(1);
+        var where = new Where(expression);
+
+        // Act
+        Action action = () => interpreter.Visit(where);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenGenericTrue_ReturnsAllListItems()
+    {
+        // Arrange
+        var left = new Literal(1);
         var right = new Literal(1);
         var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
         var expression = new Binary(left, op, right);
@@ -21,7 +70,76 @@ public class InterpreterWhereTests
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        interpreter.Visit(where);
+        var result = interpreter.Visit(where);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+        var list = (IList)result;
+        Assert.AreEqual(15, list.Count);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenGenericFalse_ReturnsNoListItems()
+    {
+        // Arrange
+        var left = new Literal(1);
+        var right = new Literal(2);
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
+        var expression = new Binary(left, op, right);
+        var where = new Where(expression);
+        var interpreter = new Interpreter(new TestContext().Items);
+
+        // Act
+        var result = interpreter.Visit(where);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+        var list = (IList)result;
+        Assert.AreEqual(0, list.Count);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenPropertyIsTrue_ReturnsMatchingListItems()
+    {
+        // Arrange
+        var left = new Variable(new Token(TokenType.IDENTIFIER, "Name", "Name", 1));
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
+        var right = new Literal("John");
+        var expression = new Binary(left, op, right);
+        var where = new Where(expression);
+        var interpreter = new Interpreter(new TestContext().Items);
+
+        // Act
+        var result = interpreter.Visit(where);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+        var list = (IList)result;
+        Assert.AreEqual(2, list.Count);
+    }
+
+    [TestMethod]
+    public void VisitWhere_WhenPropertyIsFalse_ReturnsNoListItems()
+    {
+        // Arrange
+        var left = new Variable(new Token(TokenType.IDENTIFIER, "Name", "Name", 1));
+        var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
+        var right = new Literal("Martha");
+        var expression = new Binary(left, op, right);
+        var where = new Where(expression);
+        var interpreter = new Interpreter(new TestContext().Items);
+
+        // Act
+        var result = interpreter.Visit(where);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+        var list = (IList)result;
+        Assert.AreEqual(0, list.Count);
     }
 
     internal record TestContext()

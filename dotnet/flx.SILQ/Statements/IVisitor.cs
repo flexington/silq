@@ -22,7 +22,7 @@ public interface IVisitor
     /// Visits a <see cref="Where"/> statement node.
     /// </summary>
     /// <param name="statement">The where statement to visit.</param>
-    void Visit(Where statement);
+    object Visit(Where statement);
 
     /// <summary>
     /// Visits a <see cref="Select"/> statement node.

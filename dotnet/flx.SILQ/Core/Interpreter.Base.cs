@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
@@ -225,9 +226,20 @@ public partial class Interpreter
 
         if (variable.Member is not null)
         {
-           return ResolveVariable(variable.Member, propertyValue);
+            return ResolveVariable(variable.Member, propertyValue);
         }
 
         return propertyValue;
+    }
+
+
+    /// <summary>
+    /// Checks if the given object is a list.
+    /// </summary>
+    /// <param name="obj">The object to check.</param>
+    private bool IsList(object obj)
+    {
+        // Check if the object implements the IList interface
+        return obj is IList;
     }
 }
