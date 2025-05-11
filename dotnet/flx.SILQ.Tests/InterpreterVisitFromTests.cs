@@ -10,19 +10,6 @@ namespace flx.SILQ.Core.Tests;
 public class InterpreterVisitFromTests
 {
     [TestMethod]
-    public void VisitFrom_WhenContextIsNull_ThrowsRuntimeError()
-    {
-        // Arrange
-        var fromStatement = new From(new Variable(new Token(TokenType.IDENTIFIER, "test", null, 1), null));
-        var interpreter = new Interpreter(null);
-
-        // Act
-        Action act = () => interpreter.Visit(fromStatement);
-        // Assert
-        Assert.ThrowsException<RuntimeError>(act);
-    }
-
-    [TestMethod]
     public void VisitFrom_WhenPropertyIsNotFound_ThrowsRuntimeError()
     {
         // Arrange

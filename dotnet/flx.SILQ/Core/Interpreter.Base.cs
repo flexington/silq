@@ -21,7 +21,8 @@ public partial class Interpreter
     /// <param name="context">The context in which the interpreter operates.</param>
     public Interpreter(object context)
     {
-        _environment.Define("context", context);
+        if (context == null) throw new RuntimeError("context", "Context cannot be null.");
+        _environment.SetContext(context);
     }
 
     /// <summary>

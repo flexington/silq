@@ -19,7 +19,7 @@ public class InterpreterTests
         var right = new Literal(3.0);
         var op = new Token(TokenType.PLUS, "+", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -33,7 +33,7 @@ public class InterpreterTests
     {
         // Arrange
         var expr = new Literal(42.0);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -49,7 +49,7 @@ public class InterpreterTests
         var number = new Literal(7.0);
         var op = new Token(TokenType.MINUS, "-", null, 1);
         var expr = new Unary(op, number);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -65,7 +65,7 @@ public class InterpreterTests
         var value = new Literal(true);
         var op = new Token(TokenType.BANG, "!", null, 1);
         var expr = new Unary(op, value);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -81,7 +81,7 @@ public class InterpreterTests
         var value = new Literal(false);
         var op = new Token(TokenType.BANG, "!", null, 1);
         var expr = new Unary(op, value);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -97,7 +97,7 @@ public class InterpreterTests
         var value = new Literal(0.0);
         var op = new Token(TokenType.BANG, "!", null, 1);
         var expr = new Unary(op, value);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -114,7 +114,7 @@ public class InterpreterTests
         var right = new Literal("World!");
         var op = new Token(TokenType.PLUS, "+", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -131,7 +131,7 @@ public class InterpreterTests
         var right = new Literal(2.0);
         var op = new Token(TokenType.GREATER, ">", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -148,7 +148,7 @@ public class InterpreterTests
         var right = new Literal(5.0);
         var op = new Token(TokenType.GREATER_EQUAL, ">=", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -165,7 +165,7 @@ public class InterpreterTests
         var right = new Literal(5.0);
         var op = new Token(TokenType.GREATER_EQUAL, ">=", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -182,7 +182,7 @@ public class InterpreterTests
         var right = new Literal("bar");
         var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -199,7 +199,7 @@ public class InterpreterTests
         var right = new Literal("bar");
         var op = new Token(TokenType.BANG_EQUAL, "!=", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -216,7 +216,7 @@ public class InterpreterTests
         var right = new Literal("foo");
         var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -233,7 +233,7 @@ public class InterpreterTests
         var right = new Literal("42");
         var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -250,7 +250,7 @@ public class InterpreterTests
         var right = new Literal(true);
         var op = new Token(TokenType.PLUS, "+", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act & Assert
         Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
@@ -264,7 +264,7 @@ public class InterpreterTests
         var right = new Literal(false);
         var op = new Token(TokenType.MINUS, "-", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act & Assert
         Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
@@ -278,7 +278,7 @@ public class InterpreterTests
         var right = new Literal(false);
         var op = new Token(TokenType.PLUS, "+", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act & Assert
         Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
@@ -292,7 +292,7 @@ public class InterpreterTests
         var right = new Literal("bar");
         var op = new Token(TokenType.MINUS, "-", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act & Assert
         Assert.ThrowsException<RuntimeError>(() => interpreter.Interpret(expr));
@@ -306,7 +306,7 @@ public class InterpreterTests
         var right = new Binary(new Literal(86.0), new Token(TokenType.PLUS, "+", null, 1), new Literal(79.0)); // 86 + 79
         var op = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
         var expr = new Binary(left, op, right);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -327,7 +327,7 @@ public class InterpreterTests
         var outerLeft = new Literal(5.0);
         var outerOp = new Token(TokenType.EQUAL_EQUAL, "==", null, 1);
         var expr = new Binary(outerLeft, outerOp, innerExpr);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         var result = interpreter.Interpret(expr);
@@ -344,7 +344,7 @@ public class InterpreterTests
         Console.SetOut(writer);
         var expression = new Literal("Hello, World!");
         var printStatement = new Print(expression);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         interpreter.Interpret([printStatement]);
@@ -359,7 +359,7 @@ public class InterpreterTests
         // Arrange
         var condition = new Literal(true);
         var whereStatement = new Where(condition);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         interpreter.Interpret([whereStatement]);
@@ -377,7 +377,7 @@ public class InterpreterTests
             new Variable(new Token(TokenType.IDENTIFIER, "myVar2", null, 1), null)
         };
         var selectStatement = new Select(expressions);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         interpreter.Interpret([selectStatement]);
@@ -392,7 +392,7 @@ public class InterpreterTests
         // Arrange
         var name = new Token(TokenType.IDENTIFIER, "myAlias", null, 1);
         var asStatement = new As(name);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         interpreter.Interpret([asStatement]);
@@ -408,7 +408,7 @@ public class InterpreterTests
         var functionName = new Token(TokenType.IDENTIFIER, "myFunction", null, 1);
         var parameters = new List<Expression> { new Literal("param"), new Literal(2.0) };
         var functionStatement = new Statements.Function(functionName, parameters);
-        var interpreter = new Interpreter(null);
+        var interpreter = new Interpreter("context");
 
         // Act
         interpreter.Interpret([functionStatement]);
