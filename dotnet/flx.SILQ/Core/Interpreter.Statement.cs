@@ -29,7 +29,7 @@ public partial class Interpreter : IVisitor
     public object Visit(From from)
     {
         var context = _environment.Get("context");
-        if (context == null) throw new RuntimeError(from.Property.Name, "Context is not set.");
+        if (context == null) throw new RuntimeError(context, "Context is not set.");
         return Visit(from.Property, context);
     }
 
