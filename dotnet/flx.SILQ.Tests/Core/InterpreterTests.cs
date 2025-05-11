@@ -354,21 +354,6 @@ public class InterpreterTests
     }
 
     [TestMethod]
-    public void Interpret_WhenWhereStatement_ReturnsResult()
-    {
-        // Arrange
-        var condition = new Literal(true);
-        var whereStatement = new Where(condition);
-        var interpreter = new Interpreter("context");
-
-        // Act
-        interpreter.Interpret([whereStatement]);
-
-        // Assert
-        throw new NotImplementedException("Assertion for Where statement result is not implemented.");
-    }
-
-    [TestMethod]
     public void Interpret_WhenSelectStatement_ReturnsResult()
     {
         // Arrange

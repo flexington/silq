@@ -208,4 +208,26 @@ public partial class Interpreter
         }
         return obj.ToString();
     }
+
+    /// <summary>
+    /// Resolves a variable in the current context, allowing for nested member access.
+    /// </summary>
+    /// <param name="variable">The variable to resolve.</param>
+    /// <param name="context">The context in which to resolve the variable.</param>
+    /// <returns>The resolved value of the variable.</returns>
+    /// <exception cref="RuntimeError">Thrown if the variable is not defined in the context.</exception>
+    public object ResolveVariable(Variable variable, object context)
+    {
+        var property = context.GetType().GetProperty(variable.Name.Lexeme);
+        if (property == null) throw new RuntimeError(variable.Name, $"The identifier '{variable.Name.Lexeme}' is not defined in the current context.");
+
+        var propertyValue = property.GetValue(context);
+
+        if (variable.Member is not null)
+        {
+           return ResolveVariable(variable.Member, propertyValue);
+        }
+
+        return propertyValue;
+    }
 }

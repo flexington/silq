@@ -29,23 +29,7 @@ public partial class Interpreter : IVisitor
     public object Visit(From from)
     {
         var context = _environment.Get("context");
-        if (context == null) throw new RuntimeError("context", "Context is not set.");
-        return Visit(from.Property, context);
-    }
-
-    private object Visit(Variable property, object context)
-    {
-        if (context == null) throw new RuntimeError(property.Name, "Context is not set.");
-
-        var prop = context.GetType().GetProperty(property.Name.Lexeme);
-        if (prop == null) throw new RuntimeError(property.Name, $"The identifier '{property.Name.Lexeme}' is not defined in the current context.");
-
-        if (property.Member is not null)
-        {
-            return Visit(property.Member, prop.GetValue(context));
-        }
-
-        return prop.GetValue(context);
+        return ResolveVariable(from.Property, context);
     }
 
     /// <summary>
