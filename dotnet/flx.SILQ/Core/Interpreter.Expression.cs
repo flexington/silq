@@ -1,4 +1,5 @@
 using System;
+using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Models;
 
@@ -100,8 +101,8 @@ public partial class Interpreter : IVisitor<object>
     /// <returns>The value of the variable from the environment.</returns>
     public object Visit(Variable variable)
     {
-        // return _environment.Get(variable.Name);
-        return null; // Placeholder for actual environment retrieval
+        var context = _environment.Get("context");
+        return ResolveVariable(variable, context);
     }
 
     /// <summary>

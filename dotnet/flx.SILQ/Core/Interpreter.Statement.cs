@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Statements;
@@ -29,32 +31,35 @@ public partial class Interpreter : IVisitor
     public object Visit(From from)
     {
         var context = _environment.Get("context");
-        if (context == null) throw new RuntimeError(context, "Context is not set.");
-        return Visit(from.Property, context);
-    }
-
-    private object Visit(Variable property, object context)
-    {
-        if (context == null) throw new RuntimeError(property.Name, "Context is not set.");
-
-        var prop = context.GetType().GetProperty(property.Name.Lexeme);
-        if (prop == null) throw new RuntimeError(property.Name, $"The identifier '{property.Name.Lexeme}' is not defined in the current context.");
-
-        if (property.Member is not null)
-        {
-            return Visit(property.Member, prop.GetValue(context));
-        }
-
-        return prop.GetValue(context);
+        return ResolveVariable(from.Property, context);
     }
 
     /// <summary>
     /// Implements the visitor method for the <see cref="Where"/> statement.
     /// </summary>
     /// <param name="where">The "Where" statement to process.</param>
-    public void Visit(Where where)
+    public object Visit(Where where)
     {
-        throw new NotImplementedException();
+        var context = _environment.Get("context");
+        if (!IsList(context)) throw new RuntimeError("context", "Context is not a list.");
+
+        var input = (IList)context;
+        if (input.Count == 0) throw new RuntimeError("context", "List is empty.");
+
+        var output = new List<object>();
+        foreach (var item in input)
+        {
+            var environment = new Environment(_environment);
+            environment.SetContext(item);
+            _environment = environment;
+
+            var result = Evaluate(where.Expression);
+            if (result is not bool) throw new RuntimeError("where", "Expression must evaluate to a boolean.");
+
+            if ((bool)result) output.Add(item);
+        }
+
+        return output;
     }
 
     /// <summary>

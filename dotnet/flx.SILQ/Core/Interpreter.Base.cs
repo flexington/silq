@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
@@ -21,7 +22,8 @@ public partial class Interpreter
     /// <param name="context">The context in which the interpreter operates.</param>
     public Interpreter(object context)
     {
-        _environment.Define("context", context);
+        if (context == null) throw new RuntimeError("context", "Context cannot be null.");
+        _environment.SetContext(context);
     }
 
     /// <summary>
@@ -206,5 +208,38 @@ public partial class Interpreter
             return text;
         }
         return obj.ToString();
+    }
+
+    /// <summary>
+    /// Resolves a variable in the current context, allowing for nested member access.
+    /// </summary>
+    /// <param name="variable">The variable to resolve.</param>
+    /// <param name="context">The context in which to resolve the variable.</param>
+    /// <returns>The resolved value of the variable.</returns>
+    /// <exception cref="RuntimeError">Thrown if the variable is not defined in the context.</exception>
+    public object ResolveVariable(Variable variable, object context)
+    {
+        var property = context.GetType().GetProperty(variable.Name.Lexeme);
+        if (property == null) throw new RuntimeError(variable.Name, $"The identifier '{variable.Name.Lexeme}' is not defined in the current context.");
+
+        var propertyValue = property.GetValue(context);
+
+        if (variable.Member is not null)
+        {
+            return ResolveVariable(variable.Member, propertyValue);
+        }
+
+        return propertyValue;
+    }
+
+
+    /// <summary>
+    /// Checks if the given object is a list.
+    /// </summary>
+    /// <param name="obj">The object to check.</param>
+    private bool IsList(object obj)
+    {
+        // Check if the object implements the IList interface
+        return obj is IList;
     }
 }
