@@ -10,14 +10,14 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - name: Checkout
-                uses: actions/checkout@v4
+              uses: actions/checkout@v4
             - name: Set up dotnet
-                uses: actions/setup-dotnet@v4
-                with:
-                    dotnet-version: 8.0.x
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: 8.0.x
             - name: Restore dependencies
-                run: dotnet restore
+              run: dotnet restore
             - name: Build
-                run: dotnet build --configuration Debug --no-restore
+              run: dotnet build --configuration Debug --no-restore
             - name: Test
-                run: dotnet test --configuration Debug --no-build --verbosity normal
+              run: dotnet test --configuration Debug --no-build --verbosity normal
