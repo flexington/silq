@@ -1,0 +1,29 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # This workflow is triggered by a push to the main branch or manually via the GitHub UI.
+      
+env:
+    SOLUTION_PATH: dotnet/flx.SILQ.sln
+
+jobs:
+  pack-and-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+      - name: Build
+        run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+      - name: Pack
+        run: dotnet pack ${{ env.SOLUTION_PATH }} --configuration Release --no-builds
+      - name: Publish to NuGet
+        run: dotnet nuget push dotnet/flx.SILQ/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} 
