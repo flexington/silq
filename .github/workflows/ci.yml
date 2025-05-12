@@ -5,6 +5,9 @@ on:
         branches:
             - main
 
+env:
+    SOLUTION_PATH: dotnet/flx.SILQ.slm
+
 jobs:
     build:
         runs-on: ubuntu-24.04
@@ -16,8 +19,8 @@ jobs:
               with:
                 dotnet-version: 8.0.x
             - name: Restore dependencies
-              run: dotnet restore
+              run: dotnet restore ${{ env.SOLUTION_PATH }}
             - name: Build
-              run: dotnet build --configuration Debug --no-restore
+              run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Debug --no-restore
             - name: Test
-              run: dotnet test --configuration Debug --no-build --verbosity normal
+              run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Debug --no-build --verbosity normal
