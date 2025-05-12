@@ -25,8 +25,9 @@ jobs:
             - name: Test
               run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal
             - name: Publish
-              run: dotnet publish ${{ env.SOLUTION_PATH }} --configuration Release --no-build --output ./artifact/
+              run: dotnet publish ${{ env.SOLUTION_PATH }} --configuration Release --no-build
             - name: Upload artifacts
               uses: actions/upload-artifact@v4
               with:
-                path: ./artifact/
+                path: dotnet/flx.SILQ/bin/Release/net8.0/publish
+                name: flx.SILQ
