@@ -6,4 +6,22 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>flx.SILQ</PackageId>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
+    <Authors>Sandro Paetzold</Authors>
+    <Company>Flexington</Company>
+    <Description>flx.SILQ provides the core components for the SILQ language, including the interpreter, parser, tokenizer, and essential models for building and executing SILQ queries.</Description>
+    <PackageProjectUrl>https://flexington.github.io/silq/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/flexington/silq</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
 </Project>
