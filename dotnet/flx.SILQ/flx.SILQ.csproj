@@ -6,6 +6,11 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
   <PropertyGroup>
     <PackageId>flx.SILQ</PackageId>
     <VersionPrefix>1.0.0</VersionPrefix>
