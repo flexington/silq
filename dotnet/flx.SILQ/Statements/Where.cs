@@ -15,8 +15,9 @@ public record Where(Expression Expression) : Statement
     /// Accepts a visitor to process this "Where" statement.
     /// </summary>
     /// <param name="visitor">The visitor that processes this statement.</param>
-    public override void Accept(IVisitor visitor)
+    public override object Accept(IVisitor visitor)
     {
         visitor.Visit(this);
+        return null;
     }
 }
