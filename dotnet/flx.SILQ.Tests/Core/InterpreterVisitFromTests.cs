@@ -30,7 +30,8 @@ public class InterpreterVisitFromTests
         var interpreter = new Interpreter(new TestContext());
 
         // Act
-        var result = interpreter.Visit(fromStatement);
+        interpreter.Visit(fromStatement);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);
@@ -48,7 +49,8 @@ public class InterpreterVisitFromTests
         var interpreter = new Interpreter(new TestContext());
 
         // Act
-        var result = interpreter.Visit(fromStatement);
+        interpreter.Visit(fromStatement);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);

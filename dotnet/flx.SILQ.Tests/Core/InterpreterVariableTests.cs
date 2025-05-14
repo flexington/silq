@@ -51,7 +51,7 @@ public class InterpreterVariableTests
 
         // Assert
         Assert.IsNotNull(result);
-        Assert.AreEqual(4, result);
+        Assert.AreEqual(4.0, result);
     }
 
     [TestMethod]
