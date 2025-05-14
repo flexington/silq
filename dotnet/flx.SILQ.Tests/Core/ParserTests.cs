@@ -561,6 +561,48 @@ public class ParserTests
     }
 
     [TestMethod]
+    public void ParseExpression_WhenAnd_ReturnsLogicalExpression()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.TRUE, "true", null, 1),
+            new Token(TokenType.AND, "and", null, 1),
+            new Token(TokenType.FALSE, "false", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Logical));
+    }
+
+    [TestMethod]
+    public void ParseExpression_WhenOr_ReturnsLogicalExpression()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.TRUE, "true", null, 1),
+            new Token(TokenType.OR, "or", null, 1),
+            new Token(TokenType.FALSE, "false", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var expression = parser.ParseExpression(tokens);
+
+        // Assert
+        Assert.IsNotNull(expression);
+        Assert.IsInstanceOfType(expression, typeof(Logical));
+    }
+
+    [TestMethod]
     public void ParseStatement_WhenPrintStatement_ReturnsPrintStatement()
     {
         // Arrange

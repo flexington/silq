@@ -114,4 +114,14 @@ public partial class Interpreter : IVisitor<object>
     {
         throw new NotImplementedException();
     }
+
+    /// <summary>
+    /// Visits a <see cref="Logical"/> expression and evaluates it according to its operator and operands.
+    /// </summary>
+    /// <param name="logical">The logical expression to evaluate.</param>
+    /// <returns>The result of the logical operation.</returns>
+    public object Visit(Logical logical)
+    {
+        throw new NotImplementedException();
+    }
 }
