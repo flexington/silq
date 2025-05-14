@@ -8,4 +8,5 @@ public interface IVisitor<T>
     T Visit(Grouping grouping);
     T Visit(Variable variable);
     T Visit(Function function);
+    T Visit(Logical logical);
 }

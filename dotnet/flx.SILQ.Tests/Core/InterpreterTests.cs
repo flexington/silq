@@ -337,6 +337,74 @@ public class InterpreterTests
     }
 
     [TestMethod]
+    public void Interpret_WhenOrFalseyExpression_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal(false);
+        var op = new Token(TokenType.OR, "or", null, 1);
+        var right = new Literal(true);
+        var expr = new Logical(left, op, right);
+        var interpreter = new Interpreter("context");
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenOrTruthyExpression_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal(true);
+        var op = new Token(TokenType.OR, "or", null, 1);
+        var right = new Literal(false);
+        var expr = new Logical(left, op, right);
+        var interpreter = new Interpreter("context");
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenAndFalseyExpression_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal(true);
+        var op = new Token(TokenType.AND, "and", null, 1);
+        var right = new Literal(false);
+        var expr = new Logical(left, op, right);
+        var interpreter = new Interpreter("context");
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("false", result);
+    }
+
+    [TestMethod]
+    public void Interpret_WhenAndTruthyExpression_ReturnsResult()
+    {
+        // Arrange
+        var left = new Literal(true);
+        var op = new Token(TokenType.AND, "and", null, 1);
+        var right = new Literal(true);
+        var expr = new Logical(left, op, right);
+        var interpreter = new Interpreter("context");
+
+        // Act
+        var result = interpreter.Interpret(expr);
+
+        // Assert
+        Assert.AreEqual("true", result);
+    }
+
+    [TestMethod]
     public void Interpret_WhenPrintStatement_ReturnsResult()
     {
         // Arrange
