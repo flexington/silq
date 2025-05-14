@@ -91,7 +91,7 @@ public partial class Interpreter : IVisitor<object>
     /// <returns>The result of the evaluated grouping expression.</returns>
     public object Visit(Grouping grouping)
     {
-       return Evaluate(grouping.Expression);
+        return Evaluate(grouping.Expression);
     }
 
     /// <summary>
@@ -122,6 +122,17 @@ public partial class Interpreter : IVisitor<object>
     /// <returns>The result of the logical operation.</returns>
     public object Visit(Logical logical)
     {
-        throw new NotImplementedException();
+        object left = Evaluate(logical.Left);
+
+        if (logical.Op.TokenType == TokenType.OR)
+        {
+            if (IsTruthy(left)) return left;
+        }
+        else
+        {
+            if (!IsTruthy(left)) return left;
+        }
+
+        return Evaluate(logical.Right);
     }
 }
