@@ -28,17 +28,20 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="From"/> statement.
     /// </summary>
     /// <param name="from">The "From" statement to process.</param>
-    public object Visit(From from)
+    public void Visit(From from)
     {
         var context = _environment.Get("context");
-        return ResolveVariable(from.Property, context);
+        var result = ResolveVariable(from.Property, context);
+        var environment = new Environment(_environment);
+        environment.SetContext(result);
+        _environment = environment;
     }
 
     /// <summary>
     /// Implements the visitor method for the <see cref="Where"/> statement.
     /// </summary>
     /// <param name="where">The "Where" statement to process.</param>
-    public object Visit(Where where)
+    public void Visit(Where where)
     {
         var context = _environment.Get("context");
         if (!IsList(context)) throw new RuntimeError("context", "Context is not a list.");
@@ -57,16 +60,18 @@ public partial class Interpreter : IVisitor
             if (result is not bool) throw new RuntimeError("where", "Expression must evaluate to a boolean.");
 
             if ((bool)result) output.Add(item);
+
+            _environment = _environment.Enclosing;
         }
 
-        return output;
+        _environment.SetContext(output);
     }
 
     /// <summary>
     /// Implements the visitor method for the <see cref="Select"/> statement.
     /// </summary>
     /// <param name="select">The "Select" statement to process.</param>
-    public void Visit(Select select)
+    public object Visit(Select select)
     {
         throw new NotImplementedException();
     }

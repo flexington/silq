@@ -20,7 +20,7 @@ public class Environment
     /// <summary>
     /// The enclosing environment for nested scopes.
     /// </summary>
-    private readonly Environment _enclosing;
+    public Environment Enclosing { get; private set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Environment"/> class.
@@ -28,7 +28,7 @@ public class Environment
     /// <param name="enclosing">The enclosing environment for nested scopes.</param>
     public Environment(Environment enclosing = null)
     {
-        _enclosing = enclosing;
+        Enclosing = enclosing;
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ public class Environment
     {
         if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
         if (_variables.TryGetValue(name, out var value)) return value;
-        if (_enclosing != null) return _enclosing.Get(name);
+        if (Enclosing != null) return Enclosing.Get(name);
 
         throw new RuntimeError(name, $"Undefined variable '{name}'.");
     }
@@ -92,9 +92,9 @@ public class Environment
             return;
         }
 
-        if (_enclosing != null)
+        if (Enclosing != null)
         {
-            _enclosing.Set(name, value);
+            Enclosing.Set(name, value);
             return;
         }
 

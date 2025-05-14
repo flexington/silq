@@ -229,9 +229,15 @@ public partial class Interpreter
             return ResolveVariable(variable.Member, propertyValue);
         }
 
+        if (CanConvertToDouble(propertyValue)) propertyValue = Convert.ToDouble(propertyValue);
+
         return propertyValue;
     }
 
+    public object GetContext()
+    {
+        return _environment.Get("context");
+    }
 
     /// <summary>
     /// Checks if the given object is a list.

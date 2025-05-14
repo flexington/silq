@@ -85,22 +85,22 @@ public class Tokenizer
                     break;
                 case '!':
                     bool matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.BANG_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.BANG_EQUAL, c.Value.ToString(), "!=", c.Line, c.Column));
                     else tokens.Add(new Token(TokenType.BANG, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '=':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.EQUAL_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.EQUAL_EQUAL, "==", null, c.Line, c.Column));
                     else tokens.Add(new Token(TokenType.EQUAL, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '>':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.GREATER_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.GREATER_EQUAL, c.Value.ToString(), ">=", c.Line, c.Column));
                     else tokens.Add(new Token(TokenType.GREATER, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '<':
                     matched = Match('=');
-                    if (matched) tokens.Add(new Token(TokenType.LESS_EQUAL, c.Value.ToString(), null, c.Line, c.Column));
+                    if (matched) tokens.Add(new Token(TokenType.LESS_EQUAL, c.Value.ToString(), "<=", c.Line, c.Column));
                     else tokens.Add(new Token(TokenType.LESS, c.Value.ToString(), null, c.Line, c.Column));
                     break;
                 case '/':
@@ -279,6 +279,9 @@ public class Tokenizer
         while (_characters.Count > 0 && IsAlphaNumeric(_characters.Peek().Value))
         {
             if (c.Line != _characters.Peek().Line) break; // Break if the next character is in a different line
+
+            if(_characters.Peek().Value == '.') break; // Break if the next character is a dot
+
             c = _characters.Dequeue();
             stringBuilder.Append(c.Value);
         }
