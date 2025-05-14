@@ -16,19 +16,19 @@ public interface IVisitor
     /// Visits a <see cref="From"/> statement node.
     /// </summary>
     /// <param name="statement">The from statement to visit.</param>
-    object Visit(From statement);
+    void Visit(From statement);
 
     /// <summary>
     /// Visits a <see cref="Where"/> statement node.
     /// </summary>
     /// <param name="statement">The where statement to visit.</param>
-    object Visit(Where statement);
+    void Visit(Where statement);
 
     /// <summary>
     /// Visits a <see cref="Select"/> statement node.
     /// </summary>
     /// <param name="statement">The select statement to visit.</param>
-    void Visit(Select statement);
+    object Visit(Select statement);
 
     /// <summary>
     /// Visits a <see cref="As"/> statement node.

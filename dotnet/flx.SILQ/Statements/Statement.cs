@@ -9,5 +9,5 @@ public abstract record Statement
     /// Accepts a visitor that processes this statement node.
     /// </summary>
     /// <param name="visitor">The visitor to process the statement.</param>
-    public abstract void Accept(IVisitor visitor);
+    public abstract object Accept(IVisitor visitor);
 }

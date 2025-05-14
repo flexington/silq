@@ -12,8 +12,9 @@ public record From(Variable Property) : Statement
     /// Accepts a visitor to process this from statement.
     /// </summary>
     /// <param name="visitor">The visitor that will process the from statement.</param>
-    public override void Accept(IVisitor visitor)
+    public override object Accept(IVisitor visitor)
     {
         visitor.Visit(this);
+        return null;
     }
 }

@@ -11,8 +11,9 @@ public record Select(Expression[] Expressions) : Statement
     /// Accepts a visitor to process this "Select" statement.
     /// </summary>
     /// <param name="visitor">The visitor that processes this statement.</param>
-    public override void Accept(IVisitor visitor)
+    public override object Accept(IVisitor visitor)
     {
-        visitor.Visit(this);
+       return visitor.Visit(this);
+
     }
 }

@@ -16,8 +16,9 @@ public record Function(Token Name, List<Expression> Arguments) : Statement
     /// Accepts a visitor that implements the <see cref="IVisitor"/> interface.
     /// </summary>
     /// <param name="visitor">The visitor to accept.</param>
-    public override void Accept(IVisitor visitor)
+    public override object Accept(IVisitor visitor)
     {
         visitor.Visit(this);
+        return null;
     }
 }

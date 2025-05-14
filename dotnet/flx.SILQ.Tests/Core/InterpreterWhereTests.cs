@@ -70,7 +70,8 @@ public class InterpreterWhereTests
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        var result = interpreter.Visit(where);
+        interpreter.Visit(where);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);
@@ -91,7 +92,8 @@ public class InterpreterWhereTests
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        var result = interpreter.Visit(where);
+        interpreter.Visit(where);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);
@@ -112,7 +114,8 @@ public class InterpreterWhereTests
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        var result = interpreter.Visit(where);
+        interpreter.Visit(where);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);
@@ -133,7 +136,8 @@ public class InterpreterWhereTests
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        var result = interpreter.Visit(where);
+        interpreter.Visit(where);
+        var result = interpreter.GetContext();
 
         // Assert
         Assert.IsNotNull(result);
