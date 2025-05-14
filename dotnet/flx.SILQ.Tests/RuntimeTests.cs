@@ -7,7 +7,7 @@ using flx.SILQ.Errors;
 namespace flx.SILQ.Tests;
 
 [TestClass]
-public class SilqTests
+public class RuntimeTests
 {
     TestContext _testContext;
 
@@ -130,6 +130,21 @@ public class SilqTests
     public void Execute_WhenWhereAnd_ReturnsList(){
         // Arrange
         var query = "from School.Students where Age == 14 and Grade == \"9th\";";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(IList));
+        var students = (List<object>)result;
+        Assert.AreEqual(2, students.Count);
+    }
+
+    [TestMethod]
+    public void Execute_WhenWhereOr_ReturnsList(){
+        // Arrange
+        var query = "from School.Students where Name == \"Alice\" or Grade == \"10th\";";
 
         // Act
         var runtime = new Runtime(_testContext);
