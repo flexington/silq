@@ -13,7 +13,7 @@ public class InterpreterVisitFromTests
     public void VisitFrom_WhenPropertyIsNotFound_ThrowsRuntimeError()
     {
         // Arrange
-        var fromStatement = new From(new Variable(new Token(TokenType.IDENTIFIER, "test", null, 1), null));
+        var fromStatement = new From(new Variable(new Token(TokenType.IDENTIFIER, "test", null, 1), null), null);
         var interpreter = new Interpreter(new object());
 
         // Act
@@ -26,12 +26,11 @@ public class InterpreterVisitFromTests
     public void VisitFrom_WhenPropertyIsFound_RetrunsPropertyValue()
     {
         // Arrange
-        var fromStatement = new From(new Variable(new Token(TokenType.IDENTIFIER, "Property", null, 1), null));
+        var fromStatement = new From(new Variable(new Token(TokenType.IDENTIFIER, "Property", null, 1), null), null);
         var interpreter = new Interpreter(new TestContext());
 
         // Act
-        interpreter.Visit(fromStatement);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(fromStatement);
 
         // Assert
         Assert.IsNotNull(result);
@@ -45,12 +44,11 @@ public class InterpreterVisitFromTests
         // Arrange
         var nestedProperty = new Variable(new Token(TokenType.IDENTIFIER, "Property", null, 1), null);
         var property = new Variable(new Token(TokenType.IDENTIFIER, "Nested", null, 1), nestedProperty);
-        var fromStatement = new From(property);
+        var fromStatement = new From(property, null);
         var interpreter = new Interpreter(new TestContext());
 
         // Act
-        interpreter.Visit(fromStatement);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(fromStatement);
 
         // Assert
         Assert.IsNotNull(result);

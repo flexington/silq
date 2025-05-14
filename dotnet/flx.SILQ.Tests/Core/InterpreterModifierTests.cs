@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using flx.SILQ.Core;
 using flx.SILQ.Errors;
+using flx.SILQ.Expressions;
 using flx.SILQ.Statements;
 
 namespace flx.SILQ.Tests.Core;
@@ -13,16 +15,15 @@ public class InterpreterModifierTests
     public void Count_WhenContextIsString_ReturnsCount()
     {
         // Arrange
-        var count = new Count();
+        var count = new Count(new Literal("TestContext"));
         var interpreter = new Interpreter("TestContext");
 
         // Act
-        interpreter.Visit(count);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(count);
 
         // Assert
         Assert.IsNotNull(result);
-        Assert.IsInstanceOfType(result, typeof(int));
+        Assert.IsInstanceOfType(result, typeof(double));
         Assert.AreEqual(11, result);
     }
 
@@ -30,16 +31,15 @@ public class InterpreterModifierTests
     public void Count_WhenContextIsList_ReturnsCount()
     {
         // Arrange
-        var count = new Count();
+        var count = new Count(new Literal(new List<string> { "Item1", "Item2", "Item3" }));
         var interpreter = new Interpreter(new List<string> { "Item1", "Item2", "Item3" });
 
         // Act
-        interpreter.Visit(count);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(count);
 
         // Assert
         Assert.IsNotNull(result);
-        Assert.IsInstanceOfType(result, typeof(int));
+        Assert.IsInstanceOfType(result, typeof(double));
         Assert.AreEqual(3, result);
     }
 
@@ -47,7 +47,7 @@ public class InterpreterModifierTests
     public void Count_WhenContextIsNumber_ThrowsRuntimeError()
     {
         // Arrange
-        var count = new Count();
+        var count = new Count(new Literal(42.0));
         var interpreter = new Interpreter(42.0);
 
         // Act

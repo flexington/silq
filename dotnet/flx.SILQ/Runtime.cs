@@ -23,8 +23,6 @@ public class Runtime
         Parser parser = new Parser();
         var ast = parser.ParseStatements(tokens);
 
-        _interpreter.Interpret(ast);
-        return _interpreter.GetContext();
-
+        return _interpreter.Interpret(ast);
     }
 }

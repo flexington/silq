@@ -156,7 +156,49 @@ public class RuntimeTests
         Assert.AreEqual(2, students.Count);
     }
 
+    [TestMethod]
+    public void Execute_WhenCountStringStatement_ReturnsLength()
+    {
+        // Arrange
+        var query = "count from School.Name;";
 
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(double));
+        Assert.AreEqual(11.0, result);
+    }
+
+    [TestMethod]
+    public void Execute_WhenCountListStatement_ReturnsCount()
+    {
+        // Arrange
+        var query = "count from School.Students;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(double));
+        Assert.AreEqual(3.0, result);
+    }
+
+    [TestMethod]
+    public void Execute_WhenCountNumberStatement_ThrowsRuntimeError()
+    {
+        // Arrange
+        var query = "count from School.NumberOfStudents;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        Action action = () => runtime.Execute(query);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
 
     internal record TestContext
     {
@@ -167,6 +209,7 @@ public class RuntimeTests
     {
         public string Name { get; set; }
         public string Address { get; set; }
+        public int NumberOfStudents => Students.Count;
         public List<Student> Students { get; set; }
     }
 

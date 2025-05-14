@@ -29,20 +29,27 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="From"/> statement.
     /// </summary>
     /// <param name="from">The "From" statement to process.</param>
-    public void Visit(From from)
+    public object Visit(From from)
     {
         var context = _environment.Get("context");
         var result = ResolveVariable(from.Property, context);
-        var environment = new Environment(_environment);
-        environment.SetContext(result);
-        _environment = environment;
+
+        if (from.Statement is not null)
+        {
+            var environment = new Environment(_environment);
+            environment.SetContext(result);
+            _environment = environment;
+            return Execute(from.Statement);
+        }
+
+        return result;
     }
 
     /// <summary>
     /// Implements the visitor method for the <see cref="Where"/> statement.
     /// </summary>
     /// <param name="where">The "Where" statement to process.</param>
-    public void Visit(Where where)
+    public object Visit(Where where)
     {
         var context = _environment.Get("context");
         if (!IsList(context)) throw new RuntimeError("context", "Context is not a list.");
@@ -65,7 +72,7 @@ public partial class Interpreter : IVisitor
             _environment = _environment.Enclosing;
         }
 
-        _environment.SetContext(output);
+        return output;
     }
 
     /// <summary>
@@ -99,13 +106,17 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="Count"/> statement.
     /// </summary>
     /// <param name="statement">The "Count" statement to process.</param>
-    public void Visit(Count statement)
+    public double Visit(Count statement)
     {
-        var context = _environment.Get("context");
+        object result = null;
+        if (statement.Expression != null) result = Evaluate(statement.Expression);
+        else if (statement.Statement != null) result = Execute(statement.Statement);
 
-        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context).Length);
-        else if (context is IList list) _environment.SetContext(list.Count);
-        else throw new RuntimeError("context", "Context is not a string or a list.");
+        if (result == null) throw new RuntimeError("Count", "Cannot count null.");
+
+        if (result.GetType() == typeof(string)) return ((string)result).Length;
+        else if (result is IList list) return list.Count;
+        else throw new RuntimeError("Count", "Context must be a string or list.");
     }
 
     /// <summary>

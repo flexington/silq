@@ -1,3 +1,5 @@
+using flx.SILQ.Expressions;
+
 namespace flx.SILQ.Statements;
 
 /// <summary>
@@ -5,10 +7,25 @@ namespace flx.SILQ.Statements;
 /// </summary>
 public record Count : Statement
 {
+
+    public Expression Expression { get; }
+
+    public Statement Statement { get; }
+
+    public Count(Expression expression)
+    {
+        Expression = expression;
+    }
+
+
+    public Count(Statement statement)
+    {
+        Statement = statement;
+    }
+
     /// </inheritdoc />
     public override object Accept(IVisitor visitor)
     {
-         visitor.Visit(this);
-        return null;
+        return visitor.Visit(this);
     }
 }

@@ -62,7 +62,11 @@ public partial class Parser
     /// <returns>A <see cref="Last"/> statement containing the parsed identifier.</returns>
     private Statement Last()
     {
-        return new Last();
+        // Expression expression = Expression();
+        // Consume(TokenType.SEMICOLON, "Expect ';' after value.");
+        // return new Last(expression);
+
+        throw new NotImplementedException("Last statement parsing is not implemented.");
     }
 
     /// <summary>
@@ -71,7 +75,11 @@ public partial class Parser
     /// <returns>A <see cref="First"/> statement containing the parsed expression.</returns>
     private Statement First()
     {
-        return new First();
+        // Expression expression = Expression();
+        // Consume(TokenType.SEMICOLON, "Expect ';' after value.");
+        // return new First(expression);
+
+        throw new NotImplementedException("First statement is not implemented yet.");
     }
 
     /// <summary>
@@ -80,7 +88,13 @@ public partial class Parser
     /// <returns>A <see cref="Count"/> statement containing the parsed expression.</returns>
     private Statement Count()
     {
-        return new Count();
+        Consume(TokenType.FROM, "Expect 'from' after 'count'.");
+        Count count = new Count(From());
+        Consume(TokenType.SEMICOLON, "Expect ';' after value.");
+
+        if (count == null) throw new ParserError(Peek(), "Expect identifier after 'count'.");
+
+        return count;
     }
 
     /// <summary>
@@ -100,11 +114,11 @@ public partial class Parser
     /// <returns>A <see cref="From"/> statement containing the parsed expression.</returns>
     private Statement From()
     {
-        if (Match(TokenType.IDENTIFIER))
-        {
-            Variable expression = Identifier();
-            return new From(expression);
-        }
+        Consume(TokenType.IDENTIFIER, "Expect identifier after 'from'.");
+        Variable expression = Identifier();
+        var statement = Where();
+        return new From(expression, statement);
+
 
         throw new ParserError(Peek(), "Expect identifier after 'from'.");
     }
@@ -115,9 +129,13 @@ public partial class Parser
     /// <returns>A <see cref="Where"/> statement containing the parsed expression.</returns>
     private Statement Where()
     {
-        Expression expression = Expression();
+        if (Match(TokenType.WHERE))
+        {
+            Expression expression = Expression();
+            return new Where(expression, null);
+        }
 
-        return new Where(expression);
+        return null;
     }
 
     /// <summary>
@@ -126,6 +144,8 @@ public partial class Parser
     /// <returns>A <see cref="Select"/> statement containing the parsed expression.</returns>
     private Statement Select()
     {
+        var statement = As();
+
         List<Expression> expressions = new List<Expression>();
         Consume(TokenType.LEFT_BRACE, "Expect '{' before expression.");
         expressions.Add(Expression());
