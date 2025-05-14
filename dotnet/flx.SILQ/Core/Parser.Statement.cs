@@ -43,12 +43,44 @@ public partial class Parser
     private Statement Statement()
     {
         if (Match(TokenType.PRINT)) return Print();
+
+        if (Match(TokenType.COUNT)) return Count();
+        if (Match(TokenType.FIRST)) return First();
+        if (Match(TokenType.LAST)) return Last();
+
         if (Match(TokenType.FROM)) return From();
         if (Match(TokenType.WHERE)) return Where();
         if (Match(TokenType.SELECT)) return Select();
         if (Match(TokenType.AS)) return As();
 
         throw new ParserError(Peek(), "Expect statement.");
+    }
+
+    /// <summary>
+    /// Parses a last statement, which consists of an identifier followed by a semicolon.
+    /// /// </summary>
+    /// <returns>A <see cref="Last"/> statement containing the parsed identifier.</returns>
+    private Statement Last()
+    {
+        return new Last();
+    }
+
+    /// <summary>
+    /// Parses a first statement, which consists of an expression followed by a semicolon.
+    /// </summary>
+    /// <returns>A <see cref="First"/> statement containing the parsed expression.</returns>
+    private Statement First()
+    {
+        return new First();
+    }
+
+    /// <summary>
+    /// Parses a count statement, which consists of an expression followed by a semicolon.
+    /// </summary>
+    /// <returns>A <see cref="Count"/> statement containing the parsed expression.</returns>
+    private Statement Count()
+    {
+        return new Count();
     }
 
     /// <summary>

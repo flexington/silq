@@ -798,4 +798,64 @@ public class ParserTests
         Assert.AreEqual("myMember", member.Name.Lexeme);
         Assert.IsNull(member.Member);
     }
+
+    [TestMethod]
+    public void ParseStatement_WhenCountStatement_ReturnsCountStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.COUNT, "count", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Count));
+    }
+
+    [TestMethod]
+    public void ParseStatement_WhenFirstStatement_ReturnsFirstStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.FIRST, "first", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(First));
+    }
+
+    [TestMethod]
+    public void ParseStatement_WhenLastStatement_ReturnsLastStatement()
+    {
+        // Arrange
+        var tokens = new List<Token>
+        {
+            new Token(TokenType.LAST, "last", null, 1),
+            new Token(TokenType.SEMICOLON, ";", null, 1),
+            new Token(TokenType.EOF, null, null, 1)
+        };
+
+        // Act
+        var parser = new Parser();
+        var statement = parser.ParseStatements(tokens);
+
+        // Assert
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Last));
+    }
 }

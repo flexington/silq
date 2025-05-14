@@ -41,4 +41,22 @@ public interface IVisitor
     /// </summary>
     /// <param name="statement">The function statement to visit.</param>
     void Visit(Function statement);
+
+    /// <summary>
+    /// Visits a <see cref="Count"/> statement node.
+    /// </summary>
+    /// <param name="statement">The count statement to visit.</param>
+    void Visit(Count statement);
+
+    /// <summary>
+    /// Visits a <see cref="First"/> statement node.
+    /// </summary>
+    /// <param name="statement">The first statement to visit.</param>
+    void Visit(First statement);
+
+    /// <summary>
+    /// Visits a <see cref="Last"/> statement node.
+    /// </summary>
+    /// <param name="statement">The last statement to visit.</param>
+    void Visit(Last statement);
 }
