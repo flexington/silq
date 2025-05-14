@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
 using flx.SILQ.Statements;
@@ -92,5 +93,44 @@ public partial class Interpreter : IVisitor
     public void Visit(Statements.Function statement)
     {
         throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="Count"/> statement.
+    /// </summary>
+    /// <param name="statement">The "Count" statement to process.</param>
+    public void Visit(Count statement)
+    {
+        var context = _environment.Get("context");
+
+        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context).Length);
+        else if (context is IList list) _environment.SetContext(list.Count);
+        else throw new RuntimeError("context", "Context is not a string or a list.");
+    }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="First"/> statement.
+    /// </summary>
+    /// <param name="statement">The "First" statement to process.</param>
+    public void Visit(First statement)
+    {
+        var context = _environment.Get("context");
+
+        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context)[0]);
+        else if (context is IList list) _environment.SetContext(list[0]);
+        else throw new RuntimeError("context", "Context is not a string or a list.");
+    }
+
+    /// <summary>
+    /// Implements the visitor method for the <see cref="Last"/> statement.
+    /// </summary>
+    /// <param name="statement">The "Last" statement to process.</param>
+    public void Visit(Last statement)
+    {
+        var context = _environment.Get("context");
+
+        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context)[^1]);
+        else if (context is IList list) _environment.SetContext(list[^1]);
+        else throw new RuntimeError("context", "Context is not a string or a list.");
     }
 }
