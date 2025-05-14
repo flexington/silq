@@ -299,7 +299,7 @@ public class ParserTests
 
         // Assert
         Assert.IsNotNull(expression);
-        Assert.IsInstanceOfType(expression, typeof(Literal));
+        Assert.IsInstanceOfType(expression, typeof(Logical));
     }
 
     [TestMethod]
@@ -320,7 +320,7 @@ public class ParserTests
 
         // Assert
         Assert.IsNotNull(expression);
-        Assert.IsInstanceOfType(expression, typeof(Literal));
+        Assert.IsInstanceOfType(expression, typeof(Logical));
     }
 
     [TestMethod]
