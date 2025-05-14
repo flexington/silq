@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using flx.SILQ.Errors;
@@ -42,7 +43,42 @@ public partial class Parser
     /// <returns>The parsed <see cref="Expression"/>.</returns>
     private Expression Expression()
     {
-        return Equality();
+        return Or();
+    }
+
+    /// <summary>
+    /// Parses logical OR expressions.
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
+    private Expression Or(){
+        Expression expression = And();
+
+        while (Match(TokenType.OR))
+        {
+            var operatorToken = Previous();
+            var right = And();
+            expression = new Logical(expression, operatorToken, right);
+        }
+
+        return expression;
+    }
+
+    /// <summary>
+    /// Parses logical AND expressions.
+    /// </summary>
+    /// <returns>The parsed <see cref="Expression"/>.</returns>
+    private Expression And()
+    {
+        Expression expression = Equality();
+
+        while (Match(TokenType.AND))
+        {
+            var operatorToken = Previous();
+            var right = Equality();
+            expression = new Logical(expression, operatorToken, right);
+        }
+
+        return expression;
     }
 
     /// <summary>
