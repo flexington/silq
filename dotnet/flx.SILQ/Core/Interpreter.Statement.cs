@@ -123,25 +123,27 @@ public partial class Interpreter : IVisitor
     /// Implements the visitor method for the <see cref="First"/> statement.
     /// </summary>
     /// <param name="statement">The "First" statement to process.</param>
-    public void Visit(First statement)
+    public object Visit(First statement)
     {
-        var context = _environment.Get("context");
+        object result = null;
+        if (statement.Statement != null) result = Execute(statement.Statement);
 
-        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context)[0]);
-        else if (context is IList list) _environment.SetContext(list[0]);
-        else throw new RuntimeError("context", "Context is not a string or a list.");
+        if (result.GetType() == typeof(string)) return ((string)result)[0];
+        else if (result is IList list) return list[0];
+        else throw new RuntimeError("first", "Context is not a string or a list.");
     }
 
     /// <summary>
     /// Implements the visitor method for the <see cref="Last"/> statement.
     /// </summary>
     /// <param name="statement">The "Last" statement to process.</param>
-    public void Visit(Last statement)
+    public object Visit(Last statement)
     {
-        var context = _environment.Get("context");
+        object result = null;
+        if (statement.Statement != null) result = Execute(statement.Statement);
 
-        if (context.GetType() == typeof(string)) _environment.SetContext(((string)context)[^1]);
-        else if (context is IList list) _environment.SetContext(list[^1]);
+        if (result.GetType() == typeof(string)) return ((string)result)[^1];
+        else if (result is IList list) return list[^1];
         else throw new RuntimeError("context", "Context is not a string or a list.");
     }
 }
