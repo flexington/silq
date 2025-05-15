@@ -110,8 +110,7 @@ public class Environment
     /// <exception cref="RuntimeError">Thrown if the value is null.</exception>
     public void DefineGlobal(string name, object value)
     {
-        if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
-        if (string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be empty or whitespace.");
+        if (string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be null, empty, or whitespace.");
         if (value == null) throw new RuntimeError(name, "Value cannot be null.");
 
         if (Enclosing != null)
