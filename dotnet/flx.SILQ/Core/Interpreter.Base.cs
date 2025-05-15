@@ -13,7 +13,6 @@ namespace flx.SILQ.Core;
 /// </summary>
 public partial class Interpreter
 {
-
     private Environment _environment = new();
 
     /// <summary>
@@ -49,14 +48,17 @@ public partial class Interpreter
     /// Throws a <see cref="RuntimeError"/> if an error occurs during execution.
     /// </summary>
     /// <param name="statements">The list of statements to interpret.</param>
-    public void Interpret(List<Statement> statements)
+    public object Interpret(List<Statement> statements)
     {
         try
         {
+            object result = null;
             foreach (var statement in statements)
             {
-                Execute(statement);
+                result = Execute(statement);
             }
+
+            return result;
         }
         catch (RuntimeError)
         {
@@ -137,9 +139,9 @@ public partial class Interpreter
     /// Executes a statement by accepting this interpreter as a visitor.
     /// </summary>
     /// <param name="statement">The statement to execute.</param>
-    private void Execute(Statement statement)
+    private object Execute(Statement statement)
     {
-        statement.Accept(this);
+        return statement.Accept(this);
     }
 
     /// <summary>

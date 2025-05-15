@@ -1,3 +1,5 @@
+using flx.SILQ.Expressions;
+
 namespace flx.SILQ.Statements;
 
 /// <summary>
@@ -16,13 +18,13 @@ public interface IVisitor
     /// Visits a <see cref="From"/> statement node.
     /// </summary>
     /// <param name="statement">The from statement to visit.</param>
-    void Visit(From statement);
+    object Visit(From statement);
 
     /// <summary>
     /// Visits a <see cref="Where"/> statement node.
     /// </summary>
     /// <param name="statement">The where statement to visit.</param>
-    void Visit(Where statement);
+    object Visit(Where statement);
 
     /// <summary>
     /// Visits a <see cref="Select"/> statement node.
@@ -41,4 +43,22 @@ public interface IVisitor
     /// </summary>
     /// <param name="statement">The function statement to visit.</param>
     void Visit(Function statement);
+
+    /// <summary>
+    /// Visits a <see cref="Count"/> statement node.
+    /// </summary>
+    /// <param name="statement">The count statement to visit.</param>
+    double Visit(Count statement);
+
+    /// <summary>
+    /// Visits a <see cref="First"/> statement node.
+    /// </summary>
+    /// <param name="statement">The first statement to visit.</param>
+    object Visit(First statement);
+
+    /// <summary>
+    /// Visits a <see cref="Last"/> statement node.
+    /// </summary>
+    /// <param name="statement">The last statement to visit.</param>
+    object Visit(Last statement);
 }

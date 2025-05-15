@@ -429,7 +429,7 @@ public class InterpreterTests
             new Variable(new Token(TokenType.IDENTIFIER, "myVar", null, 1), null) ,
             new Variable(new Token(TokenType.IDENTIFIER, "myVar2", null, 1), null)
         };
-        var selectStatement = new Select(expressions);
+        var selectStatement = new Select(expressions, null);
         var interpreter = new Interpreter("context");
 
         // Act

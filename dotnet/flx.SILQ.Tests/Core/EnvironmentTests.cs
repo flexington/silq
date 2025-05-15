@@ -24,7 +24,7 @@ public class EnvironmentTests
     {
         // Arrange
         var environment = new SILQ.Core.Environment();
-        var context = new EnvironmentTestContext();
+        var context = new TestContext();
 
         // Act
         environment.SetContext(context);
@@ -271,9 +271,4 @@ public class EnvironmentTests
         // Assert
         Assert.AreEqual(100, environment.Get(name));
     }
-}
-
-internal class EnvironmentTestContext
-{
-
 }

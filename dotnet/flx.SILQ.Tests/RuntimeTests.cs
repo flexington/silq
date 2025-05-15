@@ -109,7 +109,7 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenWhere_ReturnList()
+    public void Execute_WhenFromWhere_ReturnList()
     {
         // Arrange
         var query = "from School.Students where Age == 14";
@@ -127,7 +127,7 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenWhereAnd_ReturnsList(){
+    public void Execute_WhenFromWhereAnd_ReturnsList(){
         // Arrange
         var query = "from School.Students where Age == 14 and Grade == \"9th\";";
 
@@ -142,7 +142,7 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenWhereOr_ReturnsList(){
+    public void Execute_WhenFromWhereOr_ReturnsList(){
         // Arrange
         var query = "from School.Students where Name == \"Alice\" or Grade == \"10th\";";
 
@@ -156,25 +156,135 @@ public class RuntimeTests
         Assert.AreEqual(2, students.Count);
     }
 
-
-
-    internal record TestContext
+    [TestMethod]
+    public void Execute_WhenCountFromString_ReturnsLength()
     {
-        public School School { get; set; }
+        // Arrange
+        var query = "count from School.Name;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(double));
+        Assert.AreEqual(11.0, result);
     }
 
-    internal record School
+    [TestMethod]
+    public void Execute_WhenCountFromList_ReturnsCount()
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public List<Student> Students { get; set; }
+        // Arrange
+        var query = "count from School.Students;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(double));
+        Assert.AreEqual(3.0, result);
     }
 
-    internal record Student
+    [TestMethod]
+    public void Execute_WhenCountFromNumber_ThrowsRuntimeError()
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public string Grade { get; set; }
-        public School School { get; set; }
+        // Arrange
+        var query = "count from School.NumberOfStudents;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        Action action = () => runtime.Execute(query);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFirstFromList_ReturnsFirstElement()
+    {
+        // Arrange
+        var query = "first from School.Students;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(Student));
+        Assert.AreEqual("Alice", ((Student)result).Name);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFirstFromString_ReturnsFirstCharacter()
+    {
+        // Arrange
+        var query = "first from School.Name;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(char));
+        Assert.AreEqual('T', (char)result);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFirstFromNumber_ThrowsRuntimeError()
+    {
+        // Arrange
+        var query = "first from School.NumberOfStudents;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        Action action = () => runtime.Execute(query);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void Execute_WhenLastFromList_ReturnsLastElement()
+    {
+        // Arrange
+        var query = "last from School.Students;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(Student));
+        Assert.AreEqual("Charlie", ((Student)result).Name);
+    }
+
+    [TestMethod]
+    public void Execute_WhenLastFromString_ReturnsLastCharacter()
+    {
+        // Arrange
+        var query = "last from School.Name;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsInstanceOfType(result, typeof(char));
+        Assert.AreEqual('l', (char)result);
+    }
+
+    [TestMethod]
+    public void Execute_WhenLastFromNumber_ThrowsRuntimeError()
+    {
+        // Arrange
+        var query = "last from School.NumberOfStudents;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        Action action = () => runtime.Execute(query);
+
+        // Assert
+        Assert.ThrowsException<RuntimeError>(action);
     }
 }

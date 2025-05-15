@@ -18,7 +18,7 @@ public class InterpreterWhereTests
         var context = new object();
         var interpreter = new Interpreter(context);
         var expression = new Literal(1);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
 
         // Act
         Action action = () => interpreter.Visit(where);
@@ -34,7 +34,7 @@ public class InterpreterWhereTests
         var context = new List<TestSubject>();
         var interpreter = new Interpreter(context);
         var expression = new Literal(1);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
 
         // Act
         Action action = () => interpreter.Visit(where);
@@ -49,7 +49,7 @@ public class InterpreterWhereTests
         // Arrange
         var interpreter = new Interpreter(new TestContext().Items);
         var expression = new Literal(1);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
 
         // Act
         Action action = () => interpreter.Visit(where);
@@ -66,7 +66,7 @@ public class InterpreterWhereTests
         var right = new Literal(1);
         var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
         var expression = new Binary(left, op, right);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
@@ -88,12 +88,11 @@ public class InterpreterWhereTests
         var right = new Literal(2);
         var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
         var expression = new Binary(left, op, right);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        interpreter.Visit(where);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(where);
 
         // Assert
         Assert.IsNotNull(result);
@@ -110,12 +109,11 @@ public class InterpreterWhereTests
         var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
         var right = new Literal("John");
         var expression = new Binary(left, op, right);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        interpreter.Visit(where);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(where);
 
         // Assert
         Assert.IsNotNull(result);
@@ -132,12 +130,11 @@ public class InterpreterWhereTests
         var op = new Token(TokenType.EQUAL_EQUAL, "==", "==", 1);
         var right = new Literal("Martha");
         var expression = new Binary(left, op, right);
-        var where = new Where(expression);
+        var where = new Where(expression, null);
         var interpreter = new Interpreter(new TestContext().Items);
 
         // Act
-        interpreter.Visit(where);
-        var result = interpreter.GetContext();
+        var result = interpreter.Visit(where);
 
         // Assert
         Assert.IsNotNull(result);
