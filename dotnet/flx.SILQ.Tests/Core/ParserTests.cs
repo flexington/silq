@@ -696,16 +696,15 @@ public class ParserTests
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(From));
-        // var from = (From)statement.First();
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(From));
+        var from = (From)statement.First();
 
-        // Assert.IsNotNull(from.Statement);
-        // Assert.IsInstanceOfType(from.Statement, typeof(Where));
+        Assert.IsNotNull(from.Statement);
+        Assert.IsInstanceOfType(from.Statement, typeof(Select));
     }
 
     [TestMethod]
@@ -714,6 +713,8 @@ public class ParserTests
         // Arrange
         var tokens = new List<Token>
         {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.SELECT, "select", null, 1),
             new Token(TokenType.LEFT_BRACE, "{", null, 1),
             new Token(TokenType.IDENTIFIER, "myVar", null, 1),
@@ -726,18 +727,19 @@ public class ParserTests
         var parser = new Parser();
 
         // Act
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(Select));
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(From));
 
-        // var selectStatement = (Select)statement.First();
-        // Assert.IsNotNull(selectStatement.Expressions);
-        // Assert.AreEqual(2, selectStatement.Expressions.Length);
-        // Assert.IsInstanceOfType(selectStatement.Expressions[0], typeof(Variable));
-        // Assert.IsInstanceOfType(selectStatement.Expressions[1], typeof(Variable));
+        var from = (From)statement.First();
+        Assert.IsNotNull(from.Statement);
+        Assert.IsInstanceOfType(from.Statement, typeof(Select));
+
+        var select = (Select)from.Statement;
+        Assert.IsNotNull(select.Expressions);
+        Assert.AreEqual(2, select.Expressions.Length);
     }
 
     [TestMethod]
@@ -746,6 +748,8 @@ public class ParserTests
         // Arrange
         var tokens = new List<Token>
         {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.AS, "as", null, 1),
             new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.SEMICOLON, ";", null, 1),
@@ -754,16 +758,19 @@ public class ParserTests
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statements = parser.ParseStatements(tokens);
+        var statements = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statements);
-        // Assert.IsInstanceOfType(statements.First(), typeof(As));
+        Assert.IsNotNull(statements);
+        Assert.IsInstanceOfType(statements.First(), typeof(From));
 
-        // var asStatement = (As)statements.First();
-        // Assert.IsNotNull(asStatement.Name);
-        // Assert.AreEqual("myVar", asStatement.Name.Lexeme);
+        var from = (From)statements.First();
+        Assert.IsNotNull(from.Statement);
+        Assert.IsInstanceOfType(from.Statement, typeof(As));
+
+        var asStatement = (As)from.Statement;
+        Assert.IsNotNull(asStatement.Name);
+        Assert.AreEqual("myVar", asStatement.Name.Lexeme);
     }
 
     [TestMethod]
@@ -772,6 +779,8 @@ public class ParserTests
         // Arrange
         var tokens = new List<Token>
         {
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.WHERE, "where", null, 1),
             new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.DOT, ".", null, 1),
@@ -784,28 +793,31 @@ public class ParserTests
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(Where));
+        Assert.IsNotNull(statement.First());
+        Assert.IsInstanceOfType(statement.First(), typeof(From));
+        
+        var from = (From)statement.First();
+        Assert.IsNotNull(from.Statement);
+        Assert.IsInstanceOfType(from.Statement, typeof(Where));
 
-        // var whereStatement = (Where)statement.First();
-        // Assert.IsNotNull(whereStatement.Expression);
+        var where = (Where)from.Statement;
+        Assert.IsNotNull(where.Expression);
 
-        // var left = ((Binary)whereStatement.Expression).Left;
-        // Assert.IsNotNull(left);
-        // Assert.IsInstanceOfType(left, typeof(Variable));
+        var left = ((Binary)where.Expression).Left;
+        Assert.IsNotNull(left);
+        Assert.IsInstanceOfType(left, typeof(Variable));
 
-        // var variable = (Variable)left;
-        // Assert.AreEqual("myVar", variable.Name.Lexeme);
-        // Assert.IsNotNull(variable.Member);
-        // Assert.IsInstanceOfType(variable.Member, typeof(Variable));
+        var variable = (Variable)left;
+        Assert.AreEqual("myVar", variable.Name.Lexeme);
+        Assert.IsNotNull(variable.Member);
+        Assert.IsInstanceOfType(variable.Member, typeof(Variable));
 
-        // var member = (Variable)variable.Member;
-        // Assert.AreEqual("myMember", member.Name.Lexeme);
-        // Assert.IsNull(member.Member);
+        var member = (Variable)variable.Member;
+        Assert.AreEqual("myMember", member.Name.Lexeme);
+        Assert.IsNull(member.Member);
     }
 
     [TestMethod]
@@ -815,18 +827,19 @@ public class ParserTests
         var tokens = new List<Token>
         {
             new Token(TokenType.COUNT, "count", null, 1),
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.SEMICOLON, ";", null, 1),
             new Token(TokenType.EOF, null, null, 1)
         };
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(Count));
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Count));
     }
 
     [TestMethod]
@@ -836,18 +849,19 @@ public class ParserTests
         var tokens = new List<Token>
         {
             new Token(TokenType.FIRST, "first", null, 1),
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.SEMICOLON, ";", null, 1),
             new Token(TokenType.EOF, null, null, 1)
         };
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(First));
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(First));
     }
 
     [TestMethod]
@@ -857,17 +871,18 @@ public class ParserTests
         var tokens = new List<Token>
         {
             new Token(TokenType.LAST, "last", null, 1),
+            new Token(TokenType.FROM, "from", null, 1),
+            new Token(TokenType.IDENTIFIER, "myVar", null, 1),
             new Token(TokenType.SEMICOLON, ";", null, 1),
             new Token(TokenType.EOF, null, null, 1)
         };
 
         // Act
         var parser = new Parser();
-        // TODO: Fix the parser to handle the From statement correctly
-        // var statement = parser.ParseStatements(tokens);
+        var statement = parser.ParseStatements(tokens);
 
         // // Assert
-        // Assert.IsNotNull(statement);
-        // Assert.IsInstanceOfType(statement.First(), typeof(Last));
+        Assert.IsNotNull(statement);
+        Assert.IsInstanceOfType(statement.First(), typeof(Last));
     }
 }
