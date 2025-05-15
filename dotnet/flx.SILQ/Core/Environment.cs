@@ -53,9 +53,9 @@ public class Environment
     public void Define(string name, object value)
     {
         if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
-        if(string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be empty or whitespace.");
+        if (string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be empty or whitespace.");
         if (name == "context") throw new RuntimeError(name, "The identifier 'context' is reserved and cannot be used.");
-        if(_variables.ContainsKey(name)) throw new RuntimeError(name, $"The identifier '{name}' is already defined in the current context.");
+        if (_variables.ContainsKey(name)) throw new RuntimeError(name, $"The identifier '{name}' is already defined in the current context.");
 
         _variables[name] = value;
     }
@@ -99,6 +99,28 @@ public class Environment
         }
 
         throw new RuntimeError(name, $"Undefined variable '{name}'.");
+    }
+
+    /// <summary>
+    /// Defines a global variable in the environment.
+    /// </summary>
+    /// <param name="name">The name of the variable to define.</param>
+    /// <param name="value">The value to assign to the variable.</param>
+    /// <exception cref="RuntimeError">Thrown if the variable name is null, empty or whitespace.</exception>
+    /// <exception cref="RuntimeError">Thrown if the value is null.</exception>
+    public void DefineGlobal(string name, object value)
+    {
+        if (string.IsNullOrEmpty(name)) throw new RuntimeError(name, "Variable name cannot be null or empty.");
+        if (string.IsNullOrWhiteSpace(name)) throw new RuntimeError(name, "Variable name cannot be empty or whitespace.");
+        if (value == null) throw new RuntimeError(name, "Value cannot be null.");
+
+        if (Enclosing != null)
+        {
+            Enclosing.DefineGlobal(name, value);
+            return;
+        }
+
+        Define(name, value);
     }
 }
 

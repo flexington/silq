@@ -271,4 +271,89 @@ public class EnvironmentTests
         // Assert
         Assert.AreEqual(100, environment.Get(name));
     }
+
+    [TestMethod]
+    public void DefineGlobal_WhenNameIsNull_ThrowsRuntimeError()
+    {
+        // Arrange
+        var environment = new SILQ.Core.Environment();
+
+        // Act
+        Action action = () => environment.DefineGlobal(null, null);
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void DefineGlobal_WhenNameIsEmpty_ThrowsRuntimeError()
+    {
+        // Arrange
+        var environment = new SILQ.Core.Environment();
+
+        // Act
+        Action action = () => environment.DefineGlobal(string.Empty, null);
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void DefineGlobal_WhenNameIsWhitespace_ThrowsRuntimeError()
+    {
+        // Arrange
+        var environment = new SILQ.Core.Environment();
+
+        // Act
+        Action action = () => environment.DefineGlobal("   ", null);
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void DefineGlobal_WhenNameIsUndefined_ThrowsRuntimeError()
+    {
+        // Arrange
+        var environment = new SILQ.Core.Environment();
+        var name = "testVar";
+
+        // Act
+        Action action = () => environment.DefineGlobal(name, null);
+
+        // Act & Assert
+        Assert.ThrowsException<RuntimeError>(action);
+    }
+
+    [TestMethod]
+    public void DefineGlobal_WhenGlobalContext_VariableIsDefined()
+    {
+        // Arrange
+        var environment = new SILQ.Core.Environment();
+        var name = "testVar";
+        var value = 42;
+
+        // Act
+        environment.DefineGlobal(name, value);
+
+        // Assert
+        Assert.AreEqual(value, environment.Get(name));
+    }
+
+    [TestMethod]
+    public void DefineGlobal_WhenNestedContext_VariableIsDefined()
+    {
+        // Arrange
+        var parentEnvironment = new SILQ.Core.Environment();
+        var childEnvironment = new SILQ.Core.Environment(parentEnvironment);
+        var name = "testVar";
+        var value = 42;
+
+        // Act
+        childEnvironment.DefineGlobal(name, value);
+
+        // Assert
+        Assert.AreEqual(value, childEnvironment.Get(name));
+        Assert.AreEqual(value, parentEnvironment.Get(name));
+    }
 }
