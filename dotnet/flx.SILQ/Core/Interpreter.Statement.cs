@@ -32,17 +32,19 @@ public partial class Interpreter : IVisitor
     public object Visit(From from)
     {
         var context = _environment.Get("context");
-        var result = ResolveVariable(from.Property, context);
+        var variable = ResolveVariable(from.Property, context);
 
         if (from.Statement is not null)
         {
             var environment = new Environment(_environment);
-            environment.SetContext(result);
+            environment.SetContext(variable);
             _environment = environment;
-            return Execute(from.Statement);
+            var result = Execute(from.Statement);
+            _environment = _environment.Enclosing;
+            return result;
         }
 
-        return result;
+        return variable;
     }
 
     /// <summary>
@@ -90,7 +92,10 @@ public partial class Interpreter : IVisitor
     /// <param name="statement">The "As" statement to process.</param>
     public void Visit(As statement)
     {
-        throw new NotImplementedException();
+        var context = _environment.Get("context");
+        if (context == null) throw new RuntimeError("As", "Context is null.");
+
+        _environment.DefineGlobal(statement.Name.Lexeme, context);
     }
 
     /// <summary>

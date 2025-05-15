@@ -287,4 +287,17 @@ public class RuntimeTests
         // Assert
         Assert.ThrowsException<RuntimeError>(action);
     }
+
+    [TestMethod]
+    public void Execute_WhenFromAs_ReturnsNull(){
+        // Arrange
+        var query = "from School.Students as Student;";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsNull(result);
+    }
 }
