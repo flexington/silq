@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using flx.SILQ.Errors;
 using flx.SILQ.Expressions;
+using flx.SILQ.Models;
 using flx.SILQ.Statements;
 
 namespace flx.SILQ.Core;
@@ -83,7 +85,52 @@ public partial class Interpreter : IVisitor
     /// <param name="select">The "Select" statement to process.</param>
     public object Visit(Select select)
     {
-        throw new NotImplementedException();
+        var context = _environment.Get("context");
+        if (context == null) throw new RuntimeError("Select", "Context is null.");
+
+        if (IsList(context)) return SelectList(select, context);
+        else return SelectObject(select, context);
+    }
+
+    private List<object> SelectList(Select select, object context)
+    {
+        var result = new List<object>();
+        var list = (IList)context;
+
+        for (var x = 0; x < list.Count; x++)
+        {
+            var environment = new Environment(_environment);
+            environment.SetContext(list[x]);
+            _environment = environment;
+
+            Dictionary<string, object> pair = new Dictionary<string, object>();
+            for (var y = 0; y < select.Expressions.Length; y++)
+            {
+                var expression = select.Expressions[y];
+                var value = Evaluate(expression);
+                var name = ((Variable)expression).Name.Lexeme;
+                pair.Add(name, value);
+            }
+            result.Add(new SelectObject(pair));
+
+            _environment = _environment.Enclosing;
+        }
+
+        return result;
+    }
+
+    private object SelectObject(Select select, object context)
+    {
+        var result = new Dictionary<string, object>();
+        for (var x = 0; x < select.Expressions.Length; x++)
+        {
+            var expression = select.Expressions[x];
+            var value = Evaluate(expression);
+            var name = ((Variable)expression).Name.Lexeme;
+            result.Add(name, value);
+        }
+
+        return new SelectObject(result);
     }
 
     /// <summary>

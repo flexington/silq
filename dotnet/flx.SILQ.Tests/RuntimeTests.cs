@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using flx.SILQ.Errors;
+using flx.SILQ.Models;
 
 namespace flx.SILQ.Tests;
 
@@ -127,7 +128,8 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenFromWhereAnd_ReturnsList(){
+    public void Execute_WhenFromWhereAnd_ReturnsList()
+    {
         // Arrange
         var query = "from School.Students where Age == 14 and Grade == \"9th\";";
 
@@ -142,7 +144,8 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenFromWhereOr_ReturnsList(){
+    public void Execute_WhenFromWhereOr_ReturnsList()
+    {
         // Arrange
         var query = "from School.Students where Name == \"Alice\" or Grade == \"10th\";";
 
@@ -289,7 +292,8 @@ public class RuntimeTests
     }
 
     [TestMethod]
-    public void Execute_WhenFromAs_ReturnsNull(){
+    public void Execute_WhenFromAs_ReturnsNull()
+    {
         // Arrange
         var query = "from School.Students as Student;";
 
@@ -299,5 +303,87 @@ public class RuntimeTests
 
         // Assert
         Assert.IsNull(result);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFromSelectListSingle_ReturnsList()
+    {
+        // Arrange
+        var query = "from School.Students select { Name };";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+
+        var list = (List<object>)result;
+        Assert.AreEqual(3, list.Count);
+        Assert.IsInstanceOfType(list[0], typeof(SelectObject));
+
+        dynamic so = (SelectObject)list[0];
+        Assert.AreEqual("Alice", so.Name);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFromSelectListMultiple_ReturnsList()
+    {
+        // Arrange
+        var query = "from School.Students select { Name, Age };";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(IList));
+
+        var list = (List<object>)result;
+        Assert.AreEqual(3, list.Count);
+        Assert.IsInstanceOfType(list[0], typeof(SelectObject));
+
+        dynamic so = (SelectObject)list[0];
+        Assert.AreEqual("Alice", so.Name);
+        Assert.AreEqual(14, so.Age);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFromSelectObjectSingle_ReturnObject()
+    {
+        // Arrange
+        var query = "from School select { Name };";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(SelectObject));
+
+        dynamic so = (SelectObject)result;
+        Assert.AreEqual("Test School", so.Name);
+    }
+
+    [TestMethod]
+    public void Execute_WhenFromSelectObjectMultiple_ReturnObject()
+    {
+        // Arrange
+        var query = "from School select { Name, Address };";
+
+        // Act
+        var runtime = new Runtime(_testContext);
+        var result = runtime.Execute(query);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.IsInstanceOfType(result, typeof(SelectObject));
+
+        dynamic so = (SelectObject)result;
+        Assert.AreEqual("Test School", so.Name);
+        Assert.AreEqual("123 Test St", so.Address);
     }
 }

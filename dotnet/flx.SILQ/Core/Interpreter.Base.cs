@@ -221,6 +221,9 @@ public partial class Interpreter
     /// <exception cref="RuntimeError">Thrown if the variable is not defined in the context.</exception>
     public object ResolveVariable(Variable variable, object context)
     {
+        var type = context.GetType();
+        if (IsList(context)) return ResolveList(variable, context);
+
         var property = context.GetType().GetProperty(variable.Name.Lexeme);
         if (property == null) throw new RuntimeError(variable.Name, $"The identifier '{variable.Name.Lexeme}' is not defined in the current context.");
 
@@ -234,6 +237,18 @@ public partial class Interpreter
         if (CanConvertToDouble(propertyValue)) propertyValue = Convert.ToDouble(propertyValue);
 
         return propertyValue;
+    }
+
+    private object ResolveList(Variable variable, object context)
+    {
+        var list = context as IList;
+        var result = new List<object>();
+
+        foreach (var item in list)
+        {
+            result.Add(ResolveVariable(variable, item));
+        }
+        return result;
     }
 
     public object GetContext()
