@@ -6,8 +6,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-dotnettools.csharp@2.61.28",
-        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp@2.63.32",
+        "ms-dotnettools.csdevkit@1.16.6",
         "github.vscode-pull-request-github",
         "jgclark.vscode-todo-highlight",
         "k--kato.docomment",

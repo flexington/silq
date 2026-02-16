@@ -7,8 +7,9 @@ RUN apt-get install -y procps curl
 RUN apt-get install wget -y
 
 # Install .Net 8.0 and 9.0 SDK
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:dotnet/backports
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN rm packages-microsoft-prod.deb
 RUN apt-get update
 RUN apt-get install -y dotnet-sdk-8.0
 
